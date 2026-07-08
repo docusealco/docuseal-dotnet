@@ -1,10 +1,11 @@
 # docuseal-dotnet
 
-.NET SDK for the DocuSeal API. Unlike the other DocuSeal SDKs (hand-written
-client + generated models), this one uses NSwag to generate the entire
-client: its output is idiomatic .NET (typed optional query parameters,
+.NET SDK for the DocuSeal API. NSwag generates the entire client here:
+its output is idiomatic .NET (typed optional query parameters,
 CancellationToken on every method, System.Text.Json, IDocusealClient
-interface), so only a thin partial extension is written by hand.
+interface), so only a thin partial extension is written by hand. This
+differs from docuseal-js/go/java (hand-written client + generated models)
+and from docuseal-ruby/python/php (fully hand-written).
 
 ## Architecture
 
