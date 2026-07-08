@@ -97,7 +97,7 @@ specification and is never edited by hand:
 ./generate-types.sh
 ```
 
-Requires Node.js (`npx`), .NET and `python3`.
+Requires Node.js (`npx`), .NET and `ruby`.
 
 ## Documentation
 

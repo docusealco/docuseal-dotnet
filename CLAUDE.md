@@ -20,11 +20,11 @@ and from docuseal-ruby/python/php (fully hand-written).
   `CreateSubmissionAsync` against `POST /submissions/init`, which is not in
   the public spec (the generate script drops the legacy `POST /submissions`
   so this name is free).
-- `generate-types.sh` preprocesses the spec with python3: downgrades
-  OpenAPI 3.1 to 3.0 (NSwag does not support 3.1), drops webhook schemas and
-  the legacy `POST /submissions`, and extracts inline object schemas into
-  components with deterministic path-derived names - otherwise NSwag names
-  them `Fields2`/`Anonymous` with unstable counters.
+- `generate-types.sh` preprocesses the spec with ruby: drops webhook
+  schemas and the legacy `POST /submissions`, and extracts inline object
+  schemas into components with deterministic path-derived names - otherwise
+  NSwag names them `Fields2`/`Anonymous` with unstable counters. NSwag
+  consumes the OpenAPI 3.1 spec directly.
 
 ## Source of truth
 
