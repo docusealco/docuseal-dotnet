@@ -51,7 +51,7 @@ foreach (var template in templates.Data)
 var submission = await client.CreateSubmissionAsync(new CreateSubmissionRequest
 {
     TemplateId = 1000001,
-    Submitters = new List<CreateSubmissionRequestSubmittersItem>
+    Submitters = new List<CreateSubmissionRequestSubmitter>
     {
         new() { Role = "First Party", Email = "signer@example.com" }
     }

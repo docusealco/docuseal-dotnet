@@ -2378,6 +2378,1236 @@ namespace Docuseal
         }
     }
 
+    /// <summary>
+    /// Field validation rules.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class FieldValidation
+    {
+
+        /// <summary>
+        /// HTML field validation pattern string based on https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern specification.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("pattern")]
+        public string Pattern { get; set; }
+
+        /// <summary>
+        /// A custom error message to display on validation failure.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("message")]
+        public string Message { get; set; }
+
+        /// <summary>
+        /// Minimum allowed number value or date depending on field type.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("min")]
+        public double Min { get; set; }
+
+        /// <summary>
+        /// Maximum allowed number value or date depending on field type.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("max")]
+        public double Max { get; set; }
+
+        /// <summary>
+        /// Increment step for number field. Pass 1 to accept only integers, or 0.01 to accept decimal currency.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("step")]
+        public double Step { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// Field display preferences.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class FieldPreferences
+    {
+
+        /// <summary>
+        /// Font size of the field value in pixels.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("font_size")]
+        public int Font_size { get; set; }
+
+        /// <summary>
+        /// Font type of the field value.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("font_type")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<FieldPreferencesFont_type>))]
+        public FieldPreferencesFont_type Font_type { get; set; }
+
+        /// <summary>
+        /// Font family of the field value.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("font")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<FieldPreferencesFont>))]
+        public FieldPreferencesFont Font { get; set; }
+
+        /// <summary>
+        /// Font color of the field value.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("color")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<FieldPreferencesColor>))]
+        public FieldPreferencesColor Color { get; set; } = Docuseal.FieldPreferencesColor.Black;
+
+        /// <summary>
+        /// Field box background color.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("background")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<FieldPreferencesBackground>))]
+        public FieldPreferencesBackground Background { get; set; }
+
+        /// <summary>
+        /// Horizontal alignment of the field text value.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("align")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<FieldPreferencesAlign>))]
+        public FieldPreferencesAlign Align { get; set; } = Docuseal.FieldPreferencesAlign.Left;
+
+        /// <summary>
+        /// Vertical alignment of the field text value.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("valign")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<FieldPreferencesValign>))]
+        public FieldPreferencesValign Valign { get; set; } = Docuseal.FieldPreferencesValign.Center;
+
+        /// <summary>
+        /// The data format for different field types.&lt;br&gt;- Date field: accepts formats such as DD/MM/YYYY (default: MM/DD/YYYY).&lt;br&gt;- Signature field: accepts drawn, typed, drawn_or_typed (default), or upload.&lt;br&gt;- Number field: accepts currency formats such as usd, eur, gbp.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("format")]
+        public string Format { get; set; }
+
+        /// <summary>
+        /// Price value of the payment field. Only for payment fields.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("price")]
+        public double Price { get; set; }
+
+        /// <summary>
+        /// Currency value of the payment field. Only for payment fields.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("currency")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<FieldPreferencesCurrency>))]
+        public FieldPreferencesCurrency Currency { get; set; } = Docuseal.FieldPreferencesCurrency.USD;
+
+        /// <summary>
+        /// Set `true` to make sensitive data masked on the document.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("mask")]
+        public int Mask { get; set; }
+
+        /// <summary>
+        /// An array of signature reasons to choose from.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("reasons")]
+        public System.Collections.Generic.ICollection<string> Reasons { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class CreateSubmissionRequestSubmitterField
+    {
+
+        /// <summary>
+        /// Document template field name.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("name")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Default value of the field. Use base64 encoded file or a public URL to the image file to set default signature or image fields.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("default_value")]
+        public string Default_value { get; set; }
+
+        /// <summary>
+        /// Set `true` to make it impossible for the submitter to edit predefined field value.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("readonly")]
+        public bool Readonly { get; set; } = false;
+
+        /// <summary>
+        /// Set `true` to make the field required.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("required")]
+        public bool Required { get; set; }
+
+        /// <summary>
+        /// Field title displayed to the user instead of the name, shown on the signing form. Supports Markdown.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("title")]
+        public string Title { get; set; }
+
+        /// <summary>
+        /// Field description displayed on the signing form. Supports Markdown.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string Description { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("validation")]
+        public FieldValidation Validation { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("preferences")]
+        public FieldPreferences Preferences { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// Custom signature request email message for the submitter.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class CreateSubmissionRequestSubmitterMessage
+    {
+
+        /// <summary>
+        /// Custom signature request email subject for the submitter.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("subject")]
+        public string Subject { get; set; }
+
+        /// <summary>
+        /// Custom signature request email body for the submitter. Can include the following variables: {{template.name}}, {{submitter.link}}, {{account.name}}.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("body")]
+        public string Body { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class CreateSubmissionRequestSubmitter
+    {
+
+        /// <summary>
+        /// The name of the submitter.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// The role name or title of the submitter.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("role")]
+        public string Role { get; set; }
+
+        /// <summary>
+        /// The email address of the submitter.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("email")]
+        public string Email { get; set; }
+
+        /// <summary>
+        /// The phone number of the submitter, formatted according to the E.164 standard.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("phone")]
+        public string Phone { get; set; }
+
+        /// <summary>
+        /// An object with pre-filled values for the submission. Use field names for keys of the object. For more configurations see `fields` param.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("values")]
+        public object Values { get; set; }
+
+        /// <summary>
+        /// Your application-specific unique string key to identify this submitter within your app.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("external_id")]
+        public string External_id { get; set; }
+
+        /// <summary>
+        /// Pass `true` to mark submitter as completed and auto-signed via API.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("completed")]
+        public bool Completed { get; set; }
+
+        /// <summary>
+        /// Metadata object with additional submitter information.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public object Metadata { get; set; }
+
+        /// <summary>
+        /// Set `false` to disable signature request emails sending only for this submitter.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("send_email")]
+        public bool Send_email { get; set; } = true;
+
+        /// <summary>
+        /// Set `true` to send signature request via phone number and SMS.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("send_sms")]
+        public bool Send_sms { get; set; } = false;
+
+        /// <summary>
+        /// Specify Reply-To address to use in the notification emails for this submitter.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("reply_to")]
+        public string Reply_to { get; set; }
+
+        /// <summary>
+        /// Submitter specific URL to redirect to after the submission completion.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("completed_redirect_url")]
+        public string Completed_redirect_url { get; set; }
+
+        /// <summary>
+        /// The order of the submitter in the workflow (e.g., 0 for the first signer, 1 for the second, etc.). Use the same order number to create order groups. By default, submitters are ordered as in the submitters array.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("order")]
+        public int Order { get; set; }
+
+        /// <summary>
+        /// Set to `true` to require phone 2FA verification via a one-time code sent to the phone number in order to access the documents.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("require_phone_2fa")]
+        public bool Require_phone_2fa { get; set; } = false;
+
+        /// <summary>
+        /// Set to `true` to require email 2FA verification via a one-time code sent to the email address in order to access the documents.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("require_email_2fa")]
+        public bool Require_email_2fa { get; set; } = false;
+
+        [System.Text.Json.Serialization.JsonPropertyName("message")]
+        public CreateSubmissionRequestSubmitterMessage Message { get; set; }
+
+        /// <summary>
+        /// A list of configurations for template document form fields.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("fields")]
+        public System.Collections.Generic.ICollection<CreateSubmissionRequestSubmitterField> Fields { get; set; }
+
+        /// <summary>
+        /// A list of roles for the submitter. Use this param to merge multiple roles into one submitter.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("roles")]
+        public System.Collections.Generic.ICollection<string> Roles { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// Custom signature request email message.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class CreateSubmissionsFromEmailsRequestMessage
+    {
+
+        /// <summary>
+        /// Custom signature request email subject.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("subject")]
+        public string Subject { get; set; }
+
+        /// <summary>
+        /// Custom signature request email body. Can include the following variables: {{template.name}}, {{submitter.link}}, {{account.name}}.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("body")]
+        public string Body { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class CreateSubmissionFromPdfRequestSubmitterField
+    {
+
+        /// <summary>
+        /// Document field name.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("name")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Default value of the field. Use base64 encoded file or a public URL to the image file to set default signature or image fields.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("default_value")]
+        public string Default_value { get; set; }
+
+        /// <summary>
+        /// Set `true` to make it impossible for the submitter to edit predefined field value.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("readonly")]
+        public bool Readonly { get; set; } = false;
+
+        /// <summary>
+        /// Set `true` to make the field required.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("required")]
+        public bool Required { get; set; }
+
+        /// <summary>
+        /// Field title displayed to the user instead of the name, shown on the signing form. Supports Markdown.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("title")]
+        public string Title { get; set; }
+
+        /// <summary>
+        /// Field description displayed on the signing form. Supports Markdown.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string Description { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("validation")]
+        public FieldValidation Validation { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("preferences")]
+        public FieldPreferences Preferences { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class CreateSubmissionFromPdfRequestSubmitter
+    {
+
+        /// <summary>
+        /// The name of the submitter.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// The role name or title of the submitter.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("role")]
+        public string Role { get; set; }
+
+        /// <summary>
+        /// The email address of the submitter.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("email")]
+        public string Email { get; set; }
+
+        /// <summary>
+        /// The phone number of the submitter, formatted according to the E.164 standard.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("phone")]
+        public string Phone { get; set; }
+
+        /// <summary>
+        /// An object with pre-filled values for the submission. Use field names for keys of the object. For more configurations see `fields` param.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("values")]
+        public object Values { get; set; }
+
+        /// <summary>
+        /// Your application-specific unique string key to identify this submitter within your app.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("external_id")]
+        public string External_id { get; set; }
+
+        /// <summary>
+        /// Pass `true` to mark submitter as completed and auto-signed via API.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("completed")]
+        public bool Completed { get; set; }
+
+        /// <summary>
+        /// Metadata object with additional submitter information.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public object Metadata { get; set; }
+
+        /// <summary>
+        /// Set `false` to disable signature request emails sending only for this submitter.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("send_email")]
+        public bool Send_email { get; set; } = true;
+
+        /// <summary>
+        /// Set `true` to send signature request via phone number and SMS.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("send_sms")]
+        public bool Send_sms { get; set; } = false;
+
+        /// <summary>
+        /// Specify Reply-To address to use in the notification emails for this submitter.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("reply_to")]
+        public string Reply_to { get; set; }
+
+        /// <summary>
+        /// Submitter specific URL to redirect to after the submission completion.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("completed_redirect_url")]
+        public string Completed_redirect_url { get; set; }
+
+        /// <summary>
+        /// The order of the submitter in the workflow (e.g., 0 for the first signer, 1 for the second, etc.). Use the same order number to create order groups. By default, submitters are ordered as in the submitters array.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("order")]
+        public int Order { get; set; }
+
+        /// <summary>
+        /// Set to `true` to require phone 2FA verification via a one-time code sent to the phone number in order to access the documents.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("require_phone_2fa")]
+        public bool Require_phone_2fa { get; set; } = false;
+
+        /// <summary>
+        /// Set to `true` to require email 2FA verification via a one-time code sent to the email address in order to access the documents.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("require_email_2fa")]
+        public bool Require_email_2fa { get; set; } = false;
+
+        /// <summary>
+        /// Set the role name of the previous party that should invite this party via email.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("invite_by")]
+        public string Invite_by { get; set; }
+
+        /// <summary>
+        /// A list of configurations for document form fields.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("fields")]
+        public System.Collections.Generic.ICollection<CreateSubmissionFromPdfRequestSubmitterField> Fields { get; set; }
+
+        /// <summary>
+        /// A list of roles for the submitter. Use this param to merge multiple roles into one submitter.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("roles")]
+        public System.Collections.Generic.ICollection<string> Roles { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class CreateSubmissionFromPdfRequestDocumentFieldArea
+    {
+
+        /// <summary>
+        /// X-coordinate of the field area.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("x")]
+        public double X { get; set; }
+
+        /// <summary>
+        /// Y-coordinate of the field area.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("y")]
+        public double Y { get; set; }
+
+        /// <summary>
+        /// Width of the field area.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("w")]
+        public double W { get; set; }
+
+        /// <summary>
+        /// Height of the field area.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("h")]
+        public double H { get; set; }
+
+        /// <summary>
+        /// Page number of the field area. Starts from 1.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("page")]
+        public int Page { get; set; }
+
+        /// <summary>
+        /// Option string value for 'radio' and 'multiple' select field types.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("option")]
+        public string Option { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class CreateSubmissionFromPdfRequestDocumentField
+    {
+
+        /// <summary>
+        /// Name of the field.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Type of the field (e.g., text, signature, date, initials).
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("type")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromPdfRequestDocumentFieldType>))]
+        public CreateSubmissionFromPdfRequestDocumentFieldType Type { get; set; }
+
+        /// <summary>
+        /// Role name of the signer.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("role")]
+        public string Role { get; set; }
+
+        /// <summary>
+        /// Indicates if the field is required.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("required")]
+        public bool Required { get; set; }
+
+        /// <summary>
+        /// Field title displayed to the user instead of the name, shown on the signing form. Supports Markdown.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("title")]
+        public string Title { get; set; }
+
+        /// <summary>
+        /// Field description displayed on the signing form. Supports Markdown.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// List of areas where the field is located in the document.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("areas")]
+        public System.Collections.Generic.ICollection<CreateSubmissionFromPdfRequestDocumentFieldArea> Areas { get; set; }
+
+        /// <summary>
+        /// An array of option values for 'select' field type.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("options")]
+        public System.Collections.Generic.ICollection<string> Options { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class CreateSubmissionFromPdfRequestDocument
+    {
+
+        /// <summary>
+        /// Name of the document.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("name")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Base64-encoded content of the PDF file or downloadable file URL.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("file")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public byte[] File { get; set; }
+
+        /// <summary>
+        /// Fields are optional if you use {{...}} text tags to define fields in the document.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("fields")]
+        public System.Collections.Generic.ICollection<CreateSubmissionFromPdfRequestDocumentField> Fields { get; set; }
+
+        /// <summary>
+        /// Document position in the submission. If not specified, the document will be added in the order it appears in the documents array.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("position")]
+        public int Position { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    /// <summary>
+    /// Custom signature request email message.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class CreateSubmissionFromPdfRequestMessage
+    {
+
+        /// <summary>
+        /// Custom signature request email subject.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("subject")]
+        public string Subject { get; set; }
+
+        /// <summary>
+        /// Custom signature request email body. Can include the following variables: {{submission.name}}, {{submitter.link}}, {{account.name}}.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("body")]
+        public string Body { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class CreateSubmissionFromDocxRequestDocument
+    {
+
+        /// <summary>
+        /// Name of the document.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("name")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Base64-encoded content of the PDF or DOCX file or downloadable file URL.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("file")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public byte[] File { get; set; }
+
+        /// <summary>
+        /// Document position in the submission. If not specified, the document will be added in the order it appears in the documents array.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("position")]
+        public int Position { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class CreateSubmissionFromHtmlRequestDocument
+    {
+
+        /// <summary>
+        /// Document name. Random uuid will be assigned when not specified.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// HTML document content with field tags.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("html")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Html { get; set; }
+
+        /// <summary>
+        /// HTML document content of the header to be displayed on every page.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("html_header")]
+        public string Html_header { get; set; }
+
+        /// <summary>
+        /// HTML document content of the footer to be displayed on every page.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("html_footer")]
+        public string Html_footer { get; set; }
+
+        /// <summary>
+        /// Page size. Letter 8.5 x 11 will be assigned when not specified.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("size")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromHtmlRequestDocumentSize>))]
+        public CreateSubmissionFromHtmlRequestDocumentSize Size { get; set; } = Docuseal.CreateSubmissionFromHtmlRequestDocumentSize.Letter;
+
+        /// <summary>
+        /// Document position in the submission. If not specified, the document will be added in the order it appears in the documents array.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("position")]
+        public int Position { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class UpdateSubmitterRequestField
+    {
+
+        /// <summary>
+        /// Document template field name.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("name")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Default value of the field. Use base64 encoded file or a public URL to the image file to set default signature or image fields.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("default_value")]
+        public string Default_value { get; set; }
+
+        /// <summary>
+        /// Set `true` to make it impossible for the submitter to edit predefined field value.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("readonly")]
+        public bool Readonly { get; set; } = false;
+
+        /// <summary>
+        /// Set `true` to make the field required.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("required")]
+        public bool Required { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("validation")]
+        public FieldValidation Validation { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("preferences")]
+        public FieldPreferences Preferences { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class AddDocumentToTemplateRequestDocument
+    {
+
+        /// <summary>
+        /// Document name. Random uuid will be assigned when not specified.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Base64-encoded content of the PDF or DOCX file or downloadable file URL. Leave it empty if you create a new document using HTML param.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("file")]
+        public byte[] File { get; set; }
+
+        /// <summary>
+        /// HTML template with field tags. Leave it empty if you add a document via PDF or DOCX base64 encoded file param or URL.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("html")]
+        public string Html { get; set; }
+
+        /// <summary>
+        /// Position of the document. By default will be added as the last document in the template.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("position")]
+        public int Position { get; set; }
+
+        /// <summary>
+        /// Set to `true` to replace existing document with a new file at `position`. Existing document fields will be transferred to the new document if it doesn't contain any fields.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("replace")]
+        public bool Replace { get; set; } = false;
+
+        /// <summary>
+        /// Set to `true` to remove existing document at given `position` or with given `name`.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("remove")]
+        public bool Remove { get; set; } = false;
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class CreateTemplateFromHtmlRequestDocument
+    {
+
+        /// <summary>
+        /// HTML template with field tags.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("html")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Html { get; set; }
+
+        /// <summary>
+        /// Document name. Random uuid will be assigned when not specified.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string Name { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class CreateTemplateFromDocxRequestDocumentFieldArea
+    {
+
+        /// <summary>
+        /// X-coordinate of the field area.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("x")]
+        public double X { get; set; }
+
+        /// <summary>
+        /// Y-coordinate of the field area.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("y")]
+        public double Y { get; set; }
+
+        /// <summary>
+        /// Width of the field area.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("w")]
+        public double W { get; set; }
+
+        /// <summary>
+        /// Height of the field area.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("h")]
+        public double H { get; set; }
+
+        /// <summary>
+        /// Page number of the field area. Starts from 1.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("page")]
+        public int Page { get; set; }
+
+        /// <summary>
+        /// Option string value for 'radio' and 'multiple' select field types.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("option")]
+        public string Option { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class CreateTemplateFromDocxRequestDocumentField
+    {
+
+        /// <summary>
+        /// Name of the field.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Type of the field (e.g., text, signature, date, initials).
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("type")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateTemplateFromDocxRequestDocumentFieldType>))]
+        public CreateTemplateFromDocxRequestDocumentFieldType Type { get; set; }
+
+        /// <summary>
+        /// Role name of the signer.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("role")]
+        public string Role { get; set; }
+
+        /// <summary>
+        /// Indicates if the field is required.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("required")]
+        public bool Required { get; set; }
+
+        /// <summary>
+        /// Field title displayed to the user instead of the name, shown on the signing form. Supports Markdown.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("title")]
+        public string Title { get; set; }
+
+        /// <summary>
+        /// Field description displayed on the signing form. Supports Markdown.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// List of areas where the field is located in the document.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("areas")]
+        public System.Collections.Generic.ICollection<CreateTemplateFromDocxRequestDocumentFieldArea> Areas { get; set; }
+
+        /// <summary>
+        /// An array of option values for 'select' field type.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("options")]
+        public System.Collections.Generic.ICollection<string> Options { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("validation")]
+        public FieldValidation Validation { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("preferences")]
+        public FieldPreferences Preferences { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class CreateTemplateFromDocxRequestDocument
+    {
+
+        /// <summary>
+        /// Name of the document.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("name")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Base64-encoded content of the DOCX file or downloadable file URL.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("file")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public byte[] File { get; set; }
+
+        /// <summary>
+        /// Set to `true` to make the document dynamic. When enabled, the DOCX document content can be edited or use [[variables]] in the template editor.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("dynamic")]
+        public bool Dynamic { get; set; } = false;
+
+        /// <summary>
+        /// Fields are optional if you use {{...}} text tags to define fields in the document.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("fields")]
+        public System.Collections.Generic.ICollection<CreateTemplateFromDocxRequestDocumentField> Fields { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class CreateTemplateFromPdfRequestDocumentField
+    {
+
+        /// <summary>
+        /// Name of the field.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Type of the field (e.g., text, signature, date, initials).
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("type")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateTemplateFromPdfRequestDocumentFieldType>))]
+        public CreateTemplateFromPdfRequestDocumentFieldType Type { get; set; }
+
+        /// <summary>
+        /// Role name of the signer.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("role")]
+        public string Role { get; set; }
+
+        /// <summary>
+        /// Indicates if the field is required.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("required")]
+        public bool Required { get; set; }
+
+        /// <summary>
+        /// Field title displayed to the user instead of the name, shown on the signing form. Supports Markdown.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("title")]
+        public string Title { get; set; }
+
+        /// <summary>
+        /// Field description displayed on the signing form. Supports Markdown.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// List of areas where the field is located in the document.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("areas")]
+        public System.Collections.Generic.ICollection<CreateSubmissionFromPdfRequestDocumentFieldArea> Areas { get; set; }
+
+        /// <summary>
+        /// An array of option values for 'select' field type.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("options")]
+        public System.Collections.Generic.ICollection<string> Options { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("validation")]
+        public FieldValidation Validation { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("preferences")]
+        public FieldPreferences Preferences { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class CreateTemplateFromPdfRequestDocument
+    {
+
+        /// <summary>
+        /// Name of the document.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("name")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Base64-encoded content of the PDF file or downloadable file URL.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("file")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public byte[] File { get; set; }
+
+        /// <summary>
+        /// Fields are optional if you use {{...}} text tags to define fields in the document.
+        /// </summary>
+        [System.Text.Json.Serialization.JsonPropertyName("fields")]
+        public System.Collections.Generic.ICollection<CreateTemplateFromPdfRequestDocumentField> Fields { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class TemplatePagination
     {
@@ -3644,14 +4874,14 @@ namespace Docuseal
         /// </summary>
         [System.Text.Json.Serialization.JsonPropertyName("documents")]
         [System.ComponentModel.DataAnnotations.Required]
-        public System.Collections.Generic.ICollection<CreateSubmissionFromPdfRequestDocumentsItem> Documents { get; set; } = new System.Collections.ObjectModel.Collection<CreateSubmissionFromPdfRequestDocumentsItem>();
+        public System.Collections.Generic.ICollection<CreateSubmissionFromPdfRequestDocument> Documents { get; set; } = new System.Collections.ObjectModel.Collection<CreateSubmissionFromPdfRequestDocument>();
 
         /// <summary>
         /// The list of submitters for the submission.
         /// </summary>
         [System.Text.Json.Serialization.JsonPropertyName("submitters")]
         [System.ComponentModel.DataAnnotations.Required]
-        public System.Collections.Generic.ICollection<CreateSubmissionFromPdfRequestSubmittersItem> Submitters { get; set; } = new System.Collections.ObjectModel.Collection<CreateSubmissionFromPdfRequestSubmittersItem>();
+        public System.Collections.Generic.ICollection<CreateSubmissionFromPdfRequestSubmitter> Submitters { get; set; } = new System.Collections.ObjectModel.Collection<CreateSubmissionFromPdfRequestSubmitter>();
 
         [System.Text.Json.Serialization.JsonPropertyName("message")]
         public CreateSubmissionFromPdfRequestMessage Message { get; set; }
@@ -3839,17 +5069,17 @@ namespace Docuseal
         /// </summary>
         [System.Text.Json.Serialization.JsonPropertyName("documents")]
         [System.ComponentModel.DataAnnotations.Required]
-        public System.Collections.Generic.ICollection<CreateSubmissionFromDocxRequestDocumentsItem> Documents { get; set; } = new System.Collections.ObjectModel.Collection<CreateSubmissionFromDocxRequestDocumentsItem>();
+        public System.Collections.Generic.ICollection<CreateSubmissionFromDocxRequestDocument> Documents { get; set; } = new System.Collections.ObjectModel.Collection<CreateSubmissionFromDocxRequestDocument>();
 
         /// <summary>
         /// The list of submitters for the submission.
         /// </summary>
         [System.Text.Json.Serialization.JsonPropertyName("submitters")]
         [System.ComponentModel.DataAnnotations.Required]
-        public System.Collections.Generic.ICollection<CreateSubmissionFromDocxRequestSubmittersItem> Submitters { get; set; } = new System.Collections.ObjectModel.Collection<CreateSubmissionFromDocxRequestSubmittersItem>();
+        public System.Collections.Generic.ICollection<CreateSubmissionFromPdfRequestSubmitter> Submitters { get; set; } = new System.Collections.ObjectModel.Collection<CreateSubmissionFromPdfRequestSubmitter>();
 
         [System.Text.Json.Serialization.JsonPropertyName("message")]
-        public CreateSubmissionFromDocxRequestMessage Message { get; set; }
+        public CreateSubmissionFromPdfRequestMessage Message { get; set; }
 
         /// <summary>
         /// Set `true` to merge the documents into a single PDF file.
@@ -3938,17 +5168,17 @@ namespace Docuseal
         /// </summary>
         [System.Text.Json.Serialization.JsonPropertyName("documents")]
         [System.ComponentModel.DataAnnotations.Required]
-        public System.Collections.Generic.ICollection<CreateSubmissionFromHtmlRequestDocumentsItem> Documents { get; set; } = new System.Collections.ObjectModel.Collection<CreateSubmissionFromHtmlRequestDocumentsItem>();
+        public System.Collections.Generic.ICollection<CreateSubmissionFromHtmlRequestDocument> Documents { get; set; } = new System.Collections.ObjectModel.Collection<CreateSubmissionFromHtmlRequestDocument>();
 
         /// <summary>
         /// The list of submitters for the submission.
         /// </summary>
         [System.Text.Json.Serialization.JsonPropertyName("submitters")]
         [System.ComponentModel.DataAnnotations.Required]
-        public System.Collections.Generic.ICollection<CreateSubmissionFromHtmlRequestSubmittersItem> Submitters { get; set; } = new System.Collections.ObjectModel.Collection<CreateSubmissionFromHtmlRequestSubmittersItem>();
+        public System.Collections.Generic.ICollection<CreateSubmissionFromPdfRequestSubmitter> Submitters { get; set; } = new System.Collections.ObjectModel.Collection<CreateSubmissionFromPdfRequestSubmitter>();
 
         [System.Text.Json.Serialization.JsonPropertyName("message")]
-        public CreateSubmissionFromHtmlRequestMessage Message { get; set; }
+        public CreateSubmissionFromPdfRequestMessage Message { get; set; }
 
         /// <summary>
         /// Set `true` to merge the documents into a single PDF file.
@@ -4027,14 +5257,14 @@ namespace Docuseal
         public object Variables { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("message")]
-        public CreateSubmissionRequestMessage Message { get; set; }
+        public CreateSubmissionsFromEmailsRequestMessage Message { get; set; }
 
         /// <summary>
         /// The list of submitters for the submission.
         /// </summary>
         [System.Text.Json.Serialization.JsonPropertyName("submitters")]
         [System.ComponentModel.DataAnnotations.Required]
-        public System.Collections.Generic.ICollection<CreateSubmissionRequestSubmittersItem> Submitters { get; set; } = new System.Collections.ObjectModel.Collection<CreateSubmissionRequestSubmittersItem>();
+        public System.Collections.Generic.ICollection<CreateSubmissionRequestSubmitter> Submitters { get; set; } = new System.Collections.ObjectModel.Collection<CreateSubmissionRequestSubmitter>();
 
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
 
@@ -4287,13 +5517,13 @@ namespace Docuseal
         public bool Require_email_2fa { get; set; } = false;
 
         [System.Text.Json.Serialization.JsonPropertyName("message")]
-        public UpdateSubmitterRequestMessage Message { get; set; }
+        public CreateSubmissionsFromEmailsRequestMessage Message { get; set; }
 
         /// <summary>
         /// A list of configurations for template document form fields.
         /// </summary>
         [System.Text.Json.Serialization.JsonPropertyName("fields")]
-        public System.Collections.Generic.ICollection<UpdateSubmitterRequestFieldsItem> Fields { get; set; }
+        public System.Collections.Generic.ICollection<UpdateSubmitterRequestField> Fields { get; set; }
 
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
 
@@ -4488,7 +5718,7 @@ namespace Docuseal
         /// The list of documents to add or replace in the template.
         /// </summary>
         [System.Text.Json.Serialization.JsonPropertyName("documents")]
-        public System.Collections.Generic.ICollection<AddDocumentToTemplateRequestDocumentsItem> Documents { get; set; }
+        public System.Collections.Generic.ICollection<AddDocumentToTemplateRequestDocument> Documents { get; set; }
 
         /// <summary>
         /// Set to `true` to merge all existing and new documents into a single PDF document in the template.
@@ -4598,7 +5828,7 @@ namespace Docuseal
         /// The list of documents built from HTML. Can be used to create a template with multiple documents. Leave `documents` param empty when using a top-level `html` param for a template with a single document.
         /// </summary>
         [System.Text.Json.Serialization.JsonPropertyName("documents")]
-        public System.Collections.Generic.ICollection<CreateTemplateFromHtmlRequestDocumentsItem> Documents { get; set; }
+        public System.Collections.Generic.ICollection<CreateTemplateFromHtmlRequestDocument> Documents { get; set; }
 
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
 
@@ -4644,7 +5874,7 @@ namespace Docuseal
         /// </summary>
         [System.Text.Json.Serialization.JsonPropertyName("documents")]
         [System.ComponentModel.DataAnnotations.Required]
-        public System.Collections.Generic.ICollection<CreateTemplateFromDocxRequestDocumentsItem> Documents { get; set; } = new System.Collections.ObjectModel.Collection<CreateTemplateFromDocxRequestDocumentsItem>();
+        public System.Collections.Generic.ICollection<CreateTemplateFromDocxRequestDocument> Documents { get; set; } = new System.Collections.ObjectModel.Collection<CreateTemplateFromDocxRequestDocument>();
 
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
 
@@ -4690,7 +5920,7 @@ namespace Docuseal
         /// </summary>
         [System.Text.Json.Serialization.JsonPropertyName("documents")]
         [System.ComponentModel.DataAnnotations.Required]
-        public System.Collections.Generic.ICollection<CreateTemplateFromPdfRequestDocumentsItem> Documents { get; set; } = new System.Collections.ObjectModel.Collection<CreateTemplateFromPdfRequestDocumentsItem>();
+        public System.Collections.Generic.ICollection<CreateTemplateFromPdfRequestDocument> Documents { get; set; } = new System.Collections.ObjectModel.Collection<CreateTemplateFromPdfRequestDocument>();
 
         /// <summary>
         /// Remove PDF form fields from the documents.
@@ -5274,36 +6504,6 @@ namespace Docuseal
     }
 
     /// <summary>
-    /// Custom signature request email message.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionsFromEmailsRequestMessage
-    {
-
-        /// <summary>
-        /// Custom signature request email subject.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("subject")]
-        public string Subject { get; set; }
-
-        /// <summary>
-        /// Custom signature request email body. Can include the following variables: {{template.name}}, {{submitter.link}}, {{account.name}}.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("body")]
-        public string Body { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    /// <summary>
     /// Submitter preferences.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
@@ -5464,518 +6664,6 @@ namespace Docuseal
         [System.Text.Json.Serialization.JsonPropertyName("embed_src")]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string Embed_src { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionFromPdfRequestDocumentsItemFieldsItemAreasItem
-    {
-
-        /// <summary>
-        /// X-coordinate of the field area.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("x")]
-        public double X { get; set; }
-
-        /// <summary>
-        /// Y-coordinate of the field area.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("y")]
-        public double Y { get; set; }
-
-        /// <summary>
-        /// Width of the field area.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("w")]
-        public double W { get; set; }
-
-        /// <summary>
-        /// Height of the field area.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("h")]
-        public double H { get; set; }
-
-        /// <summary>
-        /// Page number of the field area. Starts from 1.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("page")]
-        public int Page { get; set; }
-
-        /// <summary>
-        /// Option string value for 'radio' and 'multiple' select field types.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("option")]
-        public string Option { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionFromPdfRequestDocumentsItemFieldsItem
-    {
-
-        /// <summary>
-        /// Name of the field.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Type of the field (e.g., text, signature, date, initials).
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("type")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromPdfRequestDocumentsItemFieldsItemType>))]
-        public CreateSubmissionFromPdfRequestDocumentsItemFieldsItemType Type { get; set; }
-
-        /// <summary>
-        /// Role name of the signer.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("role")]
-        public string Role { get; set; }
-
-        /// <summary>
-        /// Indicates if the field is required.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("required")]
-        public bool Required { get; set; }
-
-        /// <summary>
-        /// Field title displayed to the user instead of the name, shown on the signing form. Supports Markdown.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; }
-
-        /// <summary>
-        /// Field description displayed on the signing form. Supports Markdown.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; }
-
-        /// <summary>
-        /// List of areas where the field is located in the document.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("areas")]
-        public System.Collections.Generic.ICollection<CreateSubmissionFromPdfRequestDocumentsItemFieldsItemAreasItem> Areas { get; set; }
-
-        /// <summary>
-        /// An array of option values for 'select' field type.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("options")]
-        public System.Collections.Generic.ICollection<string> Options { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionFromPdfRequestDocumentsItem
-    {
-
-        /// <summary>
-        /// Name of the document.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Base64-encoded content of the PDF file or downloadable file URL.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("file")]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public byte[] File { get; set; }
-
-        /// <summary>
-        /// Fields are optional if you use {{...}} text tags to define fields in the document.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("fields")]
-        public System.Collections.Generic.ICollection<CreateSubmissionFromPdfRequestDocumentsItemFieldsItem> Fields { get; set; }
-
-        /// <summary>
-        /// Document position in the submission. If not specified, the document will be added in the order it appears in the documents array.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("position")]
-        public int Position { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    /// <summary>
-    /// Field validation rules.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionFromPdfRequestSubmittersItemFieldsItemValidation
-    {
-
-        /// <summary>
-        /// HTML field validation pattern string based on https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern specification.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("pattern")]
-        public string Pattern { get; set; }
-
-        /// <summary>
-        /// A custom error message to display on validation failure.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("message")]
-        public string Message { get; set; }
-
-        /// <summary>
-        /// Minimum allowed number value or date depending on field type.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("min")]
-        public double Min { get; set; }
-
-        /// <summary>
-        /// Maximum allowed number value or date depending on field type.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("max")]
-        public double Max { get; set; }
-
-        /// <summary>
-        /// Increment step for number field. Pass 1 to accept only integers, or 0.01 to accept decimal currency.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("step")]
-        public double Step { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    /// <summary>
-    /// Field display preferences.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferences
-    {
-
-        /// <summary>
-        /// Font size of the field value in pixels.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("font_size")]
-        public int Font_size { get; set; }
-
-        /// <summary>
-        /// Font type of the field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("font_type")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesFont_type>))]
-        public CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesFont_type Font_type { get; set; }
-
-        /// <summary>
-        /// Font family of the field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("font")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesFont>))]
-        public CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesFont Font { get; set; }
-
-        /// <summary>
-        /// Font color of the field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("color")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesColor>))]
-        public CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesColor Color { get; set; } = Docuseal.CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesColor.Black;
-
-        /// <summary>
-        /// Field box background color.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("background")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesBackground>))]
-        public CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesBackground Background { get; set; }
-
-        /// <summary>
-        /// Horizontal alignment of the field text value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("align")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesAlign>))]
-        public CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesAlign Align { get; set; } = Docuseal.CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesAlign.Left;
-
-        /// <summary>
-        /// Vertical alignment of the field text value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("valign")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesValign>))]
-        public CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesValign Valign { get; set; } = Docuseal.CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesValign.Center;
-
-        /// <summary>
-        /// The data format for different field types.&lt;br&gt;- Date field: accepts formats such as DD/MM/YYYY (default: MM/DD/YYYY).&lt;br&gt;- Signature field: accepts drawn, typed, drawn_or_typed (default), or upload.&lt;br&gt;- Number field: accepts currency formats such as usd, eur, gbp.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("format")]
-        public string Format { get; set; }
-
-        /// <summary>
-        /// Price value of the payment field. Only for payment fields.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("price")]
-        public double Price { get; set; }
-
-        /// <summary>
-        /// Currency value of the payment field. Only for payment fields.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("currency")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesCurrency>))]
-        public CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesCurrency Currency { get; set; } = Docuseal.CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesCurrency.USD;
-
-        /// <summary>
-        /// Set `true` to make sensitive data masked on the document.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("mask")]
-        public int Mask { get; set; }
-
-        /// <summary>
-        /// An array of signature reasons to choose from.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("reasons")]
-        public System.Collections.Generic.ICollection<string> Reasons { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionFromPdfRequestSubmittersItemFieldsItem
-    {
-
-        /// <summary>
-        /// Document field name.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Default value of the field. Use base64 encoded file or a public URL to the image file to set default signature or image fields.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("default_value")]
-        public string Default_value { get; set; }
-
-        /// <summary>
-        /// Set `true` to make it impossible for the submitter to edit predefined field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("readonly")]
-        public bool Readonly { get; set; } = false;
-
-        /// <summary>
-        /// Set `true` to make the field required.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("required")]
-        public bool Required { get; set; }
-
-        /// <summary>
-        /// Field title displayed to the user instead of the name, shown on the signing form. Supports Markdown.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; }
-
-        /// <summary>
-        /// Field description displayed on the signing form. Supports Markdown.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("validation")]
-        public CreateSubmissionFromPdfRequestSubmittersItemFieldsItemValidation Validation { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("preferences")]
-        public CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferences Preferences { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionFromPdfRequestSubmittersItem
-    {
-
-        /// <summary>
-        /// The name of the submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// The role name or title of the submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("role")]
-        public string Role { get; set; }
-
-        /// <summary>
-        /// The email address of the submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("email")]
-        public string Email { get; set; }
-
-        /// <summary>
-        /// The phone number of the submitter, formatted according to the E.164 standard.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("phone")]
-        public string Phone { get; set; }
-
-        /// <summary>
-        /// An object with pre-filled values for the submission. Use field names for keys of the object. For more configurations see `fields` param.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("values")]
-        public object Values { get; set; }
-
-        /// <summary>
-        /// Your application-specific unique string key to identify this submitter within your app.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("external_id")]
-        public string External_id { get; set; }
-
-        /// <summary>
-        /// Pass `true` to mark submitter as completed and auto-signed via API.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("completed")]
-        public bool Completed { get; set; }
-
-        /// <summary>
-        /// Metadata object with additional submitter information.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object Metadata { get; set; }
-
-        /// <summary>
-        /// Set `false` to disable signature request emails sending only for this submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("send_email")]
-        public bool Send_email { get; set; } = true;
-
-        /// <summary>
-        /// Set `true` to send signature request via phone number and SMS.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("send_sms")]
-        public bool Send_sms { get; set; } = false;
-
-        /// <summary>
-        /// Specify Reply-To address to use in the notification emails for this submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("reply_to")]
-        public string Reply_to { get; set; }
-
-        /// <summary>
-        /// Submitter specific URL to redirect to after the submission completion.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("completed_redirect_url")]
-        public string Completed_redirect_url { get; set; }
-
-        /// <summary>
-        /// The order of the submitter in the workflow (e.g., 0 for the first signer, 1 for the second, etc.). Use the same order number to create order groups. By default, submitters are ordered as in the submitters array.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("order")]
-        public int Order { get; set; }
-
-        /// <summary>
-        /// Set to `true` to require phone 2FA verification via a one-time code sent to the phone number in order to access the documents.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("require_phone_2fa")]
-        public bool Require_phone_2fa { get; set; } = false;
-
-        /// <summary>
-        /// Set to `true` to require email 2FA verification via a one-time code sent to the email address in order to access the documents.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("require_email_2fa")]
-        public bool Require_email_2fa { get; set; } = false;
-
-        /// <summary>
-        /// Set the role name of the previous party that should invite this party via email.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("invite_by")]
-        public string Invite_by { get; set; }
-
-        /// <summary>
-        /// A list of configurations for document form fields.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("fields")]
-        public System.Collections.Generic.ICollection<CreateSubmissionFromPdfRequestSubmittersItemFieldsItem> Fields { get; set; }
-
-        /// <summary>
-        /// A list of roles for the submitter. Use this param to merge multiple roles into one submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("roles")]
-        public System.Collections.Generic.ICollection<string> Roles { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    /// <summary>
-    /// Custom signature request email message.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionFromPdfRequestMessage
-    {
-
-        /// <summary>
-        /// Custom signature request email subject.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("subject")]
-        public string Subject { get; set; }
-
-        /// <summary>
-        /// Custom signature request email body. Can include the following variables: {{submission.name}}, {{submitter.link}}, {{account.name}}.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("body")]
-        public string Body { get; set; }
 
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
 
@@ -6154,1410 +6842,6 @@ namespace Docuseal
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionFromDocxRequestDocumentsItem
-    {
-
-        /// <summary>
-        /// Name of the document.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Base64-encoded content of the PDF or DOCX file or downloadable file URL.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("file")]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public byte[] File { get; set; }
-
-        /// <summary>
-        /// Document position in the submission. If not specified, the document will be added in the order it appears in the documents array.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("position")]
-        public int Position { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    /// <summary>
-    /// Field validation rules.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionFromDocxRequestSubmittersItemFieldsItemValidation
-    {
-
-        /// <summary>
-        /// HTML field validation pattern string based on https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern specification.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("pattern")]
-        public string Pattern { get; set; }
-
-        /// <summary>
-        /// A custom error message to display on validation failure.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("message")]
-        public string Message { get; set; }
-
-        /// <summary>
-        /// Minimum allowed number value or date depending on field type.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("min")]
-        public double Min { get; set; }
-
-        /// <summary>
-        /// Maximum allowed number value or date depending on field type.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("max")]
-        public double Max { get; set; }
-
-        /// <summary>
-        /// Increment step for number field. Pass 1 to accept only integers, or 0.01 to accept decimal currency.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("step")]
-        public double Step { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    /// <summary>
-    /// Field display preferences.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferences
-    {
-
-        /// <summary>
-        /// Font size of the field value in pixels.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("font_size")]
-        public int Font_size { get; set; }
-
-        /// <summary>
-        /// Font type of the field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("font_type")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesFont_type>))]
-        public CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesFont_type Font_type { get; set; }
-
-        /// <summary>
-        /// Font family of the field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("font")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesFont>))]
-        public CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesFont Font { get; set; }
-
-        /// <summary>
-        /// Font color of the field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("color")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesColor>))]
-        public CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesColor Color { get; set; } = Docuseal.CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesColor.Black;
-
-        /// <summary>
-        /// Field box background color.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("background")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesBackground>))]
-        public CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesBackground Background { get; set; }
-
-        /// <summary>
-        /// Horizontal alignment of the field text value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("align")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesAlign>))]
-        public CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesAlign Align { get; set; } = Docuseal.CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesAlign.Left;
-
-        /// <summary>
-        /// Vertical alignment of the field text value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("valign")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesValign>))]
-        public CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesValign Valign { get; set; } = Docuseal.CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesValign.Center;
-
-        /// <summary>
-        /// The data format for different field types.&lt;br&gt;- Date field: accepts formats such as DD/MM/YYYY (default: MM/DD/YYYY).&lt;br&gt;- Signature field: accepts drawn, typed, drawn_or_typed (default), or upload.&lt;br&gt;- Number field: accepts currency formats such as usd, eur, gbp.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("format")]
-        public string Format { get; set; }
-
-        /// <summary>
-        /// Price value of the payment field. Only for payment fields.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("price")]
-        public double Price { get; set; }
-
-        /// <summary>
-        /// Currency value of the payment field. Only for payment fields.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("currency")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesCurrency>))]
-        public CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesCurrency Currency { get; set; } = Docuseal.CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesCurrency.USD;
-
-        /// <summary>
-        /// Set `true` to make sensitive data masked on the document.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("mask")]
-        public int Mask { get; set; }
-
-        /// <summary>
-        /// An array of signature reasons to choose from.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("reasons")]
-        public System.Collections.Generic.ICollection<string> Reasons { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionFromDocxRequestSubmittersItemFieldsItem
-    {
-
-        /// <summary>
-        /// Document field name.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Default value of the field. Use base64 encoded file or a public URL to the image file to set default signature or image fields.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("default_value")]
-        public string Default_value { get; set; }
-
-        /// <summary>
-        /// Set `true` to make it impossible for the submitter to edit predefined field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("readonly")]
-        public bool Readonly { get; set; } = false;
-
-        /// <summary>
-        /// Set `true` to make the field required.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("required")]
-        public bool Required { get; set; }
-
-        /// <summary>
-        /// Field title displayed to the user instead of the name, shown on the signing form. Supports Markdown.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; }
-
-        /// <summary>
-        /// Field description displayed on the signing form. Supports Markdown.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("validation")]
-        public CreateSubmissionFromDocxRequestSubmittersItemFieldsItemValidation Validation { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("preferences")]
-        public CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferences Preferences { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionFromDocxRequestSubmittersItem
-    {
-
-        /// <summary>
-        /// The name of the submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// The role name or title of the submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("role")]
-        public string Role { get; set; }
-
-        /// <summary>
-        /// The email address of the submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("email")]
-        public string Email { get; set; }
-
-        /// <summary>
-        /// The phone number of the submitter, formatted according to the E.164 standard.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("phone")]
-        public string Phone { get; set; }
-
-        /// <summary>
-        /// An object with pre-filled values for the submission. Use field names for keys of the object. For more configurations see `fields` param.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("values")]
-        public object Values { get; set; }
-
-        /// <summary>
-        /// Your application-specific unique string key to identify this submitter within your app.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("external_id")]
-        public string External_id { get; set; }
-
-        /// <summary>
-        /// Pass `true` to mark submitter as completed and auto-signed via API.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("completed")]
-        public bool Completed { get; set; }
-
-        /// <summary>
-        /// Metadata object with additional submitter information.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object Metadata { get; set; }
-
-        /// <summary>
-        /// Set `false` to disable signature request emails sending only for this submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("send_email")]
-        public bool Send_email { get; set; } = true;
-
-        /// <summary>
-        /// Set `true` to send signature request via phone number and SMS.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("send_sms")]
-        public bool Send_sms { get; set; } = false;
-
-        /// <summary>
-        /// Specify Reply-To address to use in the notification emails for this submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("reply_to")]
-        public string Reply_to { get; set; }
-
-        /// <summary>
-        /// Submitter specific URL to redirect to after the submission completion.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("completed_redirect_url")]
-        public string Completed_redirect_url { get; set; }
-
-        /// <summary>
-        /// The order of the submitter in the workflow (e.g., 0 for the first signer, 1 for the second, etc.). Use the same order number to create order groups. By default, submitters are ordered as in the submitters array.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("order")]
-        public int Order { get; set; }
-
-        /// <summary>
-        /// Set to `true` to require phone 2FA verification via a one-time code sent to the phone number in order to access the documents.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("require_phone_2fa")]
-        public bool Require_phone_2fa { get; set; } = false;
-
-        /// <summary>
-        /// Set to `true` to require email 2FA verification via a one-time code sent to the email address in order to access the documents.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("require_email_2fa")]
-        public bool Require_email_2fa { get; set; } = false;
-
-        /// <summary>
-        /// Set the role name of the previous party that should invite this party via email.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("invite_by")]
-        public string Invite_by { get; set; }
-
-        /// <summary>
-        /// A list of configurations for document form fields.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("fields")]
-        public System.Collections.Generic.ICollection<CreateSubmissionFromDocxRequestSubmittersItemFieldsItem> Fields { get; set; }
-
-        /// <summary>
-        /// A list of roles for the submitter. Use this param to merge multiple roles into one submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("roles")]
-        public System.Collections.Generic.ICollection<string> Roles { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    /// <summary>
-    /// Custom signature request email message.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionFromDocxRequestMessage
-    {
-
-        /// <summary>
-        /// Custom signature request email subject.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("subject")]
-        public string Subject { get; set; }
-
-        /// <summary>
-        /// Custom signature request email body. Can include the following variables: {{submission.name}}, {{submitter.link}}, {{account.name}}.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("body")]
-        public string Body { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionFromHtmlRequestDocumentsItem
-    {
-
-        /// <summary>
-        /// Document name. Random uuid will be assigned when not specified.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// HTML document content with field tags.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("html")]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Html { get; set; }
-
-        /// <summary>
-        /// HTML document content of the header to be displayed on every page.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("html_header")]
-        public string Html_header { get; set; }
-
-        /// <summary>
-        /// HTML document content of the footer to be displayed on every page.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("html_footer")]
-        public string Html_footer { get; set; }
-
-        /// <summary>
-        /// Page size. Letter 8.5 x 11 will be assigned when not specified.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("size")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromHtmlRequestDocumentsItemSize>))]
-        public CreateSubmissionFromHtmlRequestDocumentsItemSize Size { get; set; } = Docuseal.CreateSubmissionFromHtmlRequestDocumentsItemSize.Letter;
-
-        /// <summary>
-        /// Document position in the submission. If not specified, the document will be added in the order it appears in the documents array.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("position")]
-        public int Position { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    /// <summary>
-    /// Field validation rules.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemValidation
-    {
-
-        /// <summary>
-        /// HTML field validation pattern string based on https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern specification.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("pattern")]
-        public string Pattern { get; set; }
-
-        /// <summary>
-        /// A custom error message to display on validation failure.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("message")]
-        public string Message { get; set; }
-
-        /// <summary>
-        /// Minimum allowed number value or date depending on field type.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("min")]
-        public double Min { get; set; }
-
-        /// <summary>
-        /// Maximum allowed number value or date depending on field type.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("max")]
-        public double Max { get; set; }
-
-        /// <summary>
-        /// Increment step for number field. Pass 1 to accept only integers, or 0.01 to accept decimal currency.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("step")]
-        public double Step { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    /// <summary>
-    /// Field display preferences.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferences
-    {
-
-        /// <summary>
-        /// Font size of the field value in pixels.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("font_size")]
-        public int Font_size { get; set; }
-
-        /// <summary>
-        /// Font type of the field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("font_type")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesFont_type>))]
-        public CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesFont_type Font_type { get; set; }
-
-        /// <summary>
-        /// Font family of the field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("font")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesFont>))]
-        public CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesFont Font { get; set; }
-
-        /// <summary>
-        /// Font color of the field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("color")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesColor>))]
-        public CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesColor Color { get; set; } = Docuseal.CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesColor.Black;
-
-        /// <summary>
-        /// Field box background color.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("background")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesBackground>))]
-        public CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesBackground Background { get; set; }
-
-        /// <summary>
-        /// Horizontal alignment of the field text value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("align")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesAlign>))]
-        public CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesAlign Align { get; set; } = Docuseal.CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesAlign.Left;
-
-        /// <summary>
-        /// Vertical alignment of the field text value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("valign")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesValign>))]
-        public CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesValign Valign { get; set; } = Docuseal.CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesValign.Center;
-
-        /// <summary>
-        /// The data format for different field types.&lt;br&gt;- Date field: accepts formats such as DD/MM/YYYY (default: MM/DD/YYYY).&lt;br&gt;- Signature field: accepts drawn, typed, drawn_or_typed (default), or upload.&lt;br&gt;- Number field: accepts currency formats such as usd, eur, gbp.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("format")]
-        public string Format { get; set; }
-
-        /// <summary>
-        /// Price value of the payment field. Only for payment fields.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("price")]
-        public double Price { get; set; }
-
-        /// <summary>
-        /// Currency value of the payment field. Only for payment fields.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("currency")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesCurrency>))]
-        public CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesCurrency Currency { get; set; } = Docuseal.CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesCurrency.USD;
-
-        /// <summary>
-        /// Set `true` to make sensitive data masked on the document.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("mask")]
-        public int Mask { get; set; }
-
-        /// <summary>
-        /// An array of signature reasons to choose from.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("reasons")]
-        public System.Collections.Generic.ICollection<string> Reasons { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionFromHtmlRequestSubmittersItemFieldsItem
-    {
-
-        /// <summary>
-        /// Document field name.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Default value of the field. Use base64 encoded file or a public URL to the image file to set default signature or image fields.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("default_value")]
-        public string Default_value { get; set; }
-
-        /// <summary>
-        /// Set `true` to make it impossible for the submitter to edit predefined field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("readonly")]
-        public bool Readonly { get; set; } = false;
-
-        /// <summary>
-        /// Set `true` to make the field required.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("required")]
-        public bool Required { get; set; }
-
-        /// <summary>
-        /// Field title displayed to the user instead of the name, shown on the signing form. Supports Markdown.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; }
-
-        /// <summary>
-        /// Field description displayed on the signing form. Supports Markdown.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("validation")]
-        public CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemValidation Validation { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("preferences")]
-        public CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferences Preferences { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionFromHtmlRequestSubmittersItem
-    {
-
-        /// <summary>
-        /// The name of the submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// The role name or title of the submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("role")]
-        public string Role { get; set; }
-
-        /// <summary>
-        /// The email address of the submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("email")]
-        public string Email { get; set; }
-
-        /// <summary>
-        /// The phone number of the submitter, formatted according to the E.164 standard.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("phone")]
-        public string Phone { get; set; }
-
-        /// <summary>
-        /// An object with pre-filled values for the submission. Use field names for keys of the object. For more configurations see `fields` param.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("values")]
-        public object Values { get; set; }
-
-        /// <summary>
-        /// Your application-specific unique string key to identify this submitter within your app.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("external_id")]
-        public string External_id { get; set; }
-
-        /// <summary>
-        /// Pass `true` to mark submitter as completed and auto-signed via API.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("completed")]
-        public bool Completed { get; set; }
-
-        /// <summary>
-        /// Metadata object with additional submitter information.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object Metadata { get; set; }
-
-        /// <summary>
-        /// Set `false` to disable signature request emails sending only for this submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("send_email")]
-        public bool Send_email { get; set; } = true;
-
-        /// <summary>
-        /// Set `true` to send signature request via phone number and SMS.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("send_sms")]
-        public bool Send_sms { get; set; } = false;
-
-        /// <summary>
-        /// Specify Reply-To address to use in the notification emails for this submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("reply_to")]
-        public string Reply_to { get; set; }
-
-        /// <summary>
-        /// Submitter specific URL to redirect to after the submission completion.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("completed_redirect_url")]
-        public string Completed_redirect_url { get; set; }
-
-        /// <summary>
-        /// The order of the submitter in the workflow (e.g., 0 for the first signer, 1 for the second, etc.). Use the same order number to create order groups. By default, submitters are ordered as in the submitters array.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("order")]
-        public int Order { get; set; }
-
-        /// <summary>
-        /// Set to `true` to require phone 2FA verification via a one-time code sent to the phone number in order to access the documents.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("require_phone_2fa")]
-        public bool Require_phone_2fa { get; set; } = false;
-
-        /// <summary>
-        /// Set to `true` to require email 2FA verification via a one-time code sent to the email address in order to access the documents.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("require_email_2fa")]
-        public bool Require_email_2fa { get; set; } = false;
-
-        /// <summary>
-        /// Set the role name of the previous party that should invite this party via email.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("invite_by")]
-        public string Invite_by { get; set; }
-
-        /// <summary>
-        /// A list of configurations for document form fields.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("fields")]
-        public System.Collections.Generic.ICollection<CreateSubmissionFromHtmlRequestSubmittersItemFieldsItem> Fields { get; set; }
-
-        /// <summary>
-        /// A list of roles for the submitter. Use this param to merge multiple roles into one submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("roles")]
-        public System.Collections.Generic.ICollection<string> Roles { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    /// <summary>
-    /// Custom signature request email message.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionFromHtmlRequestMessage
-    {
-
-        /// <summary>
-        /// Custom signature request email subject.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("subject")]
-        public string Subject { get; set; }
-
-        /// <summary>
-        /// Custom signature request email body. Can include the following variables: {{submission.name}}, {{submitter.link}}, {{account.name}}.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("body")]
-        public string Body { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    /// <summary>
-    /// Custom signature request email message.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionRequestMessage
-    {
-
-        /// <summary>
-        /// Custom signature request email subject.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("subject")]
-        public string Subject { get; set; }
-
-        /// <summary>
-        /// Custom signature request email body. Can include the following variables: {{template.name}}, {{submitter.link}}, {{account.name}}.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("body")]
-        public string Body { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    /// <summary>
-    /// Custom signature request email message for the submitter.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionRequestSubmittersItemMessage
-    {
-
-        /// <summary>
-        /// Custom signature request email subject for the submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("subject")]
-        public string Subject { get; set; }
-
-        /// <summary>
-        /// Custom signature request email body for the submitter. Can include the following variables: {{template.name}}, {{submitter.link}}, {{account.name}}.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("body")]
-        public string Body { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    /// <summary>
-    /// Field validation rules.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionRequestSubmittersItemFieldsItemValidation
-    {
-
-        /// <summary>
-        /// HTML field validation pattern string based on https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern specification.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("pattern")]
-        public string Pattern { get; set; }
-
-        /// <summary>
-        /// A custom error message to display on validation failure.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("message")]
-        public string Message { get; set; }
-
-        /// <summary>
-        /// Minimum allowed number value or date depending on field type.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("min")]
-        public double Min { get; set; }
-
-        /// <summary>
-        /// Maximum allowed number value or date depending on field type.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("max")]
-        public double Max { get; set; }
-
-        /// <summary>
-        /// Increment step for number field. Pass 1 to accept only integers, or 0.01 to accept decimal currency.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("step")]
-        public double Step { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    /// <summary>
-    /// Field display preferences.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionRequestSubmittersItemFieldsItemPreferences
-    {
-
-        /// <summary>
-        /// Font size of the field value in pixels.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("font_size")]
-        public int Font_size { get; set; }
-
-        /// <summary>
-        /// Font type of the field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("font_type")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionRequestSubmittersItemFieldsItemPreferencesFont_type>))]
-        public CreateSubmissionRequestSubmittersItemFieldsItemPreferencesFont_type Font_type { get; set; }
-
-        /// <summary>
-        /// Font family of the field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("font")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionRequestSubmittersItemFieldsItemPreferencesFont>))]
-        public CreateSubmissionRequestSubmittersItemFieldsItemPreferencesFont Font { get; set; }
-
-        /// <summary>
-        /// Font color of the field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("color")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionRequestSubmittersItemFieldsItemPreferencesColor>))]
-        public CreateSubmissionRequestSubmittersItemFieldsItemPreferencesColor Color { get; set; } = Docuseal.CreateSubmissionRequestSubmittersItemFieldsItemPreferencesColor.Black;
-
-        /// <summary>
-        /// Field box background color.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("background")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionRequestSubmittersItemFieldsItemPreferencesBackground>))]
-        public CreateSubmissionRequestSubmittersItemFieldsItemPreferencesBackground Background { get; set; }
-
-        /// <summary>
-        /// Horizontal alignment of the field text value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("align")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionRequestSubmittersItemFieldsItemPreferencesAlign>))]
-        public CreateSubmissionRequestSubmittersItemFieldsItemPreferencesAlign Align { get; set; } = Docuseal.CreateSubmissionRequestSubmittersItemFieldsItemPreferencesAlign.Left;
-
-        /// <summary>
-        /// Vertical alignment of the field text value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("valign")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionRequestSubmittersItemFieldsItemPreferencesValign>))]
-        public CreateSubmissionRequestSubmittersItemFieldsItemPreferencesValign Valign { get; set; } = Docuseal.CreateSubmissionRequestSubmittersItemFieldsItemPreferencesValign.Center;
-
-        /// <summary>
-        /// The data format for different field types.&lt;br&gt;- Date field: accepts formats such as DD/MM/YYYY (default: MM/DD/YYYY).&lt;br&gt;- Signature field: accepts drawn, typed, drawn_or_typed (default), or upload.&lt;br&gt;- Number field: accepts currency formats such as usd, eur, gbp.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("format")]
-        public string Format { get; set; }
-
-        /// <summary>
-        /// Price value of the payment field. Only for payment fields.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("price")]
-        public double Price { get; set; }
-
-        /// <summary>
-        /// Currency value of the payment field. Only for payment fields.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("currency")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateSubmissionRequestSubmittersItemFieldsItemPreferencesCurrency>))]
-        public CreateSubmissionRequestSubmittersItemFieldsItemPreferencesCurrency Currency { get; set; } = Docuseal.CreateSubmissionRequestSubmittersItemFieldsItemPreferencesCurrency.USD;
-
-        /// <summary>
-        /// Set `true` to make sensitive data masked on the document.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("mask")]
-        public int Mask { get; set; }
-
-        /// <summary>
-        /// An array of signature reasons to choose from.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("reasons")]
-        public System.Collections.Generic.ICollection<string> Reasons { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionRequestSubmittersItemFieldsItem
-    {
-
-        /// <summary>
-        /// Document template field name.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Default value of the field. Use base64 encoded file or a public URL to the image file to set default signature or image fields.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("default_value")]
-        public string Default_value { get; set; }
-
-        /// <summary>
-        /// Set `true` to make it impossible for the submitter to edit predefined field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("readonly")]
-        public bool Readonly { get; set; } = false;
-
-        /// <summary>
-        /// Set `true` to make the field required.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("required")]
-        public bool Required { get; set; }
-
-        /// <summary>
-        /// Field title displayed to the user instead of the name, shown on the signing form. Supports Markdown.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; }
-
-        /// <summary>
-        /// Field description displayed on the signing form. Supports Markdown.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("validation")]
-        public CreateSubmissionRequestSubmittersItemFieldsItemValidation Validation { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("preferences")]
-        public CreateSubmissionRequestSubmittersItemFieldsItemPreferences Preferences { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateSubmissionRequestSubmittersItem
-    {
-
-        /// <summary>
-        /// The name of the submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// The role name or title of the submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("role")]
-        public string Role { get; set; }
-
-        /// <summary>
-        /// The email address of the submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("email")]
-        public string Email { get; set; }
-
-        /// <summary>
-        /// The phone number of the submitter, formatted according to the E.164 standard.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("phone")]
-        public string Phone { get; set; }
-
-        /// <summary>
-        /// An object with pre-filled values for the submission. Use field names for keys of the object. For more configurations see `fields` param.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("values")]
-        public object Values { get; set; }
-
-        /// <summary>
-        /// Your application-specific unique string key to identify this submitter within your app.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("external_id")]
-        public string External_id { get; set; }
-
-        /// <summary>
-        /// Pass `true` to mark submitter as completed and auto-signed via API.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("completed")]
-        public bool Completed { get; set; }
-
-        /// <summary>
-        /// Metadata object with additional submitter information.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object Metadata { get; set; }
-
-        /// <summary>
-        /// Set `false` to disable signature request emails sending only for this submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("send_email")]
-        public bool Send_email { get; set; } = true;
-
-        /// <summary>
-        /// Set `true` to send signature request via phone number and SMS.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("send_sms")]
-        public bool Send_sms { get; set; } = false;
-
-        /// <summary>
-        /// Specify Reply-To address to use in the notification emails for this submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("reply_to")]
-        public string Reply_to { get; set; }
-
-        /// <summary>
-        /// Submitter specific URL to redirect to after the submission completion.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("completed_redirect_url")]
-        public string Completed_redirect_url { get; set; }
-
-        /// <summary>
-        /// The order of the submitter in the workflow (e.g., 0 for the first signer, 1 for the second, etc.). Use the same order number to create order groups. By default, submitters are ordered as in the submitters array.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("order")]
-        public int Order { get; set; }
-
-        /// <summary>
-        /// Set to `true` to require phone 2FA verification via a one-time code sent to the phone number in order to access the documents.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("require_phone_2fa")]
-        public bool Require_phone_2fa { get; set; } = false;
-
-        /// <summary>
-        /// Set to `true` to require email 2FA verification via a one-time code sent to the email address in order to access the documents.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("require_email_2fa")]
-        public bool Require_email_2fa { get; set; } = false;
-
-        [System.Text.Json.Serialization.JsonPropertyName("message")]
-        public CreateSubmissionRequestSubmittersItemMessage Message { get; set; }
-
-        /// <summary>
-        /// A list of configurations for template document form fields.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("fields")]
-        public System.Collections.Generic.ICollection<CreateSubmissionRequestSubmittersItemFieldsItem> Fields { get; set; }
-
-        /// <summary>
-        /// A list of roles for the submitter. Use this param to merge multiple roles into one submitter.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("roles")]
-        public System.Collections.Generic.ICollection<string> Roles { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    /// <summary>
-    /// Custom signature request email message.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class UpdateSubmitterRequestMessage
-    {
-
-        /// <summary>
-        /// Custom signature request email subject.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("subject")]
-        public string Subject { get; set; }
-
-        /// <summary>
-        /// Custom signature request email body. Can include the following variables: {{template.name}}, {{submitter.link}}, {{account.name}}.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("body")]
-        public string Body { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    /// <summary>
-    /// Field validation rules.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class UpdateSubmitterRequestFieldsItemValidation
-    {
-
-        /// <summary>
-        /// HTML field validation pattern string based on https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern specification.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("pattern")]
-        public string Pattern { get; set; }
-
-        /// <summary>
-        /// A custom error message to display on validation failure.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("message")]
-        public string Message { get; set; }
-
-        /// <summary>
-        /// Minimum allowed number value or date depending on field type.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("min")]
-        public double Min { get; set; }
-
-        /// <summary>
-        /// Maximum allowed number value or date depending on field type.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("max")]
-        public double Max { get; set; }
-
-        /// <summary>
-        /// Increment step for number field. Pass 1 to accept only integers, or 0.01 to accept decimal currency.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("step")]
-        public double Step { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    /// <summary>
-    /// Field display preferences.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class UpdateSubmitterRequestFieldsItemPreferences
-    {
-
-        /// <summary>
-        /// Font size of the field value in pixels.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("font_size")]
-        public int Font_size { get; set; }
-
-        /// <summary>
-        /// Font type of the field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("font_type")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<UpdateSubmitterRequestFieldsItemPreferencesFont_type>))]
-        public UpdateSubmitterRequestFieldsItemPreferencesFont_type Font_type { get; set; }
-
-        /// <summary>
-        /// Font family of the field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("font")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<UpdateSubmitterRequestFieldsItemPreferencesFont>))]
-        public UpdateSubmitterRequestFieldsItemPreferencesFont Font { get; set; }
-
-        /// <summary>
-        /// Font color of the field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("color")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<UpdateSubmitterRequestFieldsItemPreferencesColor>))]
-        public UpdateSubmitterRequestFieldsItemPreferencesColor Color { get; set; } = Docuseal.UpdateSubmitterRequestFieldsItemPreferencesColor.Black;
-
-        /// <summary>
-        /// Field box background color.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("background")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<UpdateSubmitterRequestFieldsItemPreferencesBackground>))]
-        public UpdateSubmitterRequestFieldsItemPreferencesBackground Background { get; set; }
-
-        /// <summary>
-        /// Horizontal alignment of the field text value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("align")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<UpdateSubmitterRequestFieldsItemPreferencesAlign>))]
-        public UpdateSubmitterRequestFieldsItemPreferencesAlign Align { get; set; } = Docuseal.UpdateSubmitterRequestFieldsItemPreferencesAlign.Left;
-
-        /// <summary>
-        /// Vertical alignment of the field text value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("valign")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<UpdateSubmitterRequestFieldsItemPreferencesValign>))]
-        public UpdateSubmitterRequestFieldsItemPreferencesValign Valign { get; set; } = Docuseal.UpdateSubmitterRequestFieldsItemPreferencesValign.Center;
-
-        /// <summary>
-        /// The data format for different field types.&lt;br&gt;- Date field: accepts formats such as DD/MM/YYYY (default: MM/DD/YYYY).&lt;br&gt;- Signature field: accepts drawn, typed, drawn_or_typed (default), or upload.&lt;br&gt;- Number field: accepts currency formats such as usd, eur, gbp.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("format")]
-        public string Format { get; set; }
-
-        /// <summary>
-        /// Price value of the payment field. Only for payment fields.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("price")]
-        public double Price { get; set; }
-
-        /// <summary>
-        /// Currency value of the payment field. Only for payment fields.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("currency")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<UpdateSubmitterRequestFieldsItemPreferencesCurrency>))]
-        public UpdateSubmitterRequestFieldsItemPreferencesCurrency Currency { get; set; } = Docuseal.UpdateSubmitterRequestFieldsItemPreferencesCurrency.USD;
-
-        /// <summary>
-        /// Set `true` to make sensitive data masked on the document.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("mask")]
-        public int Mask { get; set; }
-
-        /// <summary>
-        /// An array of signature reasons to choose from.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("reasons")]
-        public System.Collections.Generic.ICollection<string> Reasons { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class UpdateSubmitterRequestFieldsItem
-    {
-
-        /// <summary>
-        /// Document template field name.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Default value of the field. Use base64 encoded file or a public URL to the image file to set default signature or image fields.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("default_value")]
-        public string Default_value { get; set; }
-
-        /// <summary>
-        /// Set `true` to make it impossible for the submitter to edit predefined field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("readonly")]
-        public bool Readonly { get; set; } = false;
-
-        /// <summary>
-        /// Set `true` to make the field required.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("required")]
-        public bool Required { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("validation")]
-        public UpdateSubmitterRequestFieldsItemValidation Validation { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("preferences")]
-        public UpdateSubmitterRequestFieldsItemPreferences Preferences { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class GetSubmittersResponseDataItem
     {
 
@@ -7712,693 +6996,6 @@ namespace Docuseal
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class AddDocumentToTemplateRequestDocumentsItem
-    {
-
-        /// <summary>
-        /// Document name. Random uuid will be assigned when not specified.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Base64-encoded content of the PDF or DOCX file or downloadable file URL. Leave it empty if you create a new document using HTML param.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("file")]
-        public byte[] File { get; set; }
-
-        /// <summary>
-        /// HTML template with field tags. Leave it empty if you add a document via PDF or DOCX base64 encoded file param or URL.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("html")]
-        public string Html { get; set; }
-
-        /// <summary>
-        /// Position of the document. By default will be added as the last document in the template.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("position")]
-        public int Position { get; set; }
-
-        /// <summary>
-        /// Set to `true` to replace existing document with a new file at `position`. Existing document fields will be transferred to the new document if it doesn't contain any fields.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("replace")]
-        public bool Replace { get; set; } = false;
-
-        /// <summary>
-        /// Set to `true` to remove existing document at given `position` or with given `name`.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("remove")]
-        public bool Remove { get; set; } = false;
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateTemplateFromHtmlRequestDocumentsItem
-    {
-
-        /// <summary>
-        /// HTML template with field tags.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("html")]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Html { get; set; }
-
-        /// <summary>
-        /// Document name. Random uuid will be assigned when not specified.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateTemplateFromDocxRequestDocumentsItemFieldsItemAreasItem
-    {
-
-        /// <summary>
-        /// X-coordinate of the field area.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("x")]
-        public double X { get; set; }
-
-        /// <summary>
-        /// Y-coordinate of the field area.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("y")]
-        public double Y { get; set; }
-
-        /// <summary>
-        /// Width of the field area.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("w")]
-        public double W { get; set; }
-
-        /// <summary>
-        /// Height of the field area.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("h")]
-        public double H { get; set; }
-
-        /// <summary>
-        /// Page number of the field area. Starts from 1.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("page")]
-        public int Page { get; set; }
-
-        /// <summary>
-        /// Option string value for 'radio' and 'multiple' select field types.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("option")]
-        public string Option { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    /// <summary>
-    /// Field validation rules.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateTemplateFromDocxRequestDocumentsItemFieldsItemValidation
-    {
-
-        /// <summary>
-        /// HTML field validation pattern string based on https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern specification.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("pattern")]
-        public string Pattern { get; set; }
-
-        /// <summary>
-        /// A custom error message to display on validation failure.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("message")]
-        public string Message { get; set; }
-
-        /// <summary>
-        /// Minimum allowed number value or date depending on field type.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("min")]
-        public double Min { get; set; }
-
-        /// <summary>
-        /// Maximum allowed number value or date depending on field type.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("max")]
-        public double Max { get; set; }
-
-        /// <summary>
-        /// Increment step for number field. Pass 1 to accept only integers, or 0.01 to accept decimal currency.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("step")]
-        public double Step { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    /// <summary>
-    /// Field display preferences.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferences
-    {
-
-        /// <summary>
-        /// Font size of the field value in pixels.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("font_size")]
-        public int Font_size { get; set; }
-
-        /// <summary>
-        /// Font type of the field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("font_type")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesFont_type>))]
-        public CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesFont_type Font_type { get; set; }
-
-        /// <summary>
-        /// Font family of the field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("font")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesFont>))]
-        public CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesFont Font { get; set; }
-
-        /// <summary>
-        /// Font color of the field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("color")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesColor>))]
-        public CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesColor Color { get; set; } = Docuseal.CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesColor.Black;
-
-        /// <summary>
-        /// Field box background color.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("background")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesBackground>))]
-        public CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesBackground Background { get; set; }
-
-        /// <summary>
-        /// Horizontal alignment of the field text value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("align")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesAlign>))]
-        public CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesAlign Align { get; set; } = Docuseal.CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesAlign.Left;
-
-        /// <summary>
-        /// Vertical alignment of the field text value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("valign")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesValign>))]
-        public CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesValign Valign { get; set; } = Docuseal.CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesValign.Center;
-
-        /// <summary>
-        /// The data format for different field types.&lt;br&gt;- Date field: accepts formats such as DD/MM/YYYY (default: MM/DD/YYYY).&lt;br&gt;- Signature field: accepts drawn, typed, drawn_or_typed (default), or upload.&lt;br&gt;- Number field: accepts currency formats such as usd, eur, gbp.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("format")]
-        public string Format { get; set; }
-
-        /// <summary>
-        /// Price value of the payment field. Only for payment fields.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("price")]
-        public double Price { get; set; }
-
-        /// <summary>
-        /// Currency value of the payment field. Only for payment fields.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("currency")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesCurrency>))]
-        public CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesCurrency Currency { get; set; } = Docuseal.CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesCurrency.USD;
-
-        /// <summary>
-        /// Set `true` to make sensitive data masked on the document.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("mask")]
-        public int Mask { get; set; }
-
-        /// <summary>
-        /// An array of signature reasons to choose from.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("reasons")]
-        public System.Collections.Generic.ICollection<string> Reasons { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateTemplateFromDocxRequestDocumentsItemFieldsItem
-    {
-
-        /// <summary>
-        /// Name of the field.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Type of the field (e.g., text, signature, date, initials).
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("type")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateTemplateFromDocxRequestDocumentsItemFieldsItemType>))]
-        public CreateTemplateFromDocxRequestDocumentsItemFieldsItemType Type { get; set; }
-
-        /// <summary>
-        /// Role name of the signer.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("role")]
-        public string Role { get; set; }
-
-        /// <summary>
-        /// Indicates if the field is required.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("required")]
-        public bool Required { get; set; }
-
-        /// <summary>
-        /// Field title displayed to the user instead of the name, shown on the signing form. Supports Markdown.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; }
-
-        /// <summary>
-        /// Field description displayed on the signing form. Supports Markdown.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; }
-
-        /// <summary>
-        /// List of areas where the field is located in the document.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("areas")]
-        public System.Collections.Generic.ICollection<CreateTemplateFromDocxRequestDocumentsItemFieldsItemAreasItem> Areas { get; set; }
-
-        /// <summary>
-        /// An array of option values for 'select' field type.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("options")]
-        public System.Collections.Generic.ICollection<string> Options { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("validation")]
-        public CreateTemplateFromDocxRequestDocumentsItemFieldsItemValidation Validation { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("preferences")]
-        public CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferences Preferences { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateTemplateFromDocxRequestDocumentsItem
-    {
-
-        /// <summary>
-        /// Name of the document.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Base64-encoded content of the DOCX file or downloadable file URL.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("file")]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public byte[] File { get; set; }
-
-        /// <summary>
-        /// Set to `true` to make the document dynamic. When enabled, the DOCX document content can be edited or use [[variables]] in the template editor.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("dynamic")]
-        public bool Dynamic { get; set; } = false;
-
-        /// <summary>
-        /// Fields are optional if you use {{...}} text tags to define fields in the document.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("fields")]
-        public System.Collections.Generic.ICollection<CreateTemplateFromDocxRequestDocumentsItemFieldsItem> Fields { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateTemplateFromPdfRequestDocumentsItemFieldsItemAreasItem
-    {
-
-        /// <summary>
-        /// X-coordinate of the field area.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("x")]
-        public double X { get; set; }
-
-        /// <summary>
-        /// Y-coordinate of the field area.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("y")]
-        public double Y { get; set; }
-
-        /// <summary>
-        /// Width of the field area.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("w")]
-        public double W { get; set; }
-
-        /// <summary>
-        /// Height of the field area.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("h")]
-        public double H { get; set; }
-
-        /// <summary>
-        /// Page number of the field area. Starts from 1.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("page")]
-        public int Page { get; set; }
-
-        /// <summary>
-        /// Option string value for 'radio' and 'multiple' select field types.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("option")]
-        public string Option { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    /// <summary>
-    /// Field validation rules.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateTemplateFromPdfRequestDocumentsItemFieldsItemValidation
-    {
-
-        /// <summary>
-        /// HTML field validation pattern string based on https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern specification.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("pattern")]
-        public string Pattern { get; set; }
-
-        /// <summary>
-        /// A custom error message to display on validation failure.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("message")]
-        public string Message { get; set; }
-
-        /// <summary>
-        /// Minimum allowed number value or date depending on field type.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("min")]
-        public double Min { get; set; }
-
-        /// <summary>
-        /// Maximum allowed number value or date depending on field type.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("max")]
-        public double Max { get; set; }
-
-        /// <summary>
-        /// Increment step for number field. Pass 1 to accept only integers, or 0.01 to accept decimal currency.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("step")]
-        public double Step { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    /// <summary>
-    /// Field display preferences.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferences
-    {
-
-        /// <summary>
-        /// Font size of the field value in pixels.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("font_size")]
-        public int Font_size { get; set; }
-
-        /// <summary>
-        /// Font type of the field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("font_type")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesFont_type>))]
-        public CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesFont_type Font_type { get; set; }
-
-        /// <summary>
-        /// Font family of the field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("font")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesFont>))]
-        public CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesFont Font { get; set; }
-
-        /// <summary>
-        /// Font color of the field value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("color")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesColor>))]
-        public CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesColor Color { get; set; } = Docuseal.CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesColor.Black;
-
-        /// <summary>
-        /// Field box background color.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("background")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesBackground>))]
-        public CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesBackground Background { get; set; }
-
-        /// <summary>
-        /// Horizontal alignment of the field text value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("align")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesAlign>))]
-        public CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesAlign Align { get; set; } = Docuseal.CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesAlign.Left;
-
-        /// <summary>
-        /// Vertical alignment of the field text value.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("valign")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesValign>))]
-        public CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesValign Valign { get; set; } = Docuseal.CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesValign.Center;
-
-        /// <summary>
-        /// The data format for different field types.&lt;br&gt;- Date field: accepts formats such as DD/MM/YYYY (default: MM/DD/YYYY).&lt;br&gt;- Signature field: accepts drawn, typed, drawn_or_typed (default), or upload.&lt;br&gt;- Number field: accepts currency formats such as usd, eur, gbp.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("format")]
-        public string Format { get; set; }
-
-        /// <summary>
-        /// Price value of the payment field. Only for payment fields.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("price")]
-        public double Price { get; set; }
-
-        /// <summary>
-        /// Currency value of the payment field. Only for payment fields.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("currency")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesCurrency>))]
-        public CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesCurrency Currency { get; set; } = Docuseal.CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesCurrency.USD;
-
-        /// <summary>
-        /// Set `true` to make sensitive data masked on the document.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("mask")]
-        public int Mask { get; set; }
-
-        /// <summary>
-        /// An array of signature reasons to choose from.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("reasons")]
-        public System.Collections.Generic.ICollection<string> Reasons { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateTemplateFromPdfRequestDocumentsItemFieldsItem
-    {
-
-        /// <summary>
-        /// Name of the field.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Type of the field (e.g., text, signature, date, initials).
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("type")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<CreateTemplateFromPdfRequestDocumentsItemFieldsItemType>))]
-        public CreateTemplateFromPdfRequestDocumentsItemFieldsItemType Type { get; set; }
-
-        /// <summary>
-        /// Role name of the signer.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("role")]
-        public string Role { get; set; }
-
-        /// <summary>
-        /// Indicates if the field is required.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("required")]
-        public bool Required { get; set; }
-
-        /// <summary>
-        /// Field title displayed to the user instead of the name, shown on the signing form. Supports Markdown.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; }
-
-        /// <summary>
-        /// Field description displayed on the signing form. Supports Markdown.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; }
-
-        /// <summary>
-        /// List of areas where the field is located in the document.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("areas")]
-        public System.Collections.Generic.ICollection<CreateTemplateFromPdfRequestDocumentsItemFieldsItemAreasItem> Areas { get; set; }
-
-        /// <summary>
-        /// An array of option values for 'select' field type.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("options")]
-        public System.Collections.Generic.ICollection<string> Options { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("validation")]
-        public CreateTemplateFromPdfRequestDocumentsItemFieldsItemValidation Validation { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("preferences")]
-        public CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferences Preferences { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateTemplateFromPdfRequestDocumentsItem
-    {
-
-        /// <summary>
-        /// Name of the document.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Base64-encoded content of the PDF file or downloadable file URL.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("file")]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public byte[] File { get; set; }
-
-        /// <summary>
-        /// Fields are optional if you use {{...}} text tags to define fields in the document.
-        /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("fields")]
-        public System.Collections.Generic.ICollection<CreateTemplateFromPdfRequestDocumentsItemFieldsItem> Fields { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
     public enum Status
     {
 
@@ -8413,6 +7010,345 @@ namespace Docuseal
 
         [System.Runtime.Serialization.EnumMember(Value = @"expired")]
         Expired = 3,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum FieldPreferencesFont_type
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"bold")]
+        Bold = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"italic")]
+        Italic = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"bold_italic")]
+        Bold_italic = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum FieldPreferencesFont
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Times")]
+        Times = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Helvetica")]
+        Helvetica = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Courier")]
+        Courier = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum FieldPreferencesColor
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"black")]
+        Black = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"white")]
+        White = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"blue")]
+        Blue = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum FieldPreferencesBackground
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"black")]
+        Black = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"white")]
+        White = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"blue")]
+        Blue = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum FieldPreferencesAlign
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"left")]
+        Left = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"center")]
+        Center = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"right")]
+        Right = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum FieldPreferencesValign
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"top")]
+        Top = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"center")]
+        Center = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"bottom")]
+        Bottom = 2,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum FieldPreferencesCurrency
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"USD")]
+        USD = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"EUR")]
+        EUR = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"GBP")]
+        GBP = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"CAD")]
+        CAD = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"AUD")]
+        AUD = 4,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum CreateSubmissionFromPdfRequestDocumentFieldType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"heading")]
+        Heading = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"text")]
+        Text = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"signature")]
+        Signature = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"initials")]
+        Initials = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"date")]
+        Date = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"number")]
+        Number = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"image")]
+        Image = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"checkbox")]
+        Checkbox = 7,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"multiple")]
+        Multiple = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"file")]
+        File = 9,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"radio")]
+        Radio = 10,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"select")]
+        Select = 11,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"cells")]
+        Cells = 12,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"stamp")]
+        Stamp = 13,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"payment")]
+        Payment = 14,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"phone")]
+        Phone = 15,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"verification")]
+        Verification = 16,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"kba")]
+        Kba = 17,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"strikethrough")]
+        Strikethrough = 18,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum CreateSubmissionFromHtmlRequestDocumentSize
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Letter")]
+        Letter = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Legal")]
+        Legal = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Tabloid")]
+        Tabloid = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"Ledger")]
+        Ledger = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"A0")]
+        A0 = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"A1")]
+        A1 = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"A2")]
+        A2 = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"A3")]
+        A3 = 7,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"A4")]
+        A4 = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"A5")]
+        A5 = 9,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"A6")]
+        A6 = 10,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum CreateTemplateFromDocxRequestDocumentFieldType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"heading")]
+        Heading = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"text")]
+        Text = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"signature")]
+        Signature = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"initials")]
+        Initials = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"date")]
+        Date = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"number")]
+        Number = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"image")]
+        Image = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"checkbox")]
+        Checkbox = 7,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"multiple")]
+        Multiple = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"file")]
+        File = 9,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"radio")]
+        Radio = 10,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"select")]
+        Select = 11,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"cells")]
+        Cells = 12,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"stamp")]
+        Stamp = 13,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"payment")]
+        Payment = 14,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"phone")]
+        Phone = 15,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"verification")]
+        Verification = 16,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"kba")]
+        Kba = 17,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"strikethrough")]
+        Strikethrough = 18,
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
+    public enum CreateTemplateFromPdfRequestDocumentFieldType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"heading")]
+        Heading = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"text")]
+        Text = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"signature")]
+        Signature = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"initials")]
+        Initials = 3,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"date")]
+        Date = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"number")]
+        Number = 5,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"image")]
+        Image = 6,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"checkbox")]
+        Checkbox = 7,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"multiple")]
+        Multiple = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"file")]
+        File = 9,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"radio")]
+        Radio = 10,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"select")]
+        Select = 11,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"cells")]
+        Cells = 12,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"stamp")]
+        Stamp = 13,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"payment")]
+        Payment = 14,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"phone")]
+        Phone = 15,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"verification")]
+        Verification = 16,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"kba")]
+        Kba = 17,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"strikethrough")]
+        Strikethrough = 18,
 
     }
 
@@ -8915,180 +7851,6 @@ namespace Docuseal
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionFromPdfRequestDocumentsItemFieldsItemType
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"heading")]
-        Heading = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"text")]
-        Text = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"signature")]
-        Signature = 2,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"initials")]
-        Initials = 3,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"date")]
-        Date = 4,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"number")]
-        Number = 5,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"image")]
-        Image = 6,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"checkbox")]
-        Checkbox = 7,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"multiple")]
-        Multiple = 8,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"file")]
-        File = 9,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"radio")]
-        Radio = 10,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"select")]
-        Select = 11,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"cells")]
-        Cells = 12,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"stamp")]
-        Stamp = 13,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"payment")]
-        Payment = 14,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"phone")]
-        Phone = 15,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"verification")]
-        Verification = 16,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"kba")]
-        Kba = 17,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"strikethrough")]
-        Strikethrough = 18,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesFont_type
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"bold")]
-        Bold = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"italic")]
-        Italic = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"bold_italic")]
-        Bold_italic = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesFont
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Times")]
-        Times = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Helvetica")]
-        Helvetica = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Courier")]
-        Courier = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesColor
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"black")]
-        Black = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"white")]
-        White = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"blue")]
-        Blue = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesBackground
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"black")]
-        Black = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"white")]
-        White = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"blue")]
-        Blue = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesAlign
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"left")]
-        Left = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"center")]
-        Center = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"right")]
-        Right = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesValign
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"top")]
-        Top = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"center")]
-        Center = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"bottom")]
-        Bottom = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionFromPdfRequestSubmittersItemFieldsItemPreferencesCurrency
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"USD")]
-        USD = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"EUR")]
-        EUR = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"GBP")]
-        GBP = 2,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"CAD")]
-        CAD = 3,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"AUD")]
-        AUD = 4,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
     public enum CreateSubmissionFromPdfResponseSubmittersItemStatus
     {
 
@@ -9110,489 +7872,6 @@ namespace Docuseal
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesFont_type
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"bold")]
-        Bold = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"italic")]
-        Italic = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"bold_italic")]
-        Bold_italic = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesFont
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Times")]
-        Times = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Helvetica")]
-        Helvetica = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Courier")]
-        Courier = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesColor
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"black")]
-        Black = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"white")]
-        White = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"blue")]
-        Blue = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesBackground
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"black")]
-        Black = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"white")]
-        White = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"blue")]
-        Blue = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesAlign
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"left")]
-        Left = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"center")]
-        Center = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"right")]
-        Right = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesValign
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"top")]
-        Top = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"center")]
-        Center = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"bottom")]
-        Bottom = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionFromDocxRequestSubmittersItemFieldsItemPreferencesCurrency
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"USD")]
-        USD = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"EUR")]
-        EUR = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"GBP")]
-        GBP = 2,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"CAD")]
-        CAD = 3,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"AUD")]
-        AUD = 4,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionFromHtmlRequestDocumentsItemSize
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Letter")]
-        Letter = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Legal")]
-        Legal = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Tabloid")]
-        Tabloid = 2,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Ledger")]
-        Ledger = 3,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"A0")]
-        A0 = 4,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"A1")]
-        A1 = 5,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"A2")]
-        A2 = 6,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"A3")]
-        A3 = 7,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"A4")]
-        A4 = 8,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"A5")]
-        A5 = 9,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"A6")]
-        A6 = 10,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesFont_type
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"bold")]
-        Bold = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"italic")]
-        Italic = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"bold_italic")]
-        Bold_italic = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesFont
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Times")]
-        Times = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Helvetica")]
-        Helvetica = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Courier")]
-        Courier = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesColor
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"black")]
-        Black = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"white")]
-        White = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"blue")]
-        Blue = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesBackground
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"black")]
-        Black = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"white")]
-        White = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"blue")]
-        Blue = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesAlign
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"left")]
-        Left = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"center")]
-        Center = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"right")]
-        Right = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesValign
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"top")]
-        Top = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"center")]
-        Center = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"bottom")]
-        Bottom = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionFromHtmlRequestSubmittersItemFieldsItemPreferencesCurrency
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"USD")]
-        USD = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"EUR")]
-        EUR = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"GBP")]
-        GBP = 2,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"CAD")]
-        CAD = 3,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"AUD")]
-        AUD = 4,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionRequestSubmittersItemFieldsItemPreferencesFont_type
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"bold")]
-        Bold = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"italic")]
-        Italic = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"bold_italic")]
-        Bold_italic = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionRequestSubmittersItemFieldsItemPreferencesFont
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Times")]
-        Times = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Helvetica")]
-        Helvetica = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Courier")]
-        Courier = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionRequestSubmittersItemFieldsItemPreferencesColor
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"black")]
-        Black = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"white")]
-        White = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"blue")]
-        Blue = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionRequestSubmittersItemFieldsItemPreferencesBackground
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"black")]
-        Black = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"white")]
-        White = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"blue")]
-        Blue = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionRequestSubmittersItemFieldsItemPreferencesAlign
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"left")]
-        Left = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"center")]
-        Center = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"right")]
-        Right = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionRequestSubmittersItemFieldsItemPreferencesValign
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"top")]
-        Top = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"center")]
-        Center = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"bottom")]
-        Bottom = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateSubmissionRequestSubmittersItemFieldsItemPreferencesCurrency
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"USD")]
-        USD = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"EUR")]
-        EUR = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"GBP")]
-        GBP = 2,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"CAD")]
-        CAD = 3,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"AUD")]
-        AUD = 4,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum UpdateSubmitterRequestFieldsItemPreferencesFont_type
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"bold")]
-        Bold = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"italic")]
-        Italic = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"bold_italic")]
-        Bold_italic = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum UpdateSubmitterRequestFieldsItemPreferencesFont
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Times")]
-        Times = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Helvetica")]
-        Helvetica = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Courier")]
-        Courier = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum UpdateSubmitterRequestFieldsItemPreferencesColor
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"black")]
-        Black = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"white")]
-        White = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"blue")]
-        Blue = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum UpdateSubmitterRequestFieldsItemPreferencesBackground
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"black")]
-        Black = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"white")]
-        White = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"blue")]
-        Blue = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum UpdateSubmitterRequestFieldsItemPreferencesAlign
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"left")]
-        Left = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"center")]
-        Center = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"right")]
-        Right = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum UpdateSubmitterRequestFieldsItemPreferencesValign
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"top")]
-        Top = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"center")]
-        Center = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"bottom")]
-        Bottom = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum UpdateSubmitterRequestFieldsItemPreferencesCurrency
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"USD")]
-        USD = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"EUR")]
-        EUR = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"GBP")]
-        GBP = 2,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"CAD")]
-        CAD = 3,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"AUD")]
-        AUD = 4,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
     public enum GetSubmittersResponseDataItemStatus
     {
 
@@ -9610,354 +7889,6 @@ namespace Docuseal
 
         [System.Runtime.Serialization.EnumMember(Value = @"awaiting")]
         Awaiting = 4,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesFont_type
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"bold")]
-        Bold = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"italic")]
-        Italic = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"bold_italic")]
-        Bold_italic = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesFont
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Times")]
-        Times = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Helvetica")]
-        Helvetica = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Courier")]
-        Courier = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesColor
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"black")]
-        Black = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"white")]
-        White = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"blue")]
-        Blue = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesBackground
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"black")]
-        Black = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"white")]
-        White = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"blue")]
-        Blue = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesAlign
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"left")]
-        Left = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"center")]
-        Center = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"right")]
-        Right = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesValign
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"top")]
-        Top = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"center")]
-        Center = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"bottom")]
-        Bottom = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateTemplateFromDocxRequestDocumentsItemFieldsItemPreferencesCurrency
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"USD")]
-        USD = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"EUR")]
-        EUR = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"GBP")]
-        GBP = 2,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"CAD")]
-        CAD = 3,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"AUD")]
-        AUD = 4,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateTemplateFromDocxRequestDocumentsItemFieldsItemType
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"heading")]
-        Heading = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"text")]
-        Text = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"signature")]
-        Signature = 2,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"initials")]
-        Initials = 3,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"date")]
-        Date = 4,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"number")]
-        Number = 5,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"image")]
-        Image = 6,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"checkbox")]
-        Checkbox = 7,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"multiple")]
-        Multiple = 8,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"file")]
-        File = 9,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"radio")]
-        Radio = 10,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"select")]
-        Select = 11,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"cells")]
-        Cells = 12,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"stamp")]
-        Stamp = 13,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"payment")]
-        Payment = 14,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"phone")]
-        Phone = 15,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"verification")]
-        Verification = 16,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"kba")]
-        Kba = 17,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"strikethrough")]
-        Strikethrough = 18,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesFont_type
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"bold")]
-        Bold = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"italic")]
-        Italic = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"bold_italic")]
-        Bold_italic = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesFont
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Times")]
-        Times = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Helvetica")]
-        Helvetica = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"Courier")]
-        Courier = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesColor
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"black")]
-        Black = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"white")]
-        White = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"blue")]
-        Blue = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesBackground
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"black")]
-        Black = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"white")]
-        White = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"blue")]
-        Blue = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesAlign
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"left")]
-        Left = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"center")]
-        Center = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"right")]
-        Right = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesValign
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"top")]
-        Top = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"center")]
-        Center = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"bottom")]
-        Bottom = 2,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateTemplateFromPdfRequestDocumentsItemFieldsItemPreferencesCurrency
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"USD")]
-        USD = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"EUR")]
-        EUR = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"GBP")]
-        GBP = 2,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"CAD")]
-        CAD = 3,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"AUD")]
-        AUD = 4,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.7.1.0 (NJsonSchema v11.6.1.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CreateTemplateFromPdfRequestDocumentsItemFieldsItemType
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"heading")]
-        Heading = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"text")]
-        Text = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"signature")]
-        Signature = 2,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"initials")]
-        Initials = 3,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"date")]
-        Date = 4,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"number")]
-        Number = 5,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"image")]
-        Image = 6,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"checkbox")]
-        Checkbox = 7,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"multiple")]
-        Multiple = 8,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"file")]
-        File = 9,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"radio")]
-        Radio = 10,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"select")]
-        Select = 11,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"cells")]
-        Cells = 12,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"stamp")]
-        Stamp = 13,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"payment")]
-        Payment = 14,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"phone")]
-        Phone = 15,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"verification")]
-        Verification = 16,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"kba")]
-        Kba = 17,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"strikethrough")]
-        Strikethrough = 18,
 
     }
 
