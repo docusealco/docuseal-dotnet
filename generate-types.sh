@@ -1,79 +1,63 @@
 #!/bin/sh
-# Regenerates src/Docuseal/DocusealClient.g.cs from the DocuSeal OpenAPI spec.
+# Regenerates src/Docuseal from the DocuSeal OpenAPI spec using Fern
+# (runs the generator locally in Docker).
 # Usage: ./generate-types.sh [path-or-url-to-openapi-json]
 set -e
 
 cd "$(dirname "$0")"
 
 SPEC="${1:-https://console.docuseal.com/openapi.yml?format=json}"
-TMP_DIR="$(mktemp -d)"
-trap 'rm -rf "$TMP_DIR"' EXIT
 
 case "$SPEC" in
-  http*) curl -sf "$SPEC" -o "$TMP_DIR/openapi.json" ;;
-  *) cp "$SPEC" "$TMP_DIR/openapi.json" ;;
+  http*) curl -sf "$SPEC" -o openapi.tmp.json ;;
+  *) cp "$SPEC" openapi.tmp.json ;;
 esac
 
-# Drop webhook payload schemas (the SDK exposes only the REST client) and
-# the legacy POST /submissions operation: CreateSubmissionAsync is
-# hand-written against the newer /submissions/init endpoint instead.
-# Inline object schemas are extracted into components with deterministic
-# path-derived names - otherwise NSwag names them "Fields2"/"Anonymous"
-# with unstable counters.
-ruby - "$TMP_DIR/openapi.json" << 'RB'
-require 'json'
+# Drop webhook payload schemas (the SDK exposes only the REST client), swap
+# the legacy POST /submissions for the newer /submissions/init (same request
+# body, envelope response), strip tags so the client surface is flat
+# (client.GetTemplateAsync(...) instead of client.Templates.GetAsync(...))
+# and name method-input wrappers <OperationId>Params.
+ruby -rjson -e '
+  path = "openapi.tmp.json"
+  spec = JSON.parse(File.read(path))
+  spec.delete("webhooks")
+  spec.delete("tags")
 
-path = ARGV[0]
-spec = JSON.parse(File.read(path))
+  init = spec["paths"]["/submissions"].delete("post")
+  init["responses"]["200"]["content"]["application/json"].delete("example")
+  init["responses"]["200"]["content"]["application/json"]["schema"] = {
+    "type" => "object",
+    "required" => %w[id submitters expired_at created_at],
+    "properties" => {
+      "id" => { "type" => "integer", "description" => "Submission unique ID number." },
+      "submitters" => { "$ref" => "#/components/schemas/CreateSubmissionsFromEmailsResponse" },
+      "expired_at" => { "type" => %w[string null], "description" => "The date and time when the submission expires." },
+      "created_at" => { "type" => "string", "description" => "The date and time when the submission was created." }
+    }
+  }
+  spec["paths"]["/submissions/init"] = { "post" => init }
 
-spec.delete('webhooks')
-spec['paths']['/submissions'].delete('post')
+  spec["paths"].each_value do |methods|
+    methods.each_value do |op|
+      next unless op.is_a?(Hash)
 
-schemas = spec['components']['schemas']
+      op.delete("tags")
 
-def pascal(name)
-  name.split('_').map(&:capitalize).join
-end
-
-def extract(schema, name, schemas)
-  return schema unless schema.is_a?(Hash)
-
-  (schema['properties'] || {}).each do |prop, value|
-    schema['properties'][prop] = extract(value, name + pascal(prop), schemas)
+      params_name = op["operationId"].sub(/\A./) { |c| c.upcase } + "Params"
+      op["x-fern-request-name"] = params_name
+      op["x-fern-sdk-request-name"] = params_name
+    end
   end
 
-  schema['items'] = extract(schema['items'], name + 'Item', schemas) if schema['items'].is_a?(Hash)
+  File.write(path, JSON.generate(spec))
+'
 
-  if schema['type'] == 'object' && schema.key?('properties')
-    raise "duplicate component name: #{name}" if schemas.key?(name)
+rm -rf .fern-out
+CI=true npx -y fern-api@5.67.1 generate --local
 
-    schemas[name] = schema
-    return { '$ref' => "#/components/schemas/#{name}" }
-  end
+rm -rf src
+mkdir -p src
+cp -r .fern-out/src/Docuseal src/Docuseal
 
-  schema
-end
-
-schemas.to_a.each do |name, component|
-  (component['properties'] || {}).each do |prop, value|
-    component['properties'][prop] = extract(value, name + pascal(prop), schemas)
-  end
-
-  component['items'] = extract(component['items'], name + 'Item', schemas) if component['items'].is_a?(Hash)
-end
-
-File.write(path, JSON.generate(spec))
-RB
-
-command -v dotnet > /dev/null || export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$PATH"
-
-npx -y nswag openapi2csclient \
-  "/input:$TMP_DIR/openapi.json" \
-  /output:src/Docuseal/DocusealClient.g.cs \
-  /namespace:Docuseal \
-  /ClassName:DocusealClient \
-  /JsonLibrary:SystemTextJson \
-  /GenerateOptionalParameters:true \
-  /GenerateClientInterfaces:true \
-  /OperationGenerationMode:SingleClientFromOperationId \
-  /ExceptionClass:DocusealException > /dev/null
+rm -rf .fern-out openapi.tmp.json

@@ -8,7 +8,7 @@
 dotnet add package Docuseal
 ```
 
-Requires .NET 8.0+. No external dependencies.
+Supports .NET Framework 4.6.2+, .NET Standard 2.0 and .NET 8/9.
 
 ## Configuration
 
@@ -23,21 +23,27 @@ var client = new DocusealClient(Environment.GetEnvironmentVariable("DOCUSEAL_API
 ### EU cloud (docuseal.eu)
 
 ```csharp
-var client = new DocusealClient(Environment.GetEnvironmentVariable("DOCUSEAL_API_KEY"), DocusealClient.EuUrl);
+var client = new DocusealClient(
+    Environment.GetEnvironmentVariable("DOCUSEAL_API_KEY"),
+    new ClientOptions { BaseUrl = "https://api.docuseal.eu" });
 ```
 
 ### On-premises
 
 ```csharp
-var client = new DocusealClient(Environment.GetEnvironmentVariable("DOCUSEAL_API_KEY"), "https://yourdocuseal.com/api");
+var client = new DocusealClient(
+    Environment.GetEnvironmentVariable("DOCUSEAL_API_KEY"),
+    new ClientOptions { BaseUrl = "https://yourdocuseal.com/api" });
 ```
+
+`ClientOptions` also exposes `Timeout` and `MaxRetries`.
 
 ## Usage
 
 ### List templates
 
 ```csharp
-var templates = await client.GetTemplatesAsync(limit: 20);
+var templates = await client.GetTemplatesAsync(new GetTemplatesParams { Limit = 20 });
 
 foreach (var template in templates.Data)
 {
@@ -47,14 +53,17 @@ foreach (var template in templates.Data)
 
 ### Create a signature request
 
+Models use `required` properties: forgetting a required field is a
+compile-time error.
+
 ```csharp
-var submission = await client.CreateSubmissionAsync(new CreateSubmissionRequest
+var submission = await client.CreateSubmissionAsync(new CreateSubmissionParams
 {
     TemplateId = 1000001,
-    Submitters = new List<CreateSubmissionRequestSubmitter>
-    {
-        new() { Role = "First Party", Email = "signer@example.com" }
-    }
+    Submitters =
+    [
+        new CreateSubmissionRequestSubmitter { Role = "First Party", Email = "signer@example.com" },
+    ],
 });
 
 Console.WriteLine(submission.Submitters.First().EmbedSrc);
@@ -80,24 +89,22 @@ try
 {
     await client.GetTemplateAsync(42);
 }
-catch (DocusealException e)
+catch (DocusealClientApiException e)
 {
     Console.WriteLine($"{e.StatusCode} {e.Message}");
 }
 ```
 
-All methods accept an optional `CancellationToken` as the last argument.
+## Regenerating the SDK
 
-## Regenerating the client
-
-`src/Docuseal/DocusealClient.g.cs` is generated from the DocuSeal OpenAPI
-specification and is never edited by hand:
+`src/Docuseal` is generated from the DocuSeal OpenAPI specification by
+[Fern](https://buildwithfern.com) and is never edited by hand:
 
 ```sh
 ./generate-types.sh
 ```
 
-Requires Node.js (`npx`), .NET and `ruby`.
+Requires Node.js (`npx`), Docker and `ruby`.
 
 ## Documentation
 

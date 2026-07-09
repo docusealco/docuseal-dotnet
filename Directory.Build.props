@@ -1,0 +1,10 @@
+<Project>
+  <PropertyGroup>
+    <PackageId>Docuseal</PackageId>
+    <Version>1.0.0</Version>
+    <Description>.NET client for the DocuSeal API</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://www.docuseal.com</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/docusealco/docuseal-dotnet</RepositoryUrl>
+  </PropertyGroup>
+</Project>

@@ -1,3 +1,5 @@
 bin/
 obj/
+.fern-out/
+openapi.tmp.json
 .DS_Store
