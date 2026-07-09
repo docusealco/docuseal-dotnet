@@ -78,7 +78,7 @@ public partial interface IDocusealClient
     /// This API endpoint allows you to create submissions for a document template and send them to the specified email addresses. This is a simplified version of the POST /submissions API to be used with Zapier or other automation tools.
     /// </summary>
     WithRawResponseTask<
-        IEnumerable<CreateSubmissionsFromEmailsResponseItem>
+        IEnumerable<CreateSubmissionsFromEmailsResponseSubmitter>
     > CreateSubmissionsFromEmailsAsync(
         CreateSubmissionsFromEmailsParams request,
         RequestOptions? options = null,

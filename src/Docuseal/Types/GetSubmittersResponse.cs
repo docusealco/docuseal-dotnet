@@ -12,7 +12,7 @@ public record GetSubmittersResponse : IJsonOnDeserialized
         new Dictionary<string, JsonElement>();
 
     [JsonPropertyName("data")]
-    public IEnumerable<GetSubmittersResponseDataItem>? Data { get; set; }
+    public IEnumerable<GetSubmittersResponseSubmitter>? Data { get; set; }
 
     [JsonPropertyName("pagination")]
     public SubmitterPagination? Pagination { get; set; }

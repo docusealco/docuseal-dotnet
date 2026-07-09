@@ -12,8 +12,8 @@ public record GetSubmissionsResponse : IJsonOnDeserialized
         new Dictionary<string, JsonElement>();
 
     [JsonPropertyName("data")]
-    public IEnumerable<GetSubmissionsResponseDataItem> Data { get; set; } =
-        new List<GetSubmissionsResponseDataItem>();
+    public IEnumerable<GetSubmissionsResponseSubmission> Data { get; set; } =
+        new List<GetSubmissionsResponseSubmission>();
 
     [JsonPropertyName("pagination")]
     public required SubmissionPagination Pagination { get; set; }

@@ -5,32 +5,30 @@ using global::System.Text.Json.Serialization;
 namespace Docuseal;
 
 [JsonConverter(
-    typeof(CreateSubmissionFromPdfResponseSubmittersItemStatus.CreateSubmissionFromPdfResponseSubmittersItemStatusSerializer)
+    typeof(CreateSubmissionFromPdfResponseSubmitterStatus.CreateSubmissionFromPdfResponseSubmitterStatusSerializer)
 )]
 [Serializable]
-public readonly record struct CreateSubmissionFromPdfResponseSubmittersItemStatus : IStringEnum
+public readonly record struct CreateSubmissionFromPdfResponseSubmitterStatus : IStringEnum
 {
-    public static readonly CreateSubmissionFromPdfResponseSubmittersItemStatus Completed = new(
+    public static readonly CreateSubmissionFromPdfResponseSubmitterStatus Completed = new(
         Values.Completed
     );
 
-    public static readonly CreateSubmissionFromPdfResponseSubmittersItemStatus Declined = new(
+    public static readonly CreateSubmissionFromPdfResponseSubmitterStatus Declined = new(
         Values.Declined
     );
 
-    public static readonly CreateSubmissionFromPdfResponseSubmittersItemStatus Opened = new(
+    public static readonly CreateSubmissionFromPdfResponseSubmitterStatus Opened = new(
         Values.Opened
     );
 
-    public static readonly CreateSubmissionFromPdfResponseSubmittersItemStatus Sent = new(
-        Values.Sent
-    );
+    public static readonly CreateSubmissionFromPdfResponseSubmitterStatus Sent = new(Values.Sent);
 
-    public static readonly CreateSubmissionFromPdfResponseSubmittersItemStatus Awaiting = new(
+    public static readonly CreateSubmissionFromPdfResponseSubmitterStatus Awaiting = new(
         Values.Awaiting
     );
 
-    public CreateSubmissionFromPdfResponseSubmittersItemStatus(string value)
+    public CreateSubmissionFromPdfResponseSubmitterStatus(string value)
     {
         Value = value;
     }
@@ -43,9 +41,9 @@ public readonly record struct CreateSubmissionFromPdfResponseSubmittersItemStatu
     /// <summary>
     /// Create a string enum with the given value.
     /// </summary>
-    public static CreateSubmissionFromPdfResponseSubmittersItemStatus FromCustom(string value)
+    public static CreateSubmissionFromPdfResponseSubmitterStatus FromCustom(string value)
     {
-        return new CreateSubmissionFromPdfResponseSubmittersItemStatus(value);
+        return new CreateSubmissionFromPdfResponseSubmitterStatus(value);
     }
 
     public bool Equals(string? other)
@@ -62,27 +60,25 @@ public readonly record struct CreateSubmissionFromPdfResponseSubmittersItemStatu
     }
 
     public static bool operator ==(
-        CreateSubmissionFromPdfResponseSubmittersItemStatus value1,
+        CreateSubmissionFromPdfResponseSubmitterStatus value1,
         string value2
     ) => value1.Value.Equals(value2);
 
     public static bool operator !=(
-        CreateSubmissionFromPdfResponseSubmittersItemStatus value1,
+        CreateSubmissionFromPdfResponseSubmitterStatus value1,
         string value2
     ) => !value1.Value.Equals(value2);
 
-    public static explicit operator string(
-        CreateSubmissionFromPdfResponseSubmittersItemStatus value
-    ) => value.Value;
+    public static explicit operator string(CreateSubmissionFromPdfResponseSubmitterStatus value) =>
+        value.Value;
 
-    public static explicit operator CreateSubmissionFromPdfResponseSubmittersItemStatus(
-        string value
-    ) => new(value);
+    public static explicit operator CreateSubmissionFromPdfResponseSubmitterStatus(string value) =>
+        new(value);
 
-    internal class CreateSubmissionFromPdfResponseSubmittersItemStatusSerializer
-        : JsonConverter<CreateSubmissionFromPdfResponseSubmittersItemStatus>
+    internal class CreateSubmissionFromPdfResponseSubmitterStatusSerializer
+        : JsonConverter<CreateSubmissionFromPdfResponseSubmitterStatus>
     {
-        public override CreateSubmissionFromPdfResponseSubmittersItemStatus Read(
+        public override CreateSubmissionFromPdfResponseSubmitterStatus Read(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options
@@ -93,19 +89,19 @@ public readonly record struct CreateSubmissionFromPdfResponseSubmittersItemStatu
                 ?? throw new global::System.Exception(
                     "The JSON value could not be read as a string."
                 );
-            return new CreateSubmissionFromPdfResponseSubmittersItemStatus(stringValue);
+            return new CreateSubmissionFromPdfResponseSubmitterStatus(stringValue);
         }
 
         public override void Write(
             Utf8JsonWriter writer,
-            CreateSubmissionFromPdfResponseSubmittersItemStatus value,
+            CreateSubmissionFromPdfResponseSubmitterStatus value,
             JsonSerializerOptions options
         )
         {
             writer.WriteStringValue(value.Value);
         }
 
-        public override CreateSubmissionFromPdfResponseSubmittersItemStatus ReadAsPropertyName(
+        public override CreateSubmissionFromPdfResponseSubmitterStatus ReadAsPropertyName(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options
@@ -116,12 +112,12 @@ public readonly record struct CreateSubmissionFromPdfResponseSubmittersItemStatu
                 ?? throw new global::System.Exception(
                     "The JSON property name could not be read as a string."
                 );
-            return new CreateSubmissionFromPdfResponseSubmittersItemStatus(stringValue);
+            return new CreateSubmissionFromPdfResponseSubmitterStatus(stringValue);
         }
 
         public override void WriteAsPropertyName(
             Utf8JsonWriter writer,
-            CreateSubmissionFromPdfResponseSubmittersItemStatus value,
+            CreateSubmissionFromPdfResponseSubmitterStatus value,
             JsonSerializerOptions options
         )
         {

@@ -75,8 +75,8 @@ public record GetSubmissionResponse : IJsonOnDeserialized
     /// The list of submitters.
     /// </summary>
     [JsonPropertyName("submitters")]
-    public IEnumerable<GetSubmissionResponseSubmittersItem> Submitters { get; set; } =
-        new List<GetSubmissionResponseSubmittersItem>();
+    public IEnumerable<GetSubmissionResponseSubmitter> Submitters { get; set; } =
+        new List<GetSubmissionResponseSubmitter>();
 
     [JsonPropertyName("template")]
     public SubmissionTemplate? Template { get; set; }

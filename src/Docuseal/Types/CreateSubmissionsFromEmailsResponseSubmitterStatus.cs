@@ -5,32 +5,32 @@ using global::System.Text.Json.Serialization;
 namespace Docuseal;
 
 [JsonConverter(
-    typeof(GetSubmissionsResponseDataItemSubmittersItemStatus.GetSubmissionsResponseDataItemSubmittersItemStatusSerializer)
+    typeof(CreateSubmissionsFromEmailsResponseSubmitterStatus.CreateSubmissionsFromEmailsResponseSubmitterStatusSerializer)
 )]
 [Serializable]
-public readonly record struct GetSubmissionsResponseDataItemSubmittersItemStatus : IStringEnum
+public readonly record struct CreateSubmissionsFromEmailsResponseSubmitterStatus : IStringEnum
 {
-    public static readonly GetSubmissionsResponseDataItemSubmittersItemStatus Completed = new(
+    public static readonly CreateSubmissionsFromEmailsResponseSubmitterStatus Completed = new(
         Values.Completed
     );
 
-    public static readonly GetSubmissionsResponseDataItemSubmittersItemStatus Declined = new(
+    public static readonly CreateSubmissionsFromEmailsResponseSubmitterStatus Declined = new(
         Values.Declined
     );
 
-    public static readonly GetSubmissionsResponseDataItemSubmittersItemStatus Opened = new(
+    public static readonly CreateSubmissionsFromEmailsResponseSubmitterStatus Opened = new(
         Values.Opened
     );
 
-    public static readonly GetSubmissionsResponseDataItemSubmittersItemStatus Sent = new(
+    public static readonly CreateSubmissionsFromEmailsResponseSubmitterStatus Sent = new(
         Values.Sent
     );
 
-    public static readonly GetSubmissionsResponseDataItemSubmittersItemStatus Awaiting = new(
+    public static readonly CreateSubmissionsFromEmailsResponseSubmitterStatus Awaiting = new(
         Values.Awaiting
     );
 
-    public GetSubmissionsResponseDataItemSubmittersItemStatus(string value)
+    public CreateSubmissionsFromEmailsResponseSubmitterStatus(string value)
     {
         Value = value;
     }
@@ -43,9 +43,9 @@ public readonly record struct GetSubmissionsResponseDataItemSubmittersItemStatus
     /// <summary>
     /// Create a string enum with the given value.
     /// </summary>
-    public static GetSubmissionsResponseDataItemSubmittersItemStatus FromCustom(string value)
+    public static CreateSubmissionsFromEmailsResponseSubmitterStatus FromCustom(string value)
     {
-        return new GetSubmissionsResponseDataItemSubmittersItemStatus(value);
+        return new CreateSubmissionsFromEmailsResponseSubmitterStatus(value);
     }
 
     public bool Equals(string? other)
@@ -62,27 +62,27 @@ public readonly record struct GetSubmissionsResponseDataItemSubmittersItemStatus
     }
 
     public static bool operator ==(
-        GetSubmissionsResponseDataItemSubmittersItemStatus value1,
+        CreateSubmissionsFromEmailsResponseSubmitterStatus value1,
         string value2
     ) => value1.Value.Equals(value2);
 
     public static bool operator !=(
-        GetSubmissionsResponseDataItemSubmittersItemStatus value1,
+        CreateSubmissionsFromEmailsResponseSubmitterStatus value1,
         string value2
     ) => !value1.Value.Equals(value2);
 
     public static explicit operator string(
-        GetSubmissionsResponseDataItemSubmittersItemStatus value
+        CreateSubmissionsFromEmailsResponseSubmitterStatus value
     ) => value.Value;
 
-    public static explicit operator GetSubmissionsResponseDataItemSubmittersItemStatus(
+    public static explicit operator CreateSubmissionsFromEmailsResponseSubmitterStatus(
         string value
     ) => new(value);
 
-    internal class GetSubmissionsResponseDataItemSubmittersItemStatusSerializer
-        : JsonConverter<GetSubmissionsResponseDataItemSubmittersItemStatus>
+    internal class CreateSubmissionsFromEmailsResponseSubmitterStatusSerializer
+        : JsonConverter<CreateSubmissionsFromEmailsResponseSubmitterStatus>
     {
-        public override GetSubmissionsResponseDataItemSubmittersItemStatus Read(
+        public override CreateSubmissionsFromEmailsResponseSubmitterStatus Read(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options
@@ -93,19 +93,19 @@ public readonly record struct GetSubmissionsResponseDataItemSubmittersItemStatus
                 ?? throw new global::System.Exception(
                     "The JSON value could not be read as a string."
                 );
-            return new GetSubmissionsResponseDataItemSubmittersItemStatus(stringValue);
+            return new CreateSubmissionsFromEmailsResponseSubmitterStatus(stringValue);
         }
 
         public override void Write(
             Utf8JsonWriter writer,
-            GetSubmissionsResponseDataItemSubmittersItemStatus value,
+            CreateSubmissionsFromEmailsResponseSubmitterStatus value,
             JsonSerializerOptions options
         )
         {
             writer.WriteStringValue(value.Value);
         }
 
-        public override GetSubmissionsResponseDataItemSubmittersItemStatus ReadAsPropertyName(
+        public override CreateSubmissionsFromEmailsResponseSubmitterStatus ReadAsPropertyName(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options
@@ -116,12 +116,12 @@ public readonly record struct GetSubmissionsResponseDataItemSubmittersItemStatus
                 ?? throw new global::System.Exception(
                     "The JSON property name could not be read as a string."
                 );
-            return new GetSubmissionsResponseDataItemSubmittersItemStatus(stringValue);
+            return new CreateSubmissionsFromEmailsResponseSubmitterStatus(stringValue);
         }
 
         public override void WriteAsPropertyName(
             Utf8JsonWriter writer,
-            GetSubmissionsResponseDataItemSubmittersItemStatus value,
+            CreateSubmissionsFromEmailsResponseSubmitterStatus value,
             JsonSerializerOptions options
         )
         {

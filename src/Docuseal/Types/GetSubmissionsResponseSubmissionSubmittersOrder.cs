@@ -5,28 +5,20 @@ using global::System.Text.Json.Serialization;
 namespace Docuseal;
 
 [JsonConverter(
-    typeof(GetSubmissionResponseSubmittersItemStatus.GetSubmissionResponseSubmittersItemStatusSerializer)
+    typeof(GetSubmissionsResponseSubmissionSubmittersOrder.GetSubmissionsResponseSubmissionSubmittersOrderSerializer)
 )]
 [Serializable]
-public readonly record struct GetSubmissionResponseSubmittersItemStatus : IStringEnum
+public readonly record struct GetSubmissionsResponseSubmissionSubmittersOrder : IStringEnum
 {
-    public static readonly GetSubmissionResponseSubmittersItemStatus Completed = new(
-        Values.Completed
+    public static readonly GetSubmissionsResponseSubmissionSubmittersOrder Random = new(
+        Values.Random
     );
 
-    public static readonly GetSubmissionResponseSubmittersItemStatus Declined = new(
-        Values.Declined
+    public static readonly GetSubmissionsResponseSubmissionSubmittersOrder Preserved = new(
+        Values.Preserved
     );
 
-    public static readonly GetSubmissionResponseSubmittersItemStatus Opened = new(Values.Opened);
-
-    public static readonly GetSubmissionResponseSubmittersItemStatus Sent = new(Values.Sent);
-
-    public static readonly GetSubmissionResponseSubmittersItemStatus Awaiting = new(
-        Values.Awaiting
-    );
-
-    public GetSubmissionResponseSubmittersItemStatus(string value)
+    public GetSubmissionsResponseSubmissionSubmittersOrder(string value)
     {
         Value = value;
     }
@@ -39,9 +31,9 @@ public readonly record struct GetSubmissionResponseSubmittersItemStatus : IStrin
     /// <summary>
     /// Create a string enum with the given value.
     /// </summary>
-    public static GetSubmissionResponseSubmittersItemStatus FromCustom(string value)
+    public static GetSubmissionsResponseSubmissionSubmittersOrder FromCustom(string value)
     {
-        return new GetSubmissionResponseSubmittersItemStatus(value);
+        return new GetSubmissionsResponseSubmissionSubmittersOrder(value);
     }
 
     public bool Equals(string? other)
@@ -58,25 +50,25 @@ public readonly record struct GetSubmissionResponseSubmittersItemStatus : IStrin
     }
 
     public static bool operator ==(
-        GetSubmissionResponseSubmittersItemStatus value1,
+        GetSubmissionsResponseSubmissionSubmittersOrder value1,
         string value2
     ) => value1.Value.Equals(value2);
 
     public static bool operator !=(
-        GetSubmissionResponseSubmittersItemStatus value1,
+        GetSubmissionsResponseSubmissionSubmittersOrder value1,
         string value2
     ) => !value1.Value.Equals(value2);
 
-    public static explicit operator string(GetSubmissionResponseSubmittersItemStatus value) =>
+    public static explicit operator string(GetSubmissionsResponseSubmissionSubmittersOrder value) =>
         value.Value;
 
-    public static explicit operator GetSubmissionResponseSubmittersItemStatus(string value) =>
+    public static explicit operator GetSubmissionsResponseSubmissionSubmittersOrder(string value) =>
         new(value);
 
-    internal class GetSubmissionResponseSubmittersItemStatusSerializer
-        : JsonConverter<GetSubmissionResponseSubmittersItemStatus>
+    internal class GetSubmissionsResponseSubmissionSubmittersOrderSerializer
+        : JsonConverter<GetSubmissionsResponseSubmissionSubmittersOrder>
     {
-        public override GetSubmissionResponseSubmittersItemStatus Read(
+        public override GetSubmissionsResponseSubmissionSubmittersOrder Read(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options
@@ -87,19 +79,19 @@ public readonly record struct GetSubmissionResponseSubmittersItemStatus : IStrin
                 ?? throw new global::System.Exception(
                     "The JSON value could not be read as a string."
                 );
-            return new GetSubmissionResponseSubmittersItemStatus(stringValue);
+            return new GetSubmissionsResponseSubmissionSubmittersOrder(stringValue);
         }
 
         public override void Write(
             Utf8JsonWriter writer,
-            GetSubmissionResponseSubmittersItemStatus value,
+            GetSubmissionsResponseSubmissionSubmittersOrder value,
             JsonSerializerOptions options
         )
         {
             writer.WriteStringValue(value.Value);
         }
 
-        public override GetSubmissionResponseSubmittersItemStatus ReadAsPropertyName(
+        public override GetSubmissionsResponseSubmissionSubmittersOrder ReadAsPropertyName(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options
@@ -110,12 +102,12 @@ public readonly record struct GetSubmissionResponseSubmittersItemStatus : IStrin
                 ?? throw new global::System.Exception(
                     "The JSON property name could not be read as a string."
                 );
-            return new GetSubmissionResponseSubmittersItemStatus(stringValue);
+            return new GetSubmissionsResponseSubmissionSubmittersOrder(stringValue);
         }
 
         public override void WriteAsPropertyName(
             Utf8JsonWriter writer,
-            GetSubmissionResponseSubmittersItemStatus value,
+            GetSubmissionsResponseSubmissionSubmittersOrder value,
             JsonSerializerOptions options
         )
         {
@@ -129,14 +121,8 @@ public readonly record struct GetSubmissionResponseSubmittersItemStatus : IStrin
     [Serializable]
     public static class Values
     {
-        public const string Completed = "completed";
+        public const string Random = "random";
 
-        public const string Declined = "declined";
-
-        public const string Opened = "opened";
-
-        public const string Sent = "sent";
-
-        public const string Awaiting = "awaiting";
+        public const string Preserved = "preserved";
     }
 }

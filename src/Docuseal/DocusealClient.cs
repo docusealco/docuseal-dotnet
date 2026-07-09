@@ -728,7 +728,7 @@ public partial class DocusealClient : IDocusealClient
     }
 
     private async Task<
-        WithRawResponse<IEnumerable<CreateSubmissionsFromEmailsResponseItem>>
+        WithRawResponse<IEnumerable<CreateSubmissionsFromEmailsResponseSubmitter>>
     > CreateSubmissionsFromEmailsAsyncCore(
         CreateSubmissionsFromEmailsParams request,
         RequestOptions? options = null,
@@ -767,9 +767,11 @@ public partial class DocusealClient : IDocusealClient
             try
             {
                 var responseData = JsonUtils.Deserialize<
-                    IEnumerable<CreateSubmissionsFromEmailsResponseItem>
+                    IEnumerable<CreateSubmissionsFromEmailsResponseSubmitter>
                 >(responseBody)!;
-                return new WithRawResponse<IEnumerable<CreateSubmissionsFromEmailsResponseItem>>()
+                return new WithRawResponse<
+                    IEnumerable<CreateSubmissionsFromEmailsResponseSubmitter>
+                >()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -2067,14 +2069,14 @@ public partial class DocusealClient : IDocusealClient
     /// );
     /// </code></example>
     public WithRawResponseTask<
-        IEnumerable<CreateSubmissionsFromEmailsResponseItem>
+        IEnumerable<CreateSubmissionsFromEmailsResponseSubmitter>
     > CreateSubmissionsFromEmailsAsync(
         CreateSubmissionsFromEmailsParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<IEnumerable<CreateSubmissionsFromEmailsResponseItem>>(
+        return new WithRawResponseTask<IEnumerable<CreateSubmissionsFromEmailsResponseSubmitter>>(
             CreateSubmissionsFromEmailsAsyncCore(request, options, cancellationToken)
         );
     }

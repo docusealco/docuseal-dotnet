@@ -5,22 +5,22 @@ using global::System.Text.Json.Serialization;
 namespace Docuseal;
 
 [JsonConverter(
-    typeof(GetSubmissionsResponseDataItemSource.GetSubmissionsResponseDataItemSourceSerializer)
+    typeof(GetSubmittersResponseSubmitterStatus.GetSubmittersResponseSubmitterStatusSerializer)
 )]
 [Serializable]
-public readonly record struct GetSubmissionsResponseDataItemSource : IStringEnum
+public readonly record struct GetSubmittersResponseSubmitterStatus : IStringEnum
 {
-    public static readonly GetSubmissionsResponseDataItemSource Invite = new(Values.Invite);
+    public static readonly GetSubmittersResponseSubmitterStatus Completed = new(Values.Completed);
 
-    public static readonly GetSubmissionsResponseDataItemSource Bulk = new(Values.Bulk);
+    public static readonly GetSubmittersResponseSubmitterStatus Declined = new(Values.Declined);
 
-    public static readonly GetSubmissionsResponseDataItemSource Api = new(Values.Api);
+    public static readonly GetSubmittersResponseSubmitterStatus Opened = new(Values.Opened);
 
-    public static readonly GetSubmissionsResponseDataItemSource Embed = new(Values.Embed);
+    public static readonly GetSubmittersResponseSubmitterStatus Sent = new(Values.Sent);
 
-    public static readonly GetSubmissionsResponseDataItemSource Link = new(Values.Link);
+    public static readonly GetSubmittersResponseSubmitterStatus Awaiting = new(Values.Awaiting);
 
-    public GetSubmissionsResponseDataItemSource(string value)
+    public GetSubmittersResponseSubmitterStatus(string value)
     {
         Value = value;
     }
@@ -33,9 +33,9 @@ public readonly record struct GetSubmissionsResponseDataItemSource : IStringEnum
     /// <summary>
     /// Create a string enum with the given value.
     /// </summary>
-    public static GetSubmissionsResponseDataItemSource FromCustom(string value)
+    public static GetSubmittersResponseSubmitterStatus FromCustom(string value)
     {
-        return new GetSubmissionsResponseDataItemSource(value);
+        return new GetSubmittersResponseSubmitterStatus(value);
     }
 
     public bool Equals(string? other)
@@ -51,22 +51,22 @@ public readonly record struct GetSubmissionsResponseDataItemSource : IStringEnum
         return Value;
     }
 
-    public static bool operator ==(GetSubmissionsResponseDataItemSource value1, string value2) =>
+    public static bool operator ==(GetSubmittersResponseSubmitterStatus value1, string value2) =>
         value1.Value.Equals(value2);
 
-    public static bool operator !=(GetSubmissionsResponseDataItemSource value1, string value2) =>
+    public static bool operator !=(GetSubmittersResponseSubmitterStatus value1, string value2) =>
         !value1.Value.Equals(value2);
 
-    public static explicit operator string(GetSubmissionsResponseDataItemSource value) =>
+    public static explicit operator string(GetSubmittersResponseSubmitterStatus value) =>
         value.Value;
 
-    public static explicit operator GetSubmissionsResponseDataItemSource(string value) =>
+    public static explicit operator GetSubmittersResponseSubmitterStatus(string value) =>
         new(value);
 
-    internal class GetSubmissionsResponseDataItemSourceSerializer
-        : JsonConverter<GetSubmissionsResponseDataItemSource>
+    internal class GetSubmittersResponseSubmitterStatusSerializer
+        : JsonConverter<GetSubmittersResponseSubmitterStatus>
     {
-        public override GetSubmissionsResponseDataItemSource Read(
+        public override GetSubmittersResponseSubmitterStatus Read(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options
@@ -77,19 +77,19 @@ public readonly record struct GetSubmissionsResponseDataItemSource : IStringEnum
                 ?? throw new global::System.Exception(
                     "The JSON value could not be read as a string."
                 );
-            return new GetSubmissionsResponseDataItemSource(stringValue);
+            return new GetSubmittersResponseSubmitterStatus(stringValue);
         }
 
         public override void Write(
             Utf8JsonWriter writer,
-            GetSubmissionsResponseDataItemSource value,
+            GetSubmittersResponseSubmitterStatus value,
             JsonSerializerOptions options
         )
         {
             writer.WriteStringValue(value.Value);
         }
 
-        public override GetSubmissionsResponseDataItemSource ReadAsPropertyName(
+        public override GetSubmittersResponseSubmitterStatus ReadAsPropertyName(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options
@@ -100,12 +100,12 @@ public readonly record struct GetSubmissionsResponseDataItemSource : IStringEnum
                 ?? throw new global::System.Exception(
                     "The JSON property name could not be read as a string."
                 );
-            return new GetSubmissionsResponseDataItemSource(stringValue);
+            return new GetSubmittersResponseSubmitterStatus(stringValue);
         }
 
         public override void WriteAsPropertyName(
             Utf8JsonWriter writer,
-            GetSubmissionsResponseDataItemSource value,
+            GetSubmittersResponseSubmitterStatus value,
             JsonSerializerOptions options
         )
         {
@@ -119,14 +119,14 @@ public readonly record struct GetSubmissionsResponseDataItemSource : IStringEnum
     [Serializable]
     public static class Values
     {
-        public const string Invite = "invite";
+        public const string Completed = "completed";
 
-        public const string Bulk = "bulk";
+        public const string Declined = "declined";
 
-        public const string Api = "api";
+        public const string Opened = "opened";
 
-        public const string Embed = "embed";
+        public const string Sent = "sent";
 
-        public const string Link = "link";
+        public const string Awaiting = "awaiting";
     }
 }

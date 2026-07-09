@@ -5,7 +5,7 @@ using global::System.Text.Json.Serialization;
 namespace Docuseal;
 
 [Serializable]
-public record CreateSubmissionsFromEmailsResponseItem : IJsonOnDeserialized
+public record GetSubmissionsResponseSubmissionSubmitter : IJsonOnDeserialized
 {
     [JsonExtensionData]
     private readonly IDictionary<string, JsonElement> _extensionData =
@@ -40,24 +40,6 @@ public record CreateSubmissionsFromEmailsResponseItem : IJsonOnDeserialized
     /// </summary>
     [JsonPropertyName("slug")]
     public required string Slug { get; set; }
-
-    /// <summary>
-    /// The status of signing request for the submitter.
-    /// </summary>
-    [JsonPropertyName("status")]
-    public required CreateSubmissionsFromEmailsResponseItemStatus Status { get; set; }
-
-    /// <summary>
-    /// An array of pre-filled values for the submitter.
-    /// </summary>
-    [JsonPropertyName("values")]
-    public IEnumerable<SubmitterValue> Values { get; set; } = new List<SubmitterValue>();
-
-    /// <summary>
-    /// Metadata object with additional submitter information.
-    /// </summary>
-    [JsonPropertyName("metadata")]
-    public Dictionary<string, object?> Metadata { get; set; } = new Dictionary<string, object?>();
 
     /// <summary>
     /// The date and time when the signing request was sent to the submitter.
@@ -114,10 +96,10 @@ public record CreateSubmissionsFromEmailsResponseItem : IJsonOnDeserialized
     public string? ExternalId { get; set; }
 
     /// <summary>
-    /// Submitter preferences.
+    /// The status of signing request for the submitter.
     /// </summary>
-    [JsonPropertyName("preferences")]
-    public required CreateSubmissionsFromEmailsResponseItemPreferences Preferences { get; set; }
+    [JsonPropertyName("status")]
+    public required GetSubmissionsResponseSubmissionSubmitterStatus Status { get; set; }
 
     /// <summary>
     /// The role of the submitter in the signing process.
@@ -126,10 +108,17 @@ public record CreateSubmissionsFromEmailsResponseItem : IJsonOnDeserialized
     public required string Role { get; set; }
 
     /// <summary>
-    /// The `src` URL value to embed the signing form or sign via a link.
+    /// Metadata object with additional submitter information.
     /// </summary>
-    [JsonPropertyName("embed_src")]
-    public required string EmbedSrc { get; set; }
+    [JsonPropertyName("metadata")]
+    public Dictionary<string, object?> Metadata { get; set; } = new Dictionary<string, object?>();
+
+    /// <summary>
+    /// Submitter preferences.
+    /// </summary>
+    [JsonPropertyName("preferences")]
+    public Dictionary<string, object?> Preferences { get; set; } =
+        new Dictionary<string, object?>();
 
     [JsonIgnore]
     public ReadOnlyAdditionalProperties AdditionalProperties { get; private set; } = new();

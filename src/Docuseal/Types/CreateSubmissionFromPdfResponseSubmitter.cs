@@ -5,7 +5,7 @@ using global::System.Text.Json.Serialization;
 namespace Docuseal;
 
 [Serializable]
-public record CreateSubmissionFromPdfResponseSubmittersItem : IJsonOnDeserialized
+public record CreateSubmissionFromPdfResponseSubmitter : IJsonOnDeserialized
 {
     [JsonExtensionData]
     private readonly IDictionary<string, JsonElement> _extensionData =
@@ -93,7 +93,7 @@ public record CreateSubmissionFromPdfResponseSubmittersItem : IJsonOnDeserialize
     /// The status of signing request for the submitter.
     /// </summary>
     [JsonPropertyName("status")]
-    public required CreateSubmissionFromPdfResponseSubmittersItemStatus Status { get; set; }
+    public required CreateSubmissionFromPdfResponseSubmitterStatus Status { get; set; }
 
     /// <summary>
     /// An array of pre-filled values for the submitter.

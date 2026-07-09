@@ -5,7 +5,7 @@ using global::System.Text.Json.Serialization;
 namespace Docuseal;
 
 [Serializable]
-public record GetSubmittersResponseDataItem : IJsonOnDeserialized
+public record CreateSubmissionsFromEmailsResponseSubmitter : IJsonOnDeserialized
 {
     [JsonExtensionData]
     private readonly IDictionary<string, JsonElement> _extensionData =
@@ -33,13 +33,31 @@ public record GetSubmittersResponseDataItem : IJsonOnDeserialized
     /// The email address of the submitter.
     /// </summary>
     [JsonPropertyName("email")]
-    public required string Email { get; set; }
+    public string? Email { get; set; }
 
     /// <summary>
     /// Unique key to be used in the form signing link and embedded form.
     /// </summary>
     [JsonPropertyName("slug")]
     public required string Slug { get; set; }
+
+    /// <summary>
+    /// The status of signing request for the submitter.
+    /// </summary>
+    [JsonPropertyName("status")]
+    public required CreateSubmissionsFromEmailsResponseSubmitterStatus Status { get; set; }
+
+    /// <summary>
+    /// An array of pre-filled values for the submitter.
+    /// </summary>
+    [JsonPropertyName("values")]
+    public IEnumerable<SubmitterValue> Values { get; set; } = new List<SubmitterValue>();
+
+    /// <summary>
+    /// Metadata object with additional submitter information.
+    /// </summary>
+    [JsonPropertyName("metadata")]
+    public Dictionary<string, object?> Metadata { get; set; } = new Dictionary<string, object?>();
 
     /// <summary>
     /// The date and time when the signing request was sent to the submitter.
@@ -90,54 +108,25 @@ public record GetSubmittersResponseDataItem : IJsonOnDeserialized
     public string? Phone { get; set; }
 
     /// <summary>
-    /// The status of signing request for the submitter.
-    /// </summary>
-    [JsonPropertyName("status")]
-    public required GetSubmittersResponseDataItemStatus Status { get; set; }
-
-    /// <summary>
     /// Your application-specific unique string key to identify this submitter within your app.
     /// </summary>
     [JsonPropertyName("external_id")]
     public string? ExternalId { get; set; }
 
-    /// <summary>
-    /// Submitter preferences.
-    /// </summary>
     [JsonPropertyName("preferences")]
-    public Dictionary<string, object?> Preferences { get; set; } =
-        new Dictionary<string, object?>();
-
-    /// <summary>
-    /// Metadata object with additional submitter information.
-    /// </summary>
-    [JsonPropertyName("metadata")]
-    public Dictionary<string, object?> Metadata { get; set; } = new Dictionary<string, object?>();
-
-    /// <summary>
-    /// An array of events related to the submission.
-    /// </summary>
-    [JsonPropertyName("submission_events")]
-    public IEnumerable<SubmissionEvent> SubmissionEvents { get; set; } =
-        new List<SubmissionEvent>();
-
-    /// <summary>
-    /// An array of pre-filled values for the submitter.
-    /// </summary>
-    [JsonPropertyName("values")]
-    public IEnumerable<SubmitterValue> Values { get; set; } = new List<SubmitterValue>();
-
-    /// <summary>
-    /// An array of completed or signed documents by the submitter.
-    /// </summary>
-    [JsonPropertyName("documents")]
-    public IEnumerable<CompletedDocument> Documents { get; set; } = new List<CompletedDocument>();
+    public required CreateSubmissionsFromEmailsResponseSubmitterPreferences Preferences { get; set; }
 
     /// <summary>
     /// The role of the submitter in the signing process.
     /// </summary>
     [JsonPropertyName("role")]
     public required string Role { get; set; }
+
+    /// <summary>
+    /// The `src` URL value to embed the signing form or sign via a link.
+    /// </summary>
+    [JsonPropertyName("embed_src")]
+    public required string EmbedSrc { get; set; }
 
     [JsonIgnore]
     public ReadOnlyAdditionalProperties AdditionalProperties { get; private set; } = new();

@@ -18,8 +18,8 @@ public record CreateSubmissionResponse : IJsonOnDeserialized
     public required int Id { get; set; }
 
     [JsonPropertyName("submitters")]
-    public IEnumerable<CreateSubmissionsFromEmailsResponseItem> Submitters { get; set; } =
-        new List<CreateSubmissionsFromEmailsResponseItem>();
+    public IEnumerable<CreateSubmissionsFromEmailsResponseSubmitter> Submitters { get; set; } =
+        new List<CreateSubmissionsFromEmailsResponseSubmitter>();
 
     /// <summary>
     /// The date and time when the submission expires.

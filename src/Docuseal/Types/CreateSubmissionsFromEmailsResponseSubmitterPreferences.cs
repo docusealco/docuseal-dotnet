@@ -4,24 +4,27 @@ using global::System.Text.Json.Serialization;
 
 namespace Docuseal;
 
+/// <summary>
+/// Submitter preferences.
+/// </summary>
 [Serializable]
-public record CreateSubmissionFromPdfResponseSchemaItem : IJsonOnDeserialized
+public record CreateSubmissionsFromEmailsResponseSubmitterPreferences : IJsonOnDeserialized
 {
     [JsonExtensionData]
     private readonly IDictionary<string, JsonElement> _extensionData =
         new Dictionary<string, JsonElement>();
 
     /// <summary>
-    /// The attachment UUID.
+    /// Indicates whether the signature request email should be sent.
     /// </summary>
-    [JsonPropertyName("attachment_uuid")]
-    public string? AttachmentUuid { get; set; }
+    [JsonPropertyName("send_email")]
+    public bool? SendEmail { get; set; }
 
     /// <summary>
-    /// The attachment name.
+    /// Indicates whether the signature request should be sent via SMS.
     /// </summary>
-    [JsonPropertyName("name")]
-    public string? Name { get; set; }
+    [JsonPropertyName("send_sms")]
+    public bool? SendSms { get; set; }
 
     [JsonIgnore]
     public ReadOnlyAdditionalProperties AdditionalProperties { get; private set; } = new();

@@ -15,8 +15,7 @@ public record GetTemplatesResponse : IJsonOnDeserialized
     /// List of templates.
     /// </summary>
     [JsonPropertyName("data")]
-    public IEnumerable<GetTemplatesResponseDataItem> Data { get; set; } =
-        new List<GetTemplatesResponseDataItem>();
+    public IEnumerable<GetTemplateResponse> Data { get; set; } = new List<GetTemplateResponse>();
 
     [JsonPropertyName("pagination")]
     public required TemplatePagination Pagination { get; set; }

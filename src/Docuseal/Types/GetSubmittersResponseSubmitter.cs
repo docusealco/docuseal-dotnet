@@ -5,7 +5,7 @@ using global::System.Text.Json.Serialization;
 namespace Docuseal;
 
 [Serializable]
-public record GetSubmissionResponseSubmittersItem : IJsonOnDeserialized
+public record GetSubmittersResponseSubmitter : IJsonOnDeserialized
 {
     [JsonExtensionData]
     private readonly IDictionary<string, JsonElement> _extensionData =
@@ -33,7 +33,7 @@ public record GetSubmissionResponseSubmittersItem : IJsonOnDeserialized
     /// The email address of the submitter.
     /// </summary>
     [JsonPropertyName("email")]
-    public string? Email { get; set; }
+    public required string Email { get; set; }
 
     /// <summary>
     /// Unique key to be used in the form signing link and embedded form.
@@ -90,16 +90,36 @@ public record GetSubmissionResponseSubmittersItem : IJsonOnDeserialized
     public string? Phone { get; set; }
 
     /// <summary>
+    /// The status of signing request for the submitter.
+    /// </summary>
+    [JsonPropertyName("status")]
+    public required GetSubmittersResponseSubmitterStatus Status { get; set; }
+
+    /// <summary>
     /// Your application-specific unique string key to identify this submitter within your app.
     /// </summary>
     [JsonPropertyName("external_id")]
     public string? ExternalId { get; set; }
 
     /// <summary>
-    /// The status of signing request for the submitter.
+    /// Submitter preferences.
     /// </summary>
-    [JsonPropertyName("status")]
-    public required GetSubmissionResponseSubmittersItemStatus Status { get; set; }
+    [JsonPropertyName("preferences")]
+    public Dictionary<string, object?> Preferences { get; set; } =
+        new Dictionary<string, object?>();
+
+    /// <summary>
+    /// Metadata object with additional submitter information.
+    /// </summary>
+    [JsonPropertyName("metadata")]
+    public Dictionary<string, object?> Metadata { get; set; } = new Dictionary<string, object?>();
+
+    /// <summary>
+    /// An array of events related to the submission.
+    /// </summary>
+    [JsonPropertyName("submission_events")]
+    public IEnumerable<SubmissionEvent> SubmissionEvents { get; set; } =
+        new List<SubmissionEvent>();
 
     /// <summary>
     /// An array of pre-filled values for the submitter.

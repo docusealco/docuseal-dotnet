@@ -27,8 +27,8 @@ public record CreateSubmissionFromPdfResponse : IJsonOnDeserialized
     /// The list of submitters.
     /// </summary>
     [JsonPropertyName("submitters")]
-    public IEnumerable<CreateSubmissionFromPdfResponseSubmittersItem> Submitters { get; set; } =
-        new List<CreateSubmissionFromPdfResponseSubmittersItem>();
+    public IEnumerable<CreateSubmissionFromPdfResponseSubmitter> Submitters { get; set; } =
+        new List<CreateSubmissionFromPdfResponseSubmitter>();
 
     /// <summary>
     /// The source of the submission.
@@ -52,7 +52,7 @@ public record CreateSubmissionFromPdfResponse : IJsonOnDeserialized
     /// The one-off submission document files.
     /// </summary>
     [JsonPropertyName("schema")]
-    public IEnumerable<CreateSubmissionFromPdfResponseSchemaItem>? Schema { get; set; }
+    public IEnumerable<CreateSubmissionFromPdfResponseSchemaDocument>? Schema { get; set; }
 
     /// <summary>
     /// List of fields to be filled in the one-off submission.

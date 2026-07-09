@@ -5,7 +5,7 @@ using global::System.Text.Json.Serialization;
 namespace Docuseal;
 
 [Serializable]
-public record GetSubmissionsResponseDataItemSubmittersItem : IJsonOnDeserialized
+public record GetSubmissionResponseSubmitter : IJsonOnDeserialized
 {
     [JsonExtensionData]
     private readonly IDictionary<string, JsonElement> _extensionData =
@@ -99,26 +99,25 @@ public record GetSubmissionsResponseDataItemSubmittersItem : IJsonOnDeserialized
     /// The status of signing request for the submitter.
     /// </summary>
     [JsonPropertyName("status")]
-    public required GetSubmissionsResponseDataItemSubmittersItemStatus Status { get; set; }
+    public required GetSubmissionResponseSubmitterStatus Status { get; set; }
+
+    /// <summary>
+    /// An array of pre-filled values for the submitter.
+    /// </summary>
+    [JsonPropertyName("values")]
+    public IEnumerable<SubmitterValue> Values { get; set; } = new List<SubmitterValue>();
+
+    /// <summary>
+    /// An array of completed or signed documents by the submitter.
+    /// </summary>
+    [JsonPropertyName("documents")]
+    public IEnumerable<CompletedDocument> Documents { get; set; } = new List<CompletedDocument>();
 
     /// <summary>
     /// The role of the submitter in the signing process.
     /// </summary>
     [JsonPropertyName("role")]
     public required string Role { get; set; }
-
-    /// <summary>
-    /// Metadata object with additional submitter information.
-    /// </summary>
-    [JsonPropertyName("metadata")]
-    public Dictionary<string, object?> Metadata { get; set; } = new Dictionary<string, object?>();
-
-    /// <summary>
-    /// Submitter preferences.
-    /// </summary>
-    [JsonPropertyName("preferences")]
-    public Dictionary<string, object?> Preferences { get; set; } =
-        new Dictionary<string, object?>();
 
     [JsonIgnore]
     public ReadOnlyAdditionalProperties AdditionalProperties { get; private set; } = new();

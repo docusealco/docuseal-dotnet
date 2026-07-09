@@ -5,7 +5,7 @@ using global::System.Text.Json.Serialization;
 namespace Docuseal;
 
 [Serializable]
-public record GetSubmissionsResponseDataItem : IJsonOnDeserialized
+public record GetSubmissionsResponseSubmission : IJsonOnDeserialized
 {
     [JsonExtensionData]
     private readonly IDictionary<string, JsonElement> _extensionData =
@@ -27,7 +27,7 @@ public record GetSubmissionsResponseDataItem : IJsonOnDeserialized
     /// The source of the submission.
     /// </summary>
     [JsonPropertyName("source")]
-    public required GetSubmissionsResponseDataItemSource Source { get; set; }
+    public required GetSubmissionsResponseSubmissionSource Source { get; set; }
 
     /// <summary>
     /// Unique slug of the submission.
@@ -39,13 +39,13 @@ public record GetSubmissionsResponseDataItem : IJsonOnDeserialized
     /// The status of the submission.
     /// </summary>
     [JsonPropertyName("status")]
-    public required GetSubmissionsResponseDataItemStatus Status { get; set; }
+    public required GetSubmissionsResponseSubmissionStatus Status { get; set; }
 
     /// <summary>
     /// The order of submitters.
     /// </summary>
     [JsonPropertyName("submitters_order")]
-    public required GetSubmissionsResponseDataItemSubmittersOrder SubmittersOrder { get; set; }
+    public required GetSubmissionsResponseSubmissionSubmittersOrder SubmittersOrder { get; set; }
 
     /// <summary>
     /// Audit log file URL.
@@ -87,8 +87,8 @@ public record GetSubmissionsResponseDataItem : IJsonOnDeserialized
     /// The list of submitters.
     /// </summary>
     [JsonPropertyName("submitters")]
-    public IEnumerable<GetSubmissionsResponseDataItemSubmittersItem> Submitters { get; set; } =
-        new List<GetSubmissionsResponseDataItemSubmittersItem>();
+    public IEnumerable<GetSubmissionsResponseSubmissionSubmitter> Submitters { get; set; } =
+        new List<GetSubmissionsResponseSubmissionSubmitter>();
 
     [JsonPropertyName("template")]
     public SubmissionTemplate? Template { get; set; }
