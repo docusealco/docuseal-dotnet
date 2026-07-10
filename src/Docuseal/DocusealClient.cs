@@ -554,6 +554,92 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
+    private async Task<WithRawResponse<UpdateSubmissionResponse>> UpdateSubmissionAsyncCore(
+        UpdateSubmissionParams request,
+        RequestOptions? options = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var _queryString = new Docuseal.Core.QueryStringBuilder.Builder(capacity: 0)
+            .MergeAdditional(options?.AdditionalQueryParameters)
+            .Build();
+        var _headers = await new Docuseal.Core.HeadersBuilder.Builder()
+            .Add(_client.Options.Headers)
+            .Add(_client.Options.AdditionalHeaders)
+            .Add(options?.AdditionalHeaders)
+            .BuildAsync()
+            .ConfigureAwait(false);
+        var response = await _client
+            .SendRequestAsync(
+                new JsonRequest
+                {
+                    Method = HttpMethod.Put,
+                    Path = string.Format(
+                        "submissions/{0}",
+                        ValueConvert.ToPathParameterString(request.Id)
+                    ),
+                    Body = request,
+                    QueryString = _queryString,
+                    Headers = _headers,
+                    ContentType = "application/json",
+                    Options = options,
+                },
+                cancellationToken
+            )
+            .ConfigureAwait(false);
+        if (response.StatusCode is >= 200 and < 400)
+        {
+            var responseBody = await response
+                .Raw.Content.ReadAsStringAsync(cancellationToken)
+                .ConfigureAwait(false);
+            try
+            {
+                var responseData = JsonUtils.Deserialize<UpdateSubmissionResponse>(responseBody)!;
+                return new WithRawResponse<UpdateSubmissionResponse>()
+                {
+                    Data = responseData,
+                    RawResponse = new Docuseal.RawResponse()
+                    {
+                        StatusCode = response.Raw.StatusCode,
+                        Url = response.Raw.RequestMessage?.RequestUri ?? new Uri("about:blank"),
+                        Headers = ResponseHeaders.FromHttpResponseMessage(response.Raw),
+                    },
+                };
+            }
+            catch (JsonException e)
+            {
+                throw new DocusealClientApiException(
+                    "Failed to deserialize response",
+                    response.StatusCode,
+                    responseBody,
+                    e,
+                    rawResponse: new Docuseal.RawResponse()
+                    {
+                        StatusCode = response.Raw.StatusCode,
+                        Url = response.Raw.RequestMessage?.RequestUri ?? new Uri("about:blank"),
+                        Headers = ResponseHeaders.FromHttpResponseMessage(response.Raw),
+                    }
+                );
+            }
+        }
+        {
+            var responseBody = await response
+                .Raw.Content.ReadAsStringAsync(cancellationToken)
+                .ConfigureAwait(false);
+            throw new DocusealClientApiException(
+                $"Error with status code {response.StatusCode}",
+                response.StatusCode,
+                responseBody,
+                rawResponse: new Docuseal.RawResponse()
+                {
+                    StatusCode = response.Raw.StatusCode,
+                    Url = response.Raw.RequestMessage?.RequestUri ?? new Uri("about:blank"),
+                    Headers = ResponseHeaders.FromHttpResponseMessage(response.Raw),
+                }
+            );
+        }
+    }
+
     private async Task<WithRawResponse<ArchiveSubmissionResponse>> ArchiveSubmissionAsyncCore(
         ArchiveSubmissionParams request,
         RequestOptions? options = null,
@@ -2023,6 +2109,23 @@ public partial class DocusealClient : IDocusealClient
     {
         return new WithRawResponseTask<GetSubmissionResponse>(
             GetSubmissionAsyncCore(request, options, cancellationToken)
+        );
+    }
+
+    /// <summary>
+    /// The API endpoint allows you to update a submission: change its name, expiration date, and archive or unarchive it.
+    /// </summary>
+    /// <example><code>
+    /// await client.UpdateSubmissionAsync(new UpdateSubmissionParams { Id = 1 });
+    /// </code></example>
+    public WithRawResponseTask<UpdateSubmissionResponse> UpdateSubmissionAsync(
+        UpdateSubmissionParams request,
+        RequestOptions? options = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        return new WithRawResponseTask<UpdateSubmissionResponse>(
+            UpdateSubmissionAsyncCore(request, options, cancellationToken)
         );
     }
 

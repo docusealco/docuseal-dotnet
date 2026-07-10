@@ -57,6 +57,15 @@ public partial interface IDocusealClient
     );
 
     /// <summary>
+    /// The API endpoint allows you to update a submission: change its name, expiration date, and archive or unarchive it.
+    /// </summary>
+    WithRawResponseTask<UpdateSubmissionResponse> UpdateSubmissionAsync(
+        UpdateSubmissionParams request,
+        RequestOptions? options = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
     /// The API endpoint allows you to archive a submission.
     /// </summary>
     WithRawResponseTask<ArchiveSubmissionResponse> ArchiveSubmissionAsync(
