@@ -20,12 +20,14 @@ public record Pagination : IJsonOnDeserialized
     /// <summary>
     /// The ID of the item after which the next page starts.
     /// </summary>
+    [Nullable]
     [JsonPropertyName("next")]
     public int? Next { get; set; }
 
     /// <summary>
     /// The ID of the item before which the previous page ends.
     /// </summary>
+    [Nullable]
     [JsonPropertyName("prev")]
     public int? Prev { get; set; }
 

@@ -20,6 +20,7 @@ public record TemplateArchiveResult : IJsonOnDeserialized
     /// <summary>
     /// Date and time when the template was archived.
     /// </summary>
+    [Nullable]
     [JsonPropertyName("archived_at")]
     public string? ArchivedAt { get; set; }
 

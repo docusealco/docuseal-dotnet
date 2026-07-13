@@ -26,6 +26,7 @@ public record TemplateSummary : IJsonOnDeserialized
     /// <summary>
     /// Your application-specific unique string key to identify this template within your app.
     /// </summary>
+    [Nullable]
     [JsonPropertyName("external_id")]
     public string? ExternalId { get; set; }
 

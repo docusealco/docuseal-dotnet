@@ -15,24 +15,28 @@ public record UpdateTemplateParams
     /// <summary>
     /// The name of the template.
     /// </summary>
+    [Optional]
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
     /// The folder's name to which the template should be moved.
     /// </summary>
+    [Optional]
     [JsonPropertyName("folder_name")]
     public string? FolderName { get; set; }
 
     /// <summary>
     /// An array of submitter role names to update the template with.
     /// </summary>
+    [Optional]
     [JsonPropertyName("roles")]
     public IEnumerable<string>? Roles { get; set; }
 
     /// <summary>
     /// Set `false` to unarchive template.
     /// </summary>
+    [Optional]
     [JsonPropertyName("archived")]
     public bool? Archived { get; set; }
 

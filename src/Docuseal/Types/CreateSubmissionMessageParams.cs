@@ -17,12 +17,14 @@ public record CreateSubmissionMessageParams : IJsonOnDeserialized
     /// <summary>
     /// Custom signature request email subject.
     /// </summary>
+    [Optional]
     [JsonPropertyName("subject")]
     public string? Subject { get; set; }
 
     /// <summary>
     /// Custom signature request email body. Can include variables such as {{template.name}}, {{submission.name}}, {{submitter.link}}, {{account.name}}.
     /// </summary>
+    [Optional]
     [JsonPropertyName("body")]
     public string? Body { get; set; }
 

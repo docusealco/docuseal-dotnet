@@ -63,6 +63,7 @@ public record Template : IJsonOnDeserialized
     /// <summary>
     /// Date and time when the template was archived.
     /// </summary>
+    [Nullable]
     [JsonPropertyName("archived_at")]
     public string? ArchivedAt { get; set; }
 
@@ -87,6 +88,7 @@ public record Template : IJsonOnDeserialized
     /// <summary>
     /// Your application-specific unique string key to identify this template within your app.
     /// </summary>
+    [Nullable]
     [JsonPropertyName("external_id")]
     public string? ExternalId { get; set; }
 
@@ -105,6 +107,7 @@ public record Template : IJsonOnDeserialized
     /// <summary>
     /// Indicates if the template is accessible by link.
     /// </summary>
+    [Optional]
     [JsonPropertyName("shared_link")]
     public bool? SharedLink { get; set; }
 

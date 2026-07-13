@@ -20,6 +20,7 @@ public record SubmissionListItem : IJsonOnDeserialized
     /// <summary>
     /// Name of the document submission.
     /// </summary>
+    [Optional]
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
@@ -50,18 +51,21 @@ public record SubmissionListItem : IJsonOnDeserialized
     /// <summary>
     /// Audit log file URL.
     /// </summary>
+    [Nullable]
     [JsonPropertyName("audit_log_url")]
     public string? AuditLogUrl { get; set; }
 
     /// <summary>
     /// Combined PDF file URL with documents and Audit Log.
     /// </summary>
+    [Nullable]
     [JsonPropertyName("combined_document_url")]
     public string? CombinedDocumentUrl { get; set; }
 
     /// <summary>
     /// The date and time when the submission was completed.
     /// </summary>
+    [Nullable]
     [JsonPropertyName("completed_at")]
     public string? CompletedAt { get; set; }
 
@@ -80,12 +84,14 @@ public record SubmissionListItem : IJsonOnDeserialized
     /// <summary>
     /// The date and time when the submission was archived.
     /// </summary>
+    [Nullable]
     [JsonPropertyName("archived_at")]
     public string? ArchivedAt { get; set; }
 
     /// <summary>
     /// The date and time when the submission will expire and no longer be available for signing.
     /// </summary>
+    [Nullable]
     [JsonPropertyName("expire_at")]
     public string? ExpireAt { get; set; }
 
@@ -101,9 +107,11 @@ public record SubmissionListItem : IJsonOnDeserialized
     [JsonPropertyName("submitters")]
     public IEnumerable<SubmitterSummary> Submitters { get; set; } = new List<SubmitterSummary>();
 
+    [Optional]
     [JsonPropertyName("template")]
     public TemplateSummary? Template { get; set; }
 
+    [Optional]
     [JsonPropertyName("created_by_user")]
     public User? CreatedByUser { get; set; }
 

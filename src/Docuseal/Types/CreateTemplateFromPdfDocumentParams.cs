@@ -26,6 +26,7 @@ public record CreateTemplateFromPdfDocumentParams : IJsonOnDeserialized
     /// <summary>
     /// Fields are optional if you use {{...}} text tags to define fields in the document.
     /// </summary>
+    [Optional]
     [JsonPropertyName("fields")]
     public IEnumerable<CreateTemplateDocumentFieldParams>? Fields { get; set; }
 

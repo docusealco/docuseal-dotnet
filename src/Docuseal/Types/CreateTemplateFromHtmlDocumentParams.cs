@@ -20,6 +20,7 @@ public record CreateTemplateFromHtmlDocumentParams : IJsonOnDeserialized
     /// <summary>
     /// Document name. Random uuid will be assigned when not specified.
     /// </summary>
+    [Optional]
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 

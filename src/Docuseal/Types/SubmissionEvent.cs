@@ -38,6 +38,7 @@ public record SubmissionEvent : IJsonOnDeserialized
     /// <summary>
     /// Additional event details object.
     /// </summary>
+    [Optional]
     [JsonPropertyName("data")]
     public Dictionary<string, object?>? Data { get; set; }
 

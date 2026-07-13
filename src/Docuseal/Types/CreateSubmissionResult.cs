@@ -27,6 +27,7 @@ public record CreateSubmissionResult : IJsonOnDeserialized
     /// <summary>
     /// The date and time when the submission expires.
     /// </summary>
+    [Nullable]
     [JsonPropertyName("expire_at")]
     public string? ExpireAt { get; set; }
 

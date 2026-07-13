@@ -11,9 +11,11 @@ public record SubmitterList : IJsonOnDeserialized
     private readonly IDictionary<string, JsonElement> _extensionData =
         new Dictionary<string, JsonElement>();
 
+    [Optional]
     [JsonPropertyName("data")]
     public IEnumerable<Submitter>? Data { get; set; }
 
+    [Optional]
     [JsonPropertyName("pagination")]
     public Pagination? Pagination { get; set; }
 
