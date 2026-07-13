@@ -70,18 +70,18 @@ public record CreateSubmissionFromDocxParams
     /// An array of DOCX documents to create a submission.
     /// </summary>
     [JsonPropertyName("documents")]
-    public IEnumerable<CreateSubmissionFromDocxRequestDocument> Documents { get; set; } =
-        new List<CreateSubmissionFromDocxRequestDocument>();
+    public IEnumerable<CreateSubmissionFromDocxDocumentParams> Documents { get; set; } =
+        new List<CreateSubmissionFromDocxDocumentParams>();
 
     /// <summary>
     /// The list of submitters for the submission.
     /// </summary>
     [JsonPropertyName("submitters")]
-    public IEnumerable<CreateSubmissionFromPdfRequestSubmitter> Submitters { get; set; } =
-        new List<CreateSubmissionFromPdfRequestSubmitter>();
+    public IEnumerable<CreateSubmissionSubmitterParams> Submitters { get; set; } =
+        new List<CreateSubmissionSubmitterParams>();
 
     [JsonPropertyName("message")]
-    public CreateSubmissionFromPdfRequestMessage? Message { get; set; }
+    public CreateSubmissionMessageParams? Message { get; set; }
 
     /// <summary>
     /// Set `true` to merge the documents into a single PDF file.

@@ -64,18 +64,18 @@ public record CreateSubmissionFromHtmlParams
     /// The list of documents built from HTML. Can be used to create a submission with multiple documents.
     /// </summary>
     [JsonPropertyName("documents")]
-    public IEnumerable<CreateSubmissionFromHtmlRequestDocument> Documents { get; set; } =
-        new List<CreateSubmissionFromHtmlRequestDocument>();
+    public IEnumerable<CreateSubmissionFromHtmlDocumentParams> Documents { get; set; } =
+        new List<CreateSubmissionFromHtmlDocumentParams>();
 
     /// <summary>
     /// The list of submitters for the submission.
     /// </summary>
     [JsonPropertyName("submitters")]
-    public IEnumerable<CreateSubmissionFromPdfRequestSubmitter> Submitters { get; set; } =
-        new List<CreateSubmissionFromPdfRequestSubmitter>();
+    public IEnumerable<CreateSubmissionSubmitterParams> Submitters { get; set; } =
+        new List<CreateSubmissionSubmitterParams>();
 
     [JsonPropertyName("message")]
-    public CreateSubmissionFromPdfRequestMessage? Message { get; set; }
+    public CreateSubmissionMessageParams? Message { get; set; }
 
     /// <summary>
     /// Set `true` to merge the documents into a single PDF file.

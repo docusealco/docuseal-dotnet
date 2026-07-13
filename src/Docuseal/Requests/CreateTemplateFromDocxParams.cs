@@ -34,8 +34,8 @@ public record CreateTemplateFromDocxParams
     /// An array of DOCX documents to create a template.
     /// </summary>
     [JsonPropertyName("documents")]
-    public IEnumerable<CreateTemplateFromDocxRequestDocument> Documents { get; set; } =
-        new List<CreateTemplateFromDocxRequestDocument>();
+    public IEnumerable<CreateTemplateFromDocxDocumentParams> Documents { get; set; } =
+        new List<CreateTemplateFromDocxDocumentParams>();
 
     /// <inheritdoc />
     public override string ToString()

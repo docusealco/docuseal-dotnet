@@ -64,18 +64,18 @@ public record CreateSubmissionFromPdfParams
     /// An array of PDF documents to create a submission.
     /// </summary>
     [JsonPropertyName("documents")]
-    public IEnumerable<CreateSubmissionFromPdfRequestDocument> Documents { get; set; } =
-        new List<CreateSubmissionFromPdfRequestDocument>();
+    public IEnumerable<CreateSubmissionFromPdfDocumentParams> Documents { get; set; } =
+        new List<CreateSubmissionFromPdfDocumentParams>();
 
     /// <summary>
     /// The list of submitters for the submission.
     /// </summary>
     [JsonPropertyName("submitters")]
-    public IEnumerable<CreateSubmissionFromPdfRequestSubmitter> Submitters { get; set; } =
-        new List<CreateSubmissionFromPdfRequestSubmitter>();
+    public IEnumerable<CreateSubmissionSubmitterParams> Submitters { get; set; } =
+        new List<CreateSubmissionSubmitterParams>();
 
     [JsonPropertyName("message")]
-    public CreateSubmissionFromPdfRequestMessage? Message { get; set; }
+    public CreateSubmissionMessageParams? Message { get; set; }
 
     /// <summary>
     /// Remove PDF form fields from the documents.

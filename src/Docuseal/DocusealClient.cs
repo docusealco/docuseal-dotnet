@@ -36,7 +36,7 @@ public partial class DocusealClient : IDocusealClient
         _client = new RawClient(clientOptionsWithAuth);
     }
 
-    private async Task<WithRawResponse<GetTemplatesResponse>> GetTemplatesAsyncCore(
+    private async Task<WithRawResponse<TemplateList>> GetTemplatesAsyncCore(
         GetTemplatesParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -80,8 +80,8 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<GetTemplatesResponse>(responseBody)!;
-                return new WithRawResponse<GetTemplatesResponse>()
+                var responseData = JsonUtils.Deserialize<TemplateList>(responseBody)!;
+                return new WithRawResponse<TemplateList>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -126,7 +126,7 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<WithRawResponse<GetTemplateResponse>> GetTemplateAsyncCore(
+    private async Task<WithRawResponse<Template>> GetTemplateAsyncCore(
         GetTemplateParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -164,8 +164,8 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<GetTemplateResponse>(responseBody)!;
-                return new WithRawResponse<GetTemplateResponse>()
+                var responseData = JsonUtils.Deserialize<Template>(responseBody)!;
+                return new WithRawResponse<Template>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -210,7 +210,7 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<WithRawResponse<UpdateTemplateResponse>> UpdateTemplateAsyncCore(
+    private async Task<WithRawResponse<TemplateUpdateResult>> UpdateTemplateAsyncCore(
         UpdateTemplateParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -250,8 +250,8 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<UpdateTemplateResponse>(responseBody)!;
-                return new WithRawResponse<UpdateTemplateResponse>()
+                var responseData = JsonUtils.Deserialize<TemplateUpdateResult>(responseBody)!;
+                return new WithRawResponse<TemplateUpdateResult>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -296,7 +296,7 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<WithRawResponse<ArchiveTemplateResponse>> ArchiveTemplateAsyncCore(
+    private async Task<WithRawResponse<TemplateArchiveResult>> ArchiveTemplateAsyncCore(
         ArchiveTemplateParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -334,8 +334,8 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<ArchiveTemplateResponse>(responseBody)!;
-                return new WithRawResponse<ArchiveTemplateResponse>()
+                var responseData = JsonUtils.Deserialize<TemplateArchiveResult>(responseBody)!;
+                return new WithRawResponse<TemplateArchiveResult>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -380,7 +380,7 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<WithRawResponse<GetSubmissionsResponse>> GetSubmissionsAsyncCore(
+    private async Task<WithRawResponse<SubmissionList>> GetSubmissionsAsyncCore(
         GetSubmissionsParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -424,8 +424,8 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<GetSubmissionsResponse>(responseBody)!;
-                return new WithRawResponse<GetSubmissionsResponse>()
+                var responseData = JsonUtils.Deserialize<SubmissionList>(responseBody)!;
+                return new WithRawResponse<SubmissionList>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -470,7 +470,7 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<WithRawResponse<GetSubmissionResponse>> GetSubmissionAsyncCore(
+    private async Task<WithRawResponse<Submission>> GetSubmissionAsyncCore(
         GetSubmissionParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -508,8 +508,8 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<GetSubmissionResponse>(responseBody)!;
-                return new WithRawResponse<GetSubmissionResponse>()
+                var responseData = JsonUtils.Deserialize<Submission>(responseBody)!;
+                return new WithRawResponse<Submission>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -554,7 +554,7 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<WithRawResponse<UpdateSubmissionResponse>> UpdateSubmissionAsyncCore(
+    private async Task<WithRawResponse<SubmissionUpdateResult>> UpdateSubmissionAsyncCore(
         UpdateSubmissionParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -594,8 +594,8 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<UpdateSubmissionResponse>(responseBody)!;
-                return new WithRawResponse<UpdateSubmissionResponse>()
+                var responseData = JsonUtils.Deserialize<SubmissionUpdateResult>(responseBody)!;
+                return new WithRawResponse<SubmissionUpdateResult>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -640,7 +640,7 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<WithRawResponse<ArchiveSubmissionResponse>> ArchiveSubmissionAsyncCore(
+    private async Task<WithRawResponse<SubmissionArchiveResult>> ArchiveSubmissionAsyncCore(
         ArchiveSubmissionParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -678,8 +678,8 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<ArchiveSubmissionResponse>(responseBody)!;
-                return new WithRawResponse<ArchiveSubmissionResponse>()
+                var responseData = JsonUtils.Deserialize<SubmissionArchiveResult>(responseBody)!;
+                return new WithRawResponse<SubmissionArchiveResult>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -724,9 +724,7 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<
-        WithRawResponse<GetSubmissionDocumentsResponse>
-    > GetSubmissionDocumentsAsyncCore(
+    private async Task<WithRawResponse<SubmissionDocuments>> GetSubmissionDocumentsAsyncCore(
         GetSubmissionDocumentsParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -765,10 +763,8 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<GetSubmissionDocumentsResponse>(
-                    responseBody
-                )!;
-                return new WithRawResponse<GetSubmissionDocumentsResponse>()
+                var responseData = JsonUtils.Deserialize<SubmissionDocuments>(responseBody)!;
+                return new WithRawResponse<SubmissionDocuments>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -813,98 +809,7 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<
-        WithRawResponse<IEnumerable<CreateSubmissionsFromEmailsResponseSubmitter>>
-    > CreateSubmissionsFromEmailsAsyncCore(
-        CreateSubmissionsFromEmailsParams request,
-        RequestOptions? options = null,
-        CancellationToken cancellationToken = default
-    )
-    {
-        var _queryString = new Docuseal.Core.QueryStringBuilder.Builder(capacity: 0)
-            .MergeAdditional(options?.AdditionalQueryParameters)
-            .Build();
-        var _headers = await new Docuseal.Core.HeadersBuilder.Builder()
-            .Add(_client.Options.Headers)
-            .Add(_client.Options.AdditionalHeaders)
-            .Add(options?.AdditionalHeaders)
-            .BuildAsync()
-            .ConfigureAwait(false);
-        var response = await _client
-            .SendRequestAsync(
-                new JsonRequest
-                {
-                    Method = HttpMethod.Post,
-                    Path = "submissions/emails",
-                    Body = request,
-                    QueryString = _queryString,
-                    Headers = _headers,
-                    ContentType = "application/json",
-                    Options = options,
-                },
-                cancellationToken
-            )
-            .ConfigureAwait(false);
-        if (response.StatusCode is >= 200 and < 400)
-        {
-            var responseBody = await response
-                .Raw.Content.ReadAsStringAsync(cancellationToken)
-                .ConfigureAwait(false);
-            try
-            {
-                var responseData = JsonUtils.Deserialize<
-                    IEnumerable<CreateSubmissionsFromEmailsResponseSubmitter>
-                >(responseBody)!;
-                return new WithRawResponse<
-                    IEnumerable<CreateSubmissionsFromEmailsResponseSubmitter>
-                >()
-                {
-                    Data = responseData,
-                    RawResponse = new Docuseal.RawResponse()
-                    {
-                        StatusCode = response.Raw.StatusCode,
-                        Url = response.Raw.RequestMessage?.RequestUri ?? new Uri("about:blank"),
-                        Headers = ResponseHeaders.FromHttpResponseMessage(response.Raw),
-                    },
-                };
-            }
-            catch (JsonException e)
-            {
-                throw new DocusealClientApiException(
-                    "Failed to deserialize response",
-                    response.StatusCode,
-                    responseBody,
-                    e,
-                    rawResponse: new Docuseal.RawResponse()
-                    {
-                        StatusCode = response.Raw.StatusCode,
-                        Url = response.Raw.RequestMessage?.RequestUri ?? new Uri("about:blank"),
-                        Headers = ResponseHeaders.FromHttpResponseMessage(response.Raw),
-                    }
-                );
-            }
-        }
-        {
-            var responseBody = await response
-                .Raw.Content.ReadAsStringAsync(cancellationToken)
-                .ConfigureAwait(false);
-            throw new DocusealClientApiException(
-                $"Error with status code {response.StatusCode}",
-                response.StatusCode,
-                responseBody,
-                rawResponse: new Docuseal.RawResponse()
-                {
-                    StatusCode = response.Raw.StatusCode,
-                    Url = response.Raw.RequestMessage?.RequestUri ?? new Uri("about:blank"),
-                    Headers = ResponseHeaders.FromHttpResponseMessage(response.Raw),
-                }
-            );
-        }
-    }
-
-    private async Task<
-        WithRawResponse<CreateSubmissionFromPdfResponse>
-    > CreateSubmissionFromPdfAsyncCore(
+    private async Task<WithRawResponse<SubmissionCreateResult>> CreateSubmissionFromPdfAsyncCore(
         CreateSubmissionFromPdfParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -941,10 +846,8 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<CreateSubmissionFromPdfResponse>(
-                    responseBody
-                )!;
-                return new WithRawResponse<CreateSubmissionFromPdfResponse>()
+                var responseData = JsonUtils.Deserialize<SubmissionCreateResult>(responseBody)!;
+                return new WithRawResponse<SubmissionCreateResult>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -989,9 +892,7 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<
-        WithRawResponse<CreateSubmissionFromPdfResponse>
-    > CreateSubmissionFromDocxAsyncCore(
+    private async Task<WithRawResponse<SubmissionCreateResult>> CreateSubmissionFromDocxAsyncCore(
         CreateSubmissionFromDocxParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -1028,10 +929,8 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<CreateSubmissionFromPdfResponse>(
-                    responseBody
-                )!;
-                return new WithRawResponse<CreateSubmissionFromPdfResponse>()
+                var responseData = JsonUtils.Deserialize<SubmissionCreateResult>(responseBody)!;
+                return new WithRawResponse<SubmissionCreateResult>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -1076,9 +975,7 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<
-        WithRawResponse<CreateSubmissionFromPdfResponse>
-    > CreateSubmissionFromHtmlAsyncCore(
+    private async Task<WithRawResponse<SubmissionCreateResult>> CreateSubmissionFromHtmlAsyncCore(
         CreateSubmissionFromHtmlParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -1115,10 +1012,8 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<CreateSubmissionFromPdfResponse>(
-                    responseBody
-                )!;
-                return new WithRawResponse<CreateSubmissionFromPdfResponse>()
+                var responseData = JsonUtils.Deserialize<SubmissionCreateResult>(responseBody)!;
+                return new WithRawResponse<SubmissionCreateResult>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -1163,7 +1058,7 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<WithRawResponse<GetSubmitterResponse>> GetSubmitterAsyncCore(
+    private async Task<WithRawResponse<Submitter>> GetSubmitterAsyncCore(
         GetSubmitterParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -1201,8 +1096,8 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<GetSubmitterResponse>(responseBody)!;
-                return new WithRawResponse<GetSubmitterResponse>()
+                var responseData = JsonUtils.Deserialize<Submitter>(responseBody)!;
+                return new WithRawResponse<Submitter>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -1247,7 +1142,7 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<WithRawResponse<UpdateSubmitterResponse>> UpdateSubmitterAsyncCore(
+    private async Task<WithRawResponse<SubmitterUpdateResult>> UpdateSubmitterAsyncCore(
         UpdateSubmitterParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -1287,8 +1182,8 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<UpdateSubmitterResponse>(responseBody)!;
-                return new WithRawResponse<UpdateSubmitterResponse>()
+                var responseData = JsonUtils.Deserialize<SubmitterUpdateResult>(responseBody)!;
+                return new WithRawResponse<SubmitterUpdateResult>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -1333,7 +1228,7 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<WithRawResponse<GetSubmittersResponse>> GetSubmittersAsyncCore(
+    private async Task<WithRawResponse<SubmitterList>> GetSubmittersAsyncCore(
         GetSubmittersParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -1377,8 +1272,8 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<GetSubmittersResponse>(responseBody)!;
-                return new WithRawResponse<GetSubmittersResponse>()
+                var responseData = JsonUtils.Deserialize<SubmitterList>(responseBody)!;
+                return new WithRawResponse<SubmitterList>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -1423,8 +1318,8 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<WithRawResponse<GetTemplateResponse>> AddDocumentToTemplateAsyncCore(
-        AddDocumentToTemplateParams request,
+    private async Task<WithRawResponse<Template>> UpdateTemplateDocumentsAsyncCore(
+        UpdateTemplateDocumentsParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
@@ -1463,8 +1358,8 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<GetTemplateResponse>(responseBody)!;
-                return new WithRawResponse<GetTemplateResponse>()
+                var responseData = JsonUtils.Deserialize<Template>(responseBody)!;
+                return new WithRawResponse<Template>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -1509,7 +1404,7 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<WithRawResponse<GetTemplateResponse>> CloneTemplateAsyncCore(
+    private async Task<WithRawResponse<Template>> CloneTemplateAsyncCore(
         CloneTemplateParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -1549,8 +1444,8 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<GetTemplateResponse>(responseBody)!;
-                return new WithRawResponse<GetTemplateResponse>()
+                var responseData = JsonUtils.Deserialize<Template>(responseBody)!;
+                return new WithRawResponse<Template>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -1595,7 +1490,7 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<WithRawResponse<GetTemplateResponse>> CreateTemplateFromHtmlAsyncCore(
+    private async Task<WithRawResponse<Template>> CreateTemplateFromHtmlAsyncCore(
         CreateTemplateFromHtmlParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -1632,8 +1527,8 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<GetTemplateResponse>(responseBody)!;
-                return new WithRawResponse<GetTemplateResponse>()
+                var responseData = JsonUtils.Deserialize<Template>(responseBody)!;
+                return new WithRawResponse<Template>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -1678,7 +1573,7 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<WithRawResponse<GetTemplateResponse>> CreateTemplateFromDocxAsyncCore(
+    private async Task<WithRawResponse<Template>> CreateTemplateFromDocxAsyncCore(
         CreateTemplateFromDocxParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -1715,8 +1610,8 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<GetTemplateResponse>(responseBody)!;
-                return new WithRawResponse<GetTemplateResponse>()
+                var responseData = JsonUtils.Deserialize<Template>(responseBody)!;
+                return new WithRawResponse<Template>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -1761,7 +1656,7 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<WithRawResponse<GetTemplateResponse>> CreateTemplateFromPdfAsyncCore(
+    private async Task<WithRawResponse<Template>> CreateTemplateFromPdfAsyncCore(
         CreateTemplateFromPdfParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -1798,8 +1693,8 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<GetTemplateResponse>(responseBody)!;
-                return new WithRawResponse<GetTemplateResponse>()
+                var responseData = JsonUtils.Deserialize<Template>(responseBody)!;
+                return new WithRawResponse<Template>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -1844,7 +1739,7 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<WithRawResponse<GetTemplateResponse>> MergeTemplateAsyncCore(
+    private async Task<WithRawResponse<Template>> MergeTemplateAsyncCore(
         MergeTemplateParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -1881,8 +1776,8 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<GetTemplateResponse>(responseBody)!;
-                return new WithRawResponse<GetTemplateResponse>()
+                var responseData = JsonUtils.Deserialize<Template>(responseBody)!;
+                return new WithRawResponse<Template>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -1927,7 +1822,7 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<WithRawResponse<CreateSubmissionResponse>> CreateSubmissionAsyncCore(
+    private async Task<WithRawResponse<CreateSubmissionResult>> CreateSubmissionAsyncCore(
         CreateSubmissionParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -1964,8 +1859,8 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<CreateSubmissionResponse>(responseBody)!;
-                return new WithRawResponse<CreateSubmissionResponse>()
+                var responseData = JsonUtils.Deserialize<CreateSubmissionResult>(responseBody)!;
+                return new WithRawResponse<CreateSubmissionResult>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -2016,13 +1911,13 @@ public partial class DocusealClient : IDocusealClient
     /// <example><code>
     /// await client.GetTemplatesAsync(new GetTemplatesParams { Slug = "opaKWh8WWTAcVG" });
     /// </code></example>
-    public WithRawResponseTask<GetTemplatesResponse> GetTemplatesAsync(
+    public WithRawResponseTask<TemplateList> GetTemplatesAsync(
         GetTemplatesParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<GetTemplatesResponse>(
+        return new WithRawResponseTask<TemplateList>(
             GetTemplatesAsyncCore(request, options, cancellationToken)
         );
     }
@@ -2033,13 +1928,13 @@ public partial class DocusealClient : IDocusealClient
     /// <example><code>
     /// await client.GetTemplateAsync(new GetTemplateParams { Id = 1 });
     /// </code></example>
-    public WithRawResponseTask<GetTemplateResponse> GetTemplateAsync(
+    public WithRawResponseTask<Template> GetTemplateAsync(
         GetTemplateParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<GetTemplateResponse>(
+        return new WithRawResponseTask<Template>(
             GetTemplateAsyncCore(request, options, cancellationToken)
         );
     }
@@ -2050,13 +1945,13 @@ public partial class DocusealClient : IDocusealClient
     /// <example><code>
     /// await client.UpdateTemplateAsync(new UpdateTemplateParams { Id = 1 });
     /// </code></example>
-    public WithRawResponseTask<UpdateTemplateResponse> UpdateTemplateAsync(
+    public WithRawResponseTask<TemplateUpdateResult> UpdateTemplateAsync(
         UpdateTemplateParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<UpdateTemplateResponse>(
+        return new WithRawResponseTask<TemplateUpdateResult>(
             UpdateTemplateAsyncCore(request, options, cancellationToken)
         );
     }
@@ -2067,13 +1962,13 @@ public partial class DocusealClient : IDocusealClient
     /// <example><code>
     /// await client.ArchiveTemplateAsync(new ArchiveTemplateParams { Id = 1 });
     /// </code></example>
-    public WithRawResponseTask<ArchiveTemplateResponse> ArchiveTemplateAsync(
+    public WithRawResponseTask<TemplateArchiveResult> ArchiveTemplateAsync(
         ArchiveTemplateParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<ArchiveTemplateResponse>(
+        return new WithRawResponseTask<TemplateArchiveResult>(
             ArchiveTemplateAsyncCore(request, options, cancellationToken)
         );
     }
@@ -2084,13 +1979,13 @@ public partial class DocusealClient : IDocusealClient
     /// <example><code>
     /// await client.GetSubmissionsAsync(new GetSubmissionsParams { Slug = "NtLDQM7eJX2ZMd" });
     /// </code></example>
-    public WithRawResponseTask<GetSubmissionsResponse> GetSubmissionsAsync(
+    public WithRawResponseTask<SubmissionList> GetSubmissionsAsync(
         GetSubmissionsParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<GetSubmissionsResponse>(
+        return new WithRawResponseTask<SubmissionList>(
             GetSubmissionsAsyncCore(request, options, cancellationToken)
         );
     }
@@ -2101,13 +1996,13 @@ public partial class DocusealClient : IDocusealClient
     /// <example><code>
     /// await client.GetSubmissionAsync(new GetSubmissionParams { Id = 1 });
     /// </code></example>
-    public WithRawResponseTask<GetSubmissionResponse> GetSubmissionAsync(
+    public WithRawResponseTask<Submission> GetSubmissionAsync(
         GetSubmissionParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<GetSubmissionResponse>(
+        return new WithRawResponseTask<Submission>(
             GetSubmissionAsyncCore(request, options, cancellationToken)
         );
     }
@@ -2118,13 +2013,13 @@ public partial class DocusealClient : IDocusealClient
     /// <example><code>
     /// await client.UpdateSubmissionAsync(new UpdateSubmissionParams { Id = 1 });
     /// </code></example>
-    public WithRawResponseTask<UpdateSubmissionResponse> UpdateSubmissionAsync(
+    public WithRawResponseTask<SubmissionUpdateResult> UpdateSubmissionAsync(
         UpdateSubmissionParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<UpdateSubmissionResponse>(
+        return new WithRawResponseTask<SubmissionUpdateResult>(
             UpdateSubmissionAsyncCore(request, options, cancellationToken)
         );
     }
@@ -2135,13 +2030,13 @@ public partial class DocusealClient : IDocusealClient
     /// <example><code>
     /// await client.ArchiveSubmissionAsync(new ArchiveSubmissionParams { Id = 1 });
     /// </code></example>
-    public WithRawResponseTask<ArchiveSubmissionResponse> ArchiveSubmissionAsync(
+    public WithRawResponseTask<SubmissionArchiveResult> ArchiveSubmissionAsync(
         ArchiveSubmissionParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<ArchiveSubmissionResponse>(
+        return new WithRawResponseTask<SubmissionArchiveResult>(
             ArchiveSubmissionAsyncCore(request, options, cancellationToken)
         );
     }
@@ -2152,35 +2047,14 @@ public partial class DocusealClient : IDocusealClient
     /// <example><code>
     /// await client.GetSubmissionDocumentsAsync(new GetSubmissionDocumentsParams { Id = 1 });
     /// </code></example>
-    public WithRawResponseTask<GetSubmissionDocumentsResponse> GetSubmissionDocumentsAsync(
+    public WithRawResponseTask<SubmissionDocuments> GetSubmissionDocumentsAsync(
         GetSubmissionDocumentsParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<GetSubmissionDocumentsResponse>(
+        return new WithRawResponseTask<SubmissionDocuments>(
             GetSubmissionDocumentsAsyncCore(request, options, cancellationToken)
-        );
-    }
-
-    /// <summary>
-    /// This API endpoint allows you to create submissions for a document template and send them to the specified email addresses. This is a simplified version of the POST /submissions API to be used with Zapier or other automation tools.
-    /// </summary>
-    /// <example><code>
-    /// await client.CreateSubmissionsFromEmailsAsync(
-    ///     new CreateSubmissionsFromEmailsParams { TemplateId = 1000001, Emails = "{{emails}}" }
-    /// );
-    /// </code></example>
-    public WithRawResponseTask<
-        IEnumerable<CreateSubmissionsFromEmailsResponseSubmitter>
-    > CreateSubmissionsFromEmailsAsync(
-        CreateSubmissionsFromEmailsParams request,
-        RequestOptions? options = null,
-        CancellationToken cancellationToken = default
-    )
-    {
-        return new WithRawResponseTask<IEnumerable<CreateSubmissionsFromEmailsResponseSubmitter>>(
-            CreateSubmissionsFromEmailsAsyncCore(request, options, cancellationToken)
         );
     }
 
@@ -2191,24 +2065,24 @@ public partial class DocusealClient : IDocusealClient
     /// await client.CreateSubmissionFromPdfAsync(
     ///     new CreateSubmissionFromPdfParams
     ///     {
-    ///         Documents = new List&lt;CreateSubmissionFromPdfRequestDocument&gt;()
+    ///         Documents = new List&lt;CreateSubmissionFromPdfDocumentParams&gt;()
     ///         {
-    ///             new CreateSubmissionFromPdfRequestDocument { Name = "name", File = "base64" },
+    ///             new CreateSubmissionFromPdfDocumentParams { Name = "name", File = "base64" },
     ///         },
-    ///         Submitters = new List&lt;CreateSubmissionFromPdfRequestSubmitter&gt;()
+    ///         Submitters = new List&lt;CreateSubmissionSubmitterParams&gt;()
     ///         {
-    ///             new CreateSubmissionFromPdfRequestSubmitter(),
+    ///             new CreateSubmissionSubmitterParams(),
     ///         },
     ///     }
     /// );
     /// </code></example>
-    public WithRawResponseTask<CreateSubmissionFromPdfResponse> CreateSubmissionFromPdfAsync(
+    public WithRawResponseTask<SubmissionCreateResult> CreateSubmissionFromPdfAsync(
         CreateSubmissionFromPdfParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<CreateSubmissionFromPdfResponse>(
+        return new WithRawResponseTask<SubmissionCreateResult>(
             CreateSubmissionFromPdfAsyncCore(request, options, cancellationToken)
         );
     }
@@ -2220,24 +2094,24 @@ public partial class DocusealClient : IDocusealClient
     /// await client.CreateSubmissionFromDocxAsync(
     ///     new CreateSubmissionFromDocxParams
     ///     {
-    ///         Documents = new List&lt;CreateSubmissionFromDocxRequestDocument&gt;()
+    ///         Documents = new List&lt;CreateSubmissionFromDocxDocumentParams&gt;()
     ///         {
-    ///             new CreateSubmissionFromDocxRequestDocument { Name = "name", File = "base64" },
+    ///             new CreateSubmissionFromDocxDocumentParams { Name = "name", File = "base64" },
     ///         },
-    ///         Submitters = new List&lt;CreateSubmissionFromPdfRequestSubmitter&gt;()
+    ///         Submitters = new List&lt;CreateSubmissionSubmitterParams&gt;()
     ///         {
-    ///             new CreateSubmissionFromPdfRequestSubmitter(),
+    ///             new CreateSubmissionSubmitterParams(),
     ///         },
     ///     }
     /// );
     /// </code></example>
-    public WithRawResponseTask<CreateSubmissionFromPdfResponse> CreateSubmissionFromDocxAsync(
+    public WithRawResponseTask<SubmissionCreateResult> CreateSubmissionFromDocxAsync(
         CreateSubmissionFromDocxParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<CreateSubmissionFromPdfResponse>(
+        return new WithRawResponseTask<SubmissionCreateResult>(
             CreateSubmissionFromDocxAsyncCore(request, options, cancellationToken)
         );
     }
@@ -2249,28 +2123,28 @@ public partial class DocusealClient : IDocusealClient
     /// await client.CreateSubmissionFromHtmlAsync(
     ///     new CreateSubmissionFromHtmlParams
     ///     {
-    ///         Documents = new List&lt;CreateSubmissionFromHtmlRequestDocument&gt;()
+    ///         Documents = new List&lt;CreateSubmissionFromHtmlDocumentParams&gt;()
     ///         {
-    ///             new CreateSubmissionFromHtmlRequestDocument
+    ///             new CreateSubmissionFromHtmlDocumentParams
     ///             {
     ///                 Html =
     ///                     "<para>Lorem Ipsum is simply dummy text of the\n&lt;text-field\n  name=\"Industry\"\n  role=\"First Party\"\n  required=\"false\"\n  style=\"width: 80px; height: 16px; display: inline-block; margin-bottom: -4px\"&gt;\n&lt;/text-field&gt;\nand typesetting industry</para>\n",
     ///             },
     ///         },
-    ///         Submitters = new List&lt;CreateSubmissionFromPdfRequestSubmitter&gt;()
+    ///         Submitters = new List&lt;CreateSubmissionSubmitterParams&gt;()
     ///         {
-    ///             new CreateSubmissionFromPdfRequestSubmitter(),
+    ///             new CreateSubmissionSubmitterParams(),
     ///         },
     ///     }
     /// );
     /// </code></example>
-    public WithRawResponseTask<CreateSubmissionFromPdfResponse> CreateSubmissionFromHtmlAsync(
+    public WithRawResponseTask<SubmissionCreateResult> CreateSubmissionFromHtmlAsync(
         CreateSubmissionFromHtmlParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<CreateSubmissionFromPdfResponse>(
+        return new WithRawResponseTask<SubmissionCreateResult>(
             CreateSubmissionFromHtmlAsyncCore(request, options, cancellationToken)
         );
     }
@@ -2281,13 +2155,13 @@ public partial class DocusealClient : IDocusealClient
     /// <example><code>
     /// await client.GetSubmitterAsync(new GetSubmitterParams { Id = 1 });
     /// </code></example>
-    public WithRawResponseTask<GetSubmitterResponse> GetSubmitterAsync(
+    public WithRawResponseTask<Submitter> GetSubmitterAsync(
         GetSubmitterParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<GetSubmitterResponse>(
+        return new WithRawResponseTask<Submitter>(
             GetSubmitterAsyncCore(request, options, cancellationToken)
         );
     }
@@ -2298,13 +2172,13 @@ public partial class DocusealClient : IDocusealClient
     /// <example><code>
     /// await client.UpdateSubmitterAsync(new UpdateSubmitterParams { Id = 1 });
     /// </code></example>
-    public WithRawResponseTask<UpdateSubmitterResponse> UpdateSubmitterAsync(
+    public WithRawResponseTask<SubmitterUpdateResult> UpdateSubmitterAsync(
         UpdateSubmitterParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<UpdateSubmitterResponse>(
+        return new WithRawResponseTask<SubmitterUpdateResult>(
             UpdateSubmitterAsyncCore(request, options, cancellationToken)
         );
     }
@@ -2322,13 +2196,13 @@ public partial class DocusealClient : IDocusealClient
     ///     }
     /// );
     /// </code></example>
-    public WithRawResponseTask<GetSubmittersResponse> GetSubmittersAsync(
+    public WithRawResponseTask<SubmitterList> GetSubmittersAsync(
         GetSubmittersParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<GetSubmittersResponse>(
+        return new WithRawResponseTask<SubmitterList>(
             GetSubmittersAsyncCore(request, options, cancellationToken)
         );
     }
@@ -2337,16 +2211,16 @@ public partial class DocusealClient : IDocusealClient
     /// The API endpoint allows you to add, remove or replace documents in the template with provided PDF/DOCX file or HTML content.
     /// </summary>
     /// <example><code>
-    /// await client.AddDocumentToTemplateAsync(new AddDocumentToTemplateParams { Id = 1 });
+    /// await client.UpdateTemplateDocumentsAsync(new UpdateTemplateDocumentsParams { Id = 1 });
     /// </code></example>
-    public WithRawResponseTask<GetTemplateResponse> AddDocumentToTemplateAsync(
-        AddDocumentToTemplateParams request,
+    public WithRawResponseTask<Template> UpdateTemplateDocumentsAsync(
+        UpdateTemplateDocumentsParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<GetTemplateResponse>(
-            AddDocumentToTemplateAsyncCore(request, options, cancellationToken)
+        return new WithRawResponseTask<Template>(
+            UpdateTemplateDocumentsAsyncCore(request, options, cancellationToken)
         );
     }
 
@@ -2356,13 +2230,13 @@ public partial class DocusealClient : IDocusealClient
     /// <example><code>
     /// await client.CloneTemplateAsync(new CloneTemplateParams { Id = 1 });
     /// </code></example>
-    public WithRawResponseTask<GetTemplateResponse> CloneTemplateAsync(
+    public WithRawResponseTask<Template> CloneTemplateAsync(
         CloneTemplateParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<GetTemplateResponse>(
+        return new WithRawResponseTask<Template>(
             CloneTemplateAsyncCore(request, options, cancellationToken)
         );
     }
@@ -2371,21 +2245,15 @@ public partial class DocusealClient : IDocusealClient
     /// The API endpoint provides the functionality to seamlessly generate a PDF document template by utilizing the provided HTML content while incorporating pre-defined fields.<br/><b>Related Guides</b><br/><see href="https://www.docuseal.com/guides/create-pdf-document-fillable-form-with-html-api">Create PDF document fillable form with HTML</see>
     /// </summary>
     /// <example><code>
-    /// await client.CreateTemplateFromHtmlAsync(
-    ///     new CreateTemplateFromHtmlParams
-    ///     {
-    ///         Html =
-    ///             "<para>Lorem Ipsum is simply dummy text of the\n&lt;text-field\n  name=\"Industry\"\n  role=\"First Party\"\n  required=\"false\"\n  style=\"width: 80px; height: 16px; display: inline-block; margin-bottom: -4px\"&gt;\n&lt;/text-field&gt;\nand typesetting industry</para>\n",
-    ///     }
-    /// );
+    /// await client.CreateTemplateFromHtmlAsync(new CreateTemplateFromHtmlParams());
     /// </code></example>
-    public WithRawResponseTask<GetTemplateResponse> CreateTemplateFromHtmlAsync(
+    public WithRawResponseTask<Template> CreateTemplateFromHtmlAsync(
         CreateTemplateFromHtmlParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<GetTemplateResponse>(
+        return new WithRawResponseTask<Template>(
             CreateTemplateFromHtmlAsyncCore(request, options, cancellationToken)
         );
     }
@@ -2397,20 +2265,20 @@ public partial class DocusealClient : IDocusealClient
     /// await client.CreateTemplateFromDocxAsync(
     ///     new CreateTemplateFromDocxParams
     ///     {
-    ///         Documents = new List&lt;CreateTemplateFromDocxRequestDocument&gt;()
+    ///         Documents = new List&lt;CreateTemplateFromDocxDocumentParams&gt;()
     ///         {
-    ///             new CreateTemplateFromDocxRequestDocument { Name = "name", File = "base64" },
+    ///             new CreateTemplateFromDocxDocumentParams { Name = "name", File = "base64" },
     ///         },
     ///     }
     /// );
     /// </code></example>
-    public WithRawResponseTask<GetTemplateResponse> CreateTemplateFromDocxAsync(
+    public WithRawResponseTask<Template> CreateTemplateFromDocxAsync(
         CreateTemplateFromDocxParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<GetTemplateResponse>(
+        return new WithRawResponseTask<Template>(
             CreateTemplateFromDocxAsyncCore(request, options, cancellationToken)
         );
     }
@@ -2422,20 +2290,20 @@ public partial class DocusealClient : IDocusealClient
     /// await client.CreateTemplateFromPdfAsync(
     ///     new CreateTemplateFromPdfParams
     ///     {
-    ///         Documents = new List&lt;CreateTemplateFromPdfRequestDocument&gt;()
+    ///         Documents = new List&lt;CreateTemplateFromPdfDocumentParams&gt;()
     ///         {
-    ///             new CreateTemplateFromPdfRequestDocument { Name = "name", File = "base64" },
+    ///             new CreateTemplateFromPdfDocumentParams { Name = "name", File = "base64" },
     ///         },
     ///     }
     /// );
     /// </code></example>
-    public WithRawResponseTask<GetTemplateResponse> CreateTemplateFromPdfAsync(
+    public WithRawResponseTask<Template> CreateTemplateFromPdfAsync(
         CreateTemplateFromPdfParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<GetTemplateResponse>(
+        return new WithRawResponseTask<Template>(
             CreateTemplateFromPdfAsyncCore(request, options, cancellationToken)
         );
     }
@@ -2451,13 +2319,13 @@ public partial class DocusealClient : IDocusealClient
     ///     }
     /// );
     /// </code></example>
-    public WithRawResponseTask<GetTemplateResponse> MergeTemplateAsync(
+    public WithRawResponseTask<Template> MergeTemplateAsync(
         MergeTemplateParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<GetTemplateResponse>(
+        return new WithRawResponseTask<Template>(
             MergeTemplateAsyncCore(request, options, cancellationToken)
         );
     }
@@ -2470,20 +2338,20 @@ public partial class DocusealClient : IDocusealClient
     ///     new CreateSubmissionParams
     ///     {
     ///         TemplateId = 1000001,
-    ///         Submitters = new List&lt;CreateSubmissionRequestSubmitter&gt;()
+    ///         Submitters = new List&lt;CreateSubmissionSubmitterParams&gt;()
     ///         {
-    ///             new CreateSubmissionRequestSubmitter(),
+    ///             new CreateSubmissionSubmitterParams(),
     ///         },
     ///     }
     /// );
     /// </code></example>
-    public WithRawResponseTask<CreateSubmissionResponse> CreateSubmissionAsync(
+    public WithRawResponseTask<CreateSubmissionResult> CreateSubmissionAsync(
         CreateSubmissionParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<CreateSubmissionResponse>(
+        return new WithRawResponseTask<CreateSubmissionResult>(
             CreateSubmissionAsyncCore(request, options, cancellationToken)
         );
     }

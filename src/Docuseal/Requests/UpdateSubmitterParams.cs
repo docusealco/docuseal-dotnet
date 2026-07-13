@@ -91,13 +91,13 @@ public record UpdateSubmitterParams
     public bool? RequireEmail2Fa { get; set; }
 
     [JsonPropertyName("message")]
-    public CreateSubmissionsFromEmailsRequestMessage? Message { get; set; }
+    public UpdateSubmitterMessageParams? Message { get; set; }
 
     /// <summary>
     /// A list of configurations for template document form fields.
     /// </summary>
     [JsonPropertyName("fields")]
-    public IEnumerable<UpdateSubmitterRequestField>? Fields { get; set; }
+    public IEnumerable<UpdateSubmitterFieldParams>? Fields { get; set; }
 
     /// <inheritdoc />
     public override string ToString()

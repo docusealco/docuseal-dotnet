@@ -10,7 +10,7 @@ public record CreateTemplateFromHtmlParams
     /// HTML template with field tags.
     /// </summary>
     [JsonPropertyName("html")]
-    public required string Html { get; set; }
+    public string? Html { get; set; }
 
     /// <summary>
     /// HTML template of the header to be displayed on every page.
@@ -58,7 +58,7 @@ public record CreateTemplateFromHtmlParams
     /// The list of documents built from HTML. Can be used to create a template with multiple documents. Leave `documents` param empty when using a top-level `html` param for a template with a single document.
     /// </summary>
     [JsonPropertyName("documents")]
-    public IEnumerable<CreateTemplateFromHtmlRequestDocument>? Documents { get; set; }
+    public IEnumerable<CreateTemplateFromHtmlDocumentParams>? Documents { get; set; }
 
     /// <inheritdoc />
     public override string ToString()

@@ -1,7 +1,6 @@
 using Docuseal.Core;
 using global::System.Text.Json;
 using global::System.Text.Json.Serialization;
-using OneOf;
 
 namespace Docuseal;
 
@@ -25,40 +24,40 @@ public record FieldPreferences : IJsonOnDeserialized
     /// Font type of the field value.
     /// </summary>
     [JsonPropertyName("font_type")]
-    public FieldPreferencesFontType? FontType { get; set; }
+    public string? FontType { get; set; }
 
     /// <summary>
     /// Font family of the field value.
     /// </summary>
     [JsonPropertyName("font")]
-    public FieldPreferencesFont? Font { get; set; }
+    public string? Font { get; set; }
 
     /// <summary>
     /// Font color of the field value.
     /// </summary>
     [JsonPropertyName("color")]
-    public FieldPreferencesColor? Color { get; set; }
+    public string? Color { get; set; }
 
     /// <summary>
     /// Field box background color.
     /// </summary>
     [JsonPropertyName("background")]
-    public FieldPreferencesBackground? Background { get; set; }
+    public string? Background { get; set; }
 
     /// <summary>
     /// Horizontal alignment of the field text value.
     /// </summary>
     [JsonPropertyName("align")]
-    public FieldPreferencesAlign? Align { get; set; }
+    public string? Align { get; set; }
 
     /// <summary>
     /// Vertical alignment of the field text value.
     /// </summary>
     [JsonPropertyName("valign")]
-    public FieldPreferencesValign? Valign { get; set; }
+    public string? Valign { get; set; }
 
     /// <summary>
-    /// The data format for different field types.<br/>- Date field: accepts formats such as DD/MM/YYYY (default: MM/DD/YYYY).<br/>- Signature field: accepts drawn, typed, drawn_or_typed (default), or upload.<br/>- Number field: accepts currency formats such as usd, eur, gbp.
+    /// The data format for different field types.
     /// </summary>
     [JsonPropertyName("format")]
     public string? Format { get; set; }
@@ -73,13 +72,13 @@ public record FieldPreferences : IJsonOnDeserialized
     /// Currency value of the payment field. Only for payment fields.
     /// </summary>
     [JsonPropertyName("currency")]
-    public FieldPreferencesCurrency? Currency { get; set; }
+    public string? Currency { get; set; }
 
     /// <summary>
-    /// Set `true` to make sensitive data masked on the document.
+    /// Indicates if the field is masked on the document.
     /// </summary>
     [JsonPropertyName("mask")]
-    public OneOf<int, bool>? Mask { get; set; }
+    public bool? Mask { get; set; }
 
     /// <summary>
     /// An array of signature reasons to choose from.

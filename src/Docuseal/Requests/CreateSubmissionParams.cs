@@ -61,14 +61,14 @@ public record CreateSubmissionParams
     public Dictionary<string, object?>? Variables { get; set; }
 
     [JsonPropertyName("message")]
-    public CreateSubmissionsFromEmailsRequestMessage? Message { get; set; }
+    public CreateSubmissionMessageParams? Message { get; set; }
 
     /// <summary>
     /// The list of submitters for the submission.
     /// </summary>
     [JsonPropertyName("submitters")]
-    public IEnumerable<CreateSubmissionRequestSubmitter> Submitters { get; set; } =
-        new List<CreateSubmissionRequestSubmitter>();
+    public IEnumerable<CreateSubmissionSubmitterParams> Submitters { get; set; } =
+        new List<CreateSubmissionSubmitterParams>();
 
     /// <inheritdoc />
     public override string ToString()

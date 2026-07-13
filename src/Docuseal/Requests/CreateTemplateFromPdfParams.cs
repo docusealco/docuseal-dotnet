@@ -34,8 +34,8 @@ public record CreateTemplateFromPdfParams
     /// An array of PDF documents to create a template.
     /// </summary>
     [JsonPropertyName("documents")]
-    public IEnumerable<CreateTemplateFromPdfRequestDocument> Documents { get; set; } =
-        new List<CreateTemplateFromPdfRequestDocument>();
+    public IEnumerable<CreateTemplateFromPdfDocumentParams> Documents { get; set; } =
+        new List<CreateTemplateFromPdfDocumentParams>();
 
     /// <summary>
     /// Remove PDF form fields from the documents.
