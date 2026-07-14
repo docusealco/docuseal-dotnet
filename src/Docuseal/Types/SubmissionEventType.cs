@@ -4,53 +4,49 @@ using global::System.Text.Json.Serialization;
 
 namespace Docuseal;
 
-[JsonConverter(typeof(SubmissionEventEventType.SubmissionEventEventTypeSerializer))]
+[JsonConverter(typeof(SubmissionEventType.SubmissionEventTypeSerializer))]
 [Serializable]
-public readonly record struct SubmissionEventEventType : IStringEnum
+public readonly record struct SubmissionEventType : IStringEnum
 {
-    public static readonly SubmissionEventEventType SendEmail = new(Values.SendEmail);
+    public static readonly SubmissionEventType SendEmail = new(Values.SendEmail);
 
-    public static readonly SubmissionEventEventType BounceEmail = new(Values.BounceEmail);
+    public static readonly SubmissionEventType BounceEmail = new(Values.BounceEmail);
 
-    public static readonly SubmissionEventEventType ComplaintEmail = new(Values.ComplaintEmail);
+    public static readonly SubmissionEventType ComplaintEmail = new(Values.ComplaintEmail);
 
-    public static readonly SubmissionEventEventType SendReminderEmail = new(
-        Values.SendReminderEmail
-    );
+    public static readonly SubmissionEventType SendReminderEmail = new(Values.SendReminderEmail);
 
-    public static readonly SubmissionEventEventType SendSms = new(Values.SendSms);
+    public static readonly SubmissionEventType SendSms = new(Values.SendSms);
 
-    public static readonly SubmissionEventEventType Send2FaSms = new(Values.Send2FaSms);
+    public static readonly SubmissionEventType Send2FaSms = new(Values.Send2FaSms);
 
-    public static readonly SubmissionEventEventType OpenEmail = new(Values.OpenEmail);
+    public static readonly SubmissionEventType OpenEmail = new(Values.OpenEmail);
 
-    public static readonly SubmissionEventEventType ClickEmail = new(Values.ClickEmail);
+    public static readonly SubmissionEventType ClickEmail = new(Values.ClickEmail);
 
-    public static readonly SubmissionEventEventType ClickSms = new(Values.ClickSms);
+    public static readonly SubmissionEventType ClickSms = new(Values.ClickSms);
 
-    public static readonly SubmissionEventEventType PhoneVerified = new(Values.PhoneVerified);
+    public static readonly SubmissionEventType PhoneVerified = new(Values.PhoneVerified);
 
-    public static readonly SubmissionEventEventType StartForm = new(Values.StartForm);
+    public static readonly SubmissionEventType StartForm = new(Values.StartForm);
 
-    public static readonly SubmissionEventEventType StartVerification = new(
-        Values.StartVerification
-    );
+    public static readonly SubmissionEventType StartVerification = new(Values.StartVerification);
 
-    public static readonly SubmissionEventEventType CompleteVerification = new(
+    public static readonly SubmissionEventType CompleteVerification = new(
         Values.CompleteVerification
     );
 
-    public static readonly SubmissionEventEventType ViewForm = new(Values.ViewForm);
+    public static readonly SubmissionEventType ViewForm = new(Values.ViewForm);
 
-    public static readonly SubmissionEventEventType InviteParty = new(Values.InviteParty);
+    public static readonly SubmissionEventType InviteParty = new(Values.InviteParty);
 
-    public static readonly SubmissionEventEventType CompleteForm = new(Values.CompleteForm);
+    public static readonly SubmissionEventType CompleteForm = new(Values.CompleteForm);
 
-    public static readonly SubmissionEventEventType DeclineForm = new(Values.DeclineForm);
+    public static readonly SubmissionEventType DeclineForm = new(Values.DeclineForm);
 
-    public static readonly SubmissionEventEventType ApiCompleteForm = new(Values.ApiCompleteForm);
+    public static readonly SubmissionEventType ApiCompleteForm = new(Values.ApiCompleteForm);
 
-    public SubmissionEventEventType(string value)
+    public SubmissionEventType(string value)
     {
         Value = value;
     }
@@ -63,9 +59,9 @@ public readonly record struct SubmissionEventEventType : IStringEnum
     /// <summary>
     /// Create a string enum with the given value.
     /// </summary>
-    public static SubmissionEventEventType FromCustom(string value)
+    public static SubmissionEventType FromCustom(string value)
     {
-        return new SubmissionEventEventType(value);
+        return new SubmissionEventType(value);
     }
 
     public bool Equals(string? other)
@@ -81,19 +77,19 @@ public readonly record struct SubmissionEventEventType : IStringEnum
         return Value;
     }
 
-    public static bool operator ==(SubmissionEventEventType value1, string value2) =>
+    public static bool operator ==(SubmissionEventType value1, string value2) =>
         value1.Value.Equals(value2);
 
-    public static bool operator !=(SubmissionEventEventType value1, string value2) =>
+    public static bool operator !=(SubmissionEventType value1, string value2) =>
         !value1.Value.Equals(value2);
 
-    public static explicit operator string(SubmissionEventEventType value) => value.Value;
+    public static explicit operator string(SubmissionEventType value) => value.Value;
 
-    public static explicit operator SubmissionEventEventType(string value) => new(value);
+    public static explicit operator SubmissionEventType(string value) => new(value);
 
-    internal class SubmissionEventEventTypeSerializer : JsonConverter<SubmissionEventEventType>
+    internal class SubmissionEventTypeSerializer : JsonConverter<SubmissionEventType>
     {
-        public override SubmissionEventEventType Read(
+        public override SubmissionEventType Read(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options
@@ -104,19 +100,19 @@ public readonly record struct SubmissionEventEventType : IStringEnum
                 ?? throw new global::System.Exception(
                     "The JSON value could not be read as a string."
                 );
-            return new SubmissionEventEventType(stringValue);
+            return new SubmissionEventType(stringValue);
         }
 
         public override void Write(
             Utf8JsonWriter writer,
-            SubmissionEventEventType value,
+            SubmissionEventType value,
             JsonSerializerOptions options
         )
         {
             writer.WriteStringValue(value.Value);
         }
 
-        public override SubmissionEventEventType ReadAsPropertyName(
+        public override SubmissionEventType ReadAsPropertyName(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options
@@ -127,12 +123,12 @@ public readonly record struct SubmissionEventEventType : IStringEnum
                 ?? throw new global::System.Exception(
                     "The JSON property name could not be read as a string."
                 );
-            return new SubmissionEventEventType(stringValue);
+            return new SubmissionEventType(stringValue);
         }
 
         public override void WriteAsPropertyName(
             Utf8JsonWriter writer,
-            SubmissionEventEventType value,
+            SubmissionEventType value,
             JsonSerializerOptions options
         )
         {

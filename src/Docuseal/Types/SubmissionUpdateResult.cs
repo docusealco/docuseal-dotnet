@@ -20,9 +20,9 @@ public record SubmissionUpdateResult : IJsonOnDeserialized
     /// <summary>
     /// Name of the document submission.
     /// </summary>
-    [Optional]
+    [Nullable, Optional]
     [JsonPropertyName("name")]
-    public string? Name { get; set; }
+    public Optional<string?> Name { get; set; }
 
     /// <summary>
     /// Unique slug of the submission.
@@ -34,13 +34,13 @@ public record SubmissionUpdateResult : IJsonOnDeserialized
     /// The source of the submission.
     /// </summary>
     [JsonPropertyName("source")]
-    public required SubmissionUpdateResultSource Source { get; set; }
+    public required SubmissionSource Source { get; set; }
 
     /// <summary>
     /// The order of submitters.
     /// </summary>
     [JsonPropertyName("submitters_order")]
-    public required SubmissionUpdateResultSubmittersOrder SubmittersOrder { get; set; }
+    public required SubmittersOrder SubmittersOrder { get; set; }
 
     /// <summary>
     /// Audit log file URL.
@@ -113,7 +113,7 @@ public record SubmissionUpdateResult : IJsonOnDeserialized
     /// The status of the submission.
     /// </summary>
     [JsonPropertyName("status")]
-    public required SubmissionUpdateResultStatus Status { get; set; }
+    public required SubmissionStatus Status { get; set; }
 
     /// <summary>
     /// The date and time when the submission was completed.

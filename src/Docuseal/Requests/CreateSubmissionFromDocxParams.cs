@@ -39,7 +39,7 @@ public record CreateSubmissionFromDocxParams
     /// </summary>
     [Optional]
     [JsonPropertyName("order")]
-    public CreateSubmissionFromDocxRequestOrder? Order { get; set; }
+    public SubmittersOrder? Order { get; set; }
 
     /// <summary>
     /// Specify URL to redirect to after the submission completion.

@@ -16,7 +16,7 @@ public record GetSubmissionsParams
     /// Filter submissions by status.
     /// </summary>
     [JsonIgnore]
-    public GetSubmissionsRequestStatus? Status { get; set; }
+    public SubmissionStatus? Status { get; set; }
 
     /// <summary>
     /// Filter submissions based on submitter's name, email or phone partial match.

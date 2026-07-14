@@ -17,86 +17,86 @@ public record FieldPreferences : IJsonOnDeserialized
     /// <summary>
     /// Font size of the field value in pixels.
     /// </summary>
-    [Optional]
+    [Nullable, Optional]
     [JsonPropertyName("font_size")]
-    public int? FontSize { get; set; }
+    public Optional<int?> FontSize { get; set; }
 
     /// <summary>
     /// Font type of the field value.
     /// </summary>
-    [Optional]
+    [Nullable, Optional]
     [JsonPropertyName("font_type")]
-    public string? FontType { get; set; }
+    public Optional<string?> FontType { get; set; }
 
     /// <summary>
     /// Font family of the field value.
     /// </summary>
-    [Optional]
+    [Nullable, Optional]
     [JsonPropertyName("font")]
-    public string? Font { get; set; }
+    public Optional<string?> Font { get; set; }
 
     /// <summary>
     /// Font color of the field value.
     /// </summary>
-    [Optional]
+    [Nullable, Optional]
     [JsonPropertyName("color")]
-    public string? Color { get; set; }
+    public Optional<string?> Color { get; set; }
 
     /// <summary>
     /// Field box background color.
     /// </summary>
-    [Optional]
+    [Nullable, Optional]
     [JsonPropertyName("background")]
-    public string? Background { get; set; }
+    public Optional<string?> Background { get; set; }
 
     /// <summary>
     /// Horizontal alignment of the field text value.
     /// </summary>
-    [Optional]
+    [Nullable, Optional]
     [JsonPropertyName("align")]
-    public string? Align { get; set; }
+    public Optional<string?> Align { get; set; }
 
     /// <summary>
     /// Vertical alignment of the field text value.
     /// </summary>
-    [Optional]
+    [Nullable, Optional]
     [JsonPropertyName("valign")]
-    public string? Valign { get; set; }
+    public Optional<string?> Valign { get; set; }
 
     /// <summary>
     /// The data format for different field types.
     /// </summary>
-    [Optional]
+    [Nullable, Optional]
     [JsonPropertyName("format")]
-    public string? Format { get; set; }
+    public Optional<string?> Format { get; set; }
 
     /// <summary>
     /// Price value of the payment field. Only for payment fields.
     /// </summary>
-    [Optional]
+    [Nullable, Optional]
     [JsonPropertyName("price")]
-    public double? Price { get; set; }
+    public Optional<double?> Price { get; set; }
 
     /// <summary>
     /// Currency value of the payment field. Only for payment fields.
     /// </summary>
-    [Optional]
+    [Nullable, Optional]
     [JsonPropertyName("currency")]
-    public string? Currency { get; set; }
+    public Optional<string?> Currency { get; set; }
 
     /// <summary>
     /// Indicates if the field is masked on the document.
     /// </summary>
-    [Optional]
+    [Nullable, Optional]
     [JsonPropertyName("mask")]
-    public bool? Mask { get; set; }
+    public Optional<bool?> Mask { get; set; }
 
     /// <summary>
     /// An array of signature reasons to choose from.
     /// </summary>
-    [Optional]
+    [Nullable, Optional]
     [JsonPropertyName("reasons")]
-    public IEnumerable<string>? Reasons { get; set; }
+    public Optional<IEnumerable<string>?> Reasons { get; set; }
 
     [JsonIgnore]
     public ReadOnlyAdditionalProperties AdditionalProperties { get; private set; } = new();

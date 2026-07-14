@@ -46,7 +46,7 @@ public record SubmitterCreateResult : IJsonOnDeserialized
     /// The status of signing request for the submitter.
     /// </summary>
     [JsonPropertyName("status")]
-    public required SubmitterCreateResultStatus Status { get; set; }
+    public required SubmitterStatus Status { get; set; }
 
     /// <summary>
     /// An array of pre-filled values for the submitter.

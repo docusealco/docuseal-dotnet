@@ -27,7 +27,7 @@ public record SubmissionEvent : IJsonOnDeserialized
     /// Event type.
     /// </summary>
     [JsonPropertyName("event_type")]
-    public required SubmissionEventEventType EventType { get; set; }
+    public required SubmissionEventType EventType { get; set; }
 
     /// <summary>
     /// Date and time when the event was triggered.

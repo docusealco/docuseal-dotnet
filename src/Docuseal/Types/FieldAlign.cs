@@ -4,19 +4,17 @@ using global::System.Text.Json.Serialization;
 
 namespace Docuseal;
 
-[JsonConverter(
-    typeof(UpdateSubmitterFieldPreferencesParamsAlign.UpdateSubmitterFieldPreferencesParamsAlignSerializer)
-)]
+[JsonConverter(typeof(FieldAlign.FieldAlignSerializer))]
 [Serializable]
-public readonly record struct UpdateSubmitterFieldPreferencesParamsAlign : IStringEnum
+public readonly record struct FieldAlign : IStringEnum
 {
-    public static readonly UpdateSubmitterFieldPreferencesParamsAlign Left = new(Values.Left);
+    public static readonly FieldAlign Left = new(Values.Left);
 
-    public static readonly UpdateSubmitterFieldPreferencesParamsAlign Center = new(Values.Center);
+    public static readonly FieldAlign Center = new(Values.Center);
 
-    public static readonly UpdateSubmitterFieldPreferencesParamsAlign Right = new(Values.Right);
+    public static readonly FieldAlign Right = new(Values.Right);
 
-    public UpdateSubmitterFieldPreferencesParamsAlign(string value)
+    public FieldAlign(string value)
     {
         Value = value;
     }
@@ -29,9 +27,9 @@ public readonly record struct UpdateSubmitterFieldPreferencesParamsAlign : IStri
     /// <summary>
     /// Create a string enum with the given value.
     /// </summary>
-    public static UpdateSubmitterFieldPreferencesParamsAlign FromCustom(string value)
+    public static FieldAlign FromCustom(string value)
     {
-        return new UpdateSubmitterFieldPreferencesParamsAlign(value);
+        return new FieldAlign(value);
     }
 
     public bool Equals(string? other)
@@ -47,26 +45,18 @@ public readonly record struct UpdateSubmitterFieldPreferencesParamsAlign : IStri
         return Value;
     }
 
-    public static bool operator ==(
-        UpdateSubmitterFieldPreferencesParamsAlign value1,
-        string value2
-    ) => value1.Value.Equals(value2);
+    public static bool operator ==(FieldAlign value1, string value2) => value1.Value.Equals(value2);
 
-    public static bool operator !=(
-        UpdateSubmitterFieldPreferencesParamsAlign value1,
-        string value2
-    ) => !value1.Value.Equals(value2);
+    public static bool operator !=(FieldAlign value1, string value2) =>
+        !value1.Value.Equals(value2);
 
-    public static explicit operator string(UpdateSubmitterFieldPreferencesParamsAlign value) =>
-        value.Value;
+    public static explicit operator string(FieldAlign value) => value.Value;
 
-    public static explicit operator UpdateSubmitterFieldPreferencesParamsAlign(string value) =>
-        new(value);
+    public static explicit operator FieldAlign(string value) => new(value);
 
-    internal class UpdateSubmitterFieldPreferencesParamsAlignSerializer
-        : JsonConverter<UpdateSubmitterFieldPreferencesParamsAlign>
+    internal class FieldAlignSerializer : JsonConverter<FieldAlign>
     {
-        public override UpdateSubmitterFieldPreferencesParamsAlign Read(
+        public override FieldAlign Read(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options
@@ -77,19 +67,19 @@ public readonly record struct UpdateSubmitterFieldPreferencesParamsAlign : IStri
                 ?? throw new global::System.Exception(
                     "The JSON value could not be read as a string."
                 );
-            return new UpdateSubmitterFieldPreferencesParamsAlign(stringValue);
+            return new FieldAlign(stringValue);
         }
 
         public override void Write(
             Utf8JsonWriter writer,
-            UpdateSubmitterFieldPreferencesParamsAlign value,
+            FieldAlign value,
             JsonSerializerOptions options
         )
         {
             writer.WriteStringValue(value.Value);
         }
 
-        public override UpdateSubmitterFieldPreferencesParamsAlign ReadAsPropertyName(
+        public override FieldAlign ReadAsPropertyName(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options
@@ -100,12 +90,12 @@ public readonly record struct UpdateSubmitterFieldPreferencesParamsAlign : IStri
                 ?? throw new global::System.Exception(
                     "The JSON property name could not be read as a string."
                 );
-            return new UpdateSubmitterFieldPreferencesParamsAlign(stringValue);
+            return new FieldAlign(stringValue);
         }
 
         public override void WriteAsPropertyName(
             Utf8JsonWriter writer,
-            UpdateSubmitterFieldPreferencesParamsAlign value,
+            FieldAlign value,
             JsonSerializerOptions options
         )
         {

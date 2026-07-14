@@ -31,7 +31,7 @@ public record CreateSubmissionParams
     /// </summary>
     [Optional]
     [JsonPropertyName("order")]
-    public CreateSubmissionRequestOrder? Order { get; set; }
+    public SubmittersOrder? Order { get; set; }
 
     /// <summary>
     /// Specify URL to redirect to after the submission completion.

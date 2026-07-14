@@ -39,7 +39,7 @@ public record CreateTemplateFromHtmlParams
     /// </summary>
     [Optional]
     [JsonPropertyName("size")]
-    public CreateTemplateFromHtmlRequestSize? Size { get; set; }
+    public PageSize? Size { get; set; }
 
     /// <summary>
     /// Your application-specific unique string key to identify this template within your app. Existing template with specified `external_id` will be updated with a new HTML.

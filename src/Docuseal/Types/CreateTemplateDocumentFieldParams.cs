@@ -23,7 +23,7 @@ public record CreateTemplateDocumentFieldParams : IJsonOnDeserialized
     /// </summary>
     [Optional]
     [JsonPropertyName("type")]
-    public CreateTemplateDocumentFieldParamsType? Type { get; set; }
+    public FieldType? Type { get; set; }
 
     /// <summary>
     /// Role name of the signer.

@@ -4,21 +4,17 @@ using global::System.Text.Json.Serialization;
 
 namespace Docuseal;
 
-[JsonConverter(typeof(SubmissionCreateResultSource.SubmissionCreateResultSourceSerializer))]
+[JsonConverter(typeof(FieldFont.FieldFontSerializer))]
 [Serializable]
-public readonly record struct SubmissionCreateResultSource : IStringEnum
+public readonly record struct FieldFont : IStringEnum
 {
-    public static readonly SubmissionCreateResultSource Invite = new(Values.Invite);
+    public static readonly FieldFont Times = new(Values.Times);
 
-    public static readonly SubmissionCreateResultSource Bulk = new(Values.Bulk);
+    public static readonly FieldFont Helvetica = new(Values.Helvetica);
 
-    public static readonly SubmissionCreateResultSource Api = new(Values.Api);
+    public static readonly FieldFont Courier = new(Values.Courier);
 
-    public static readonly SubmissionCreateResultSource Embed = new(Values.Embed);
-
-    public static readonly SubmissionCreateResultSource Link = new(Values.Link);
-
-    public SubmissionCreateResultSource(string value)
+    public FieldFont(string value)
     {
         Value = value;
     }
@@ -31,9 +27,9 @@ public readonly record struct SubmissionCreateResultSource : IStringEnum
     /// <summary>
     /// Create a string enum with the given value.
     /// </summary>
-    public static SubmissionCreateResultSource FromCustom(string value)
+    public static FieldFont FromCustom(string value)
     {
-        return new SubmissionCreateResultSource(value);
+        return new FieldFont(value);
     }
 
     public bool Equals(string? other)
@@ -49,20 +45,17 @@ public readonly record struct SubmissionCreateResultSource : IStringEnum
         return Value;
     }
 
-    public static bool operator ==(SubmissionCreateResultSource value1, string value2) =>
-        value1.Value.Equals(value2);
+    public static bool operator ==(FieldFont value1, string value2) => value1.Value.Equals(value2);
 
-    public static bool operator !=(SubmissionCreateResultSource value1, string value2) =>
-        !value1.Value.Equals(value2);
+    public static bool operator !=(FieldFont value1, string value2) => !value1.Value.Equals(value2);
 
-    public static explicit operator string(SubmissionCreateResultSource value) => value.Value;
+    public static explicit operator string(FieldFont value) => value.Value;
 
-    public static explicit operator SubmissionCreateResultSource(string value) => new(value);
+    public static explicit operator FieldFont(string value) => new(value);
 
-    internal class SubmissionCreateResultSourceSerializer
-        : JsonConverter<SubmissionCreateResultSource>
+    internal class FieldFontSerializer : JsonConverter<FieldFont>
     {
-        public override SubmissionCreateResultSource Read(
+        public override FieldFont Read(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options
@@ -73,19 +66,19 @@ public readonly record struct SubmissionCreateResultSource : IStringEnum
                 ?? throw new global::System.Exception(
                     "The JSON value could not be read as a string."
                 );
-            return new SubmissionCreateResultSource(stringValue);
+            return new FieldFont(stringValue);
         }
 
         public override void Write(
             Utf8JsonWriter writer,
-            SubmissionCreateResultSource value,
+            FieldFont value,
             JsonSerializerOptions options
         )
         {
             writer.WriteStringValue(value.Value);
         }
 
-        public override SubmissionCreateResultSource ReadAsPropertyName(
+        public override FieldFont ReadAsPropertyName(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options
@@ -96,12 +89,12 @@ public readonly record struct SubmissionCreateResultSource : IStringEnum
                 ?? throw new global::System.Exception(
                     "The JSON property name could not be read as a string."
                 );
-            return new SubmissionCreateResultSource(stringValue);
+            return new FieldFont(stringValue);
         }
 
         public override void WriteAsPropertyName(
             Utf8JsonWriter writer,
-            SubmissionCreateResultSource value,
+            FieldFont value,
             JsonSerializerOptions options
         )
         {
@@ -115,14 +108,10 @@ public readonly record struct SubmissionCreateResultSource : IStringEnum
     [Serializable]
     public static class Values
     {
-        public const string Invite = "invite";
+        public const string Times = "Times";
 
-        public const string Bulk = "bulk";
+        public const string Helvetica = "Helvetica";
 
-        public const string Api = "api";
-
-        public const string Embed = "embed";
-
-        public const string Link = "link";
+        public const string Courier = "Courier";
     }
 }

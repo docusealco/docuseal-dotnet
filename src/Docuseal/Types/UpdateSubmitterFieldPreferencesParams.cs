@@ -27,42 +27,42 @@ public record UpdateSubmitterFieldPreferencesParams : IJsonOnDeserialized
     /// </summary>
     [Optional]
     [JsonPropertyName("font_type")]
-    public UpdateSubmitterFieldPreferencesParamsFontType? FontType { get; set; }
+    public FieldFontType? FontType { get; set; }
 
     /// <summary>
     /// Font family of the field value.
     /// </summary>
     [Optional]
     [JsonPropertyName("font")]
-    public UpdateSubmitterFieldPreferencesParamsFont? Font { get; set; }
+    public FieldFont? Font { get; set; }
 
     /// <summary>
     /// Font color of the field value.
     /// </summary>
     [Optional]
     [JsonPropertyName("color")]
-    public UpdateSubmitterFieldPreferencesParamsColor? Color { get; set; }
+    public string? Color { get; set; }
 
     /// <summary>
     /// Field box background color.
     /// </summary>
     [Optional]
     [JsonPropertyName("background")]
-    public UpdateSubmitterFieldPreferencesParamsBackground? Background { get; set; }
+    public string? Background { get; set; }
 
     /// <summary>
     /// Horizontal alignment of the field text value.
     /// </summary>
     [Optional]
     [JsonPropertyName("align")]
-    public UpdateSubmitterFieldPreferencesParamsAlign? Align { get; set; }
+    public FieldAlign? Align { get; set; }
 
     /// <summary>
     /// Vertical alignment of the field text value.
     /// </summary>
     [Optional]
     [JsonPropertyName("valign")]
-    public UpdateSubmitterFieldPreferencesParamsValign? Valign { get; set; }
+    public FieldValign? Valign { get; set; }
 
     /// <summary>
     /// The data format for different field types.<br/>- Date field: accepts formats such as DD/MM/YYYY (default: MM/DD/YYYY).<br/>- Signature field: accepts drawn, typed, drawn_or_typed (default), or upload.<br/>- Number field: accepts currency formats such as usd, eur, gbp.
@@ -83,7 +83,7 @@ public record UpdateSubmitterFieldPreferencesParams : IJsonOnDeserialized
     /// </summary>
     [Optional]
     [JsonPropertyName("currency")]
-    public UpdateSubmitterFieldPreferencesParamsCurrency? Currency { get; set; }
+    public Currency? Currency { get; set; }
 
     /// <summary>
     /// Set `true` to make sensitive data masked on the document.

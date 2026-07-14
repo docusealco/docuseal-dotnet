@@ -4,17 +4,15 @@ using global::System.Text.Json.Serialization;
 
 namespace Docuseal;
 
-[JsonConverter(
-    typeof(CreateSubmissionFromDocxRequestOrder.CreateSubmissionFromDocxRequestOrderSerializer)
-)]
+[JsonConverter(typeof(SubmittersOrder.SubmittersOrderSerializer))]
 [Serializable]
-public readonly record struct CreateSubmissionFromDocxRequestOrder : IStringEnum
+public readonly record struct SubmittersOrder : IStringEnum
 {
-    public static readonly CreateSubmissionFromDocxRequestOrder Preserved = new(Values.Preserved);
+    public static readonly SubmittersOrder Random = new(Values.Random);
 
-    public static readonly CreateSubmissionFromDocxRequestOrder Random = new(Values.Random);
+    public static readonly SubmittersOrder Preserved = new(Values.Preserved);
 
-    public CreateSubmissionFromDocxRequestOrder(string value)
+    public SubmittersOrder(string value)
     {
         Value = value;
     }
@@ -27,9 +25,9 @@ public readonly record struct CreateSubmissionFromDocxRequestOrder : IStringEnum
     /// <summary>
     /// Create a string enum with the given value.
     /// </summary>
-    public static CreateSubmissionFromDocxRequestOrder FromCustom(string value)
+    public static SubmittersOrder FromCustom(string value)
     {
-        return new CreateSubmissionFromDocxRequestOrder(value);
+        return new SubmittersOrder(value);
     }
 
     public bool Equals(string? other)
@@ -45,22 +43,19 @@ public readonly record struct CreateSubmissionFromDocxRequestOrder : IStringEnum
         return Value;
     }
 
-    public static bool operator ==(CreateSubmissionFromDocxRequestOrder value1, string value2) =>
+    public static bool operator ==(SubmittersOrder value1, string value2) =>
         value1.Value.Equals(value2);
 
-    public static bool operator !=(CreateSubmissionFromDocxRequestOrder value1, string value2) =>
+    public static bool operator !=(SubmittersOrder value1, string value2) =>
         !value1.Value.Equals(value2);
 
-    public static explicit operator string(CreateSubmissionFromDocxRequestOrder value) =>
-        value.Value;
+    public static explicit operator string(SubmittersOrder value) => value.Value;
 
-    public static explicit operator CreateSubmissionFromDocxRequestOrder(string value) =>
-        new(value);
+    public static explicit operator SubmittersOrder(string value) => new(value);
 
-    internal class CreateSubmissionFromDocxRequestOrderSerializer
-        : JsonConverter<CreateSubmissionFromDocxRequestOrder>
+    internal class SubmittersOrderSerializer : JsonConverter<SubmittersOrder>
     {
-        public override CreateSubmissionFromDocxRequestOrder Read(
+        public override SubmittersOrder Read(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options
@@ -71,19 +66,19 @@ public readonly record struct CreateSubmissionFromDocxRequestOrder : IStringEnum
                 ?? throw new global::System.Exception(
                     "The JSON value could not be read as a string."
                 );
-            return new CreateSubmissionFromDocxRequestOrder(stringValue);
+            return new SubmittersOrder(stringValue);
         }
 
         public override void Write(
             Utf8JsonWriter writer,
-            CreateSubmissionFromDocxRequestOrder value,
+            SubmittersOrder value,
             JsonSerializerOptions options
         )
         {
             writer.WriteStringValue(value.Value);
         }
 
-        public override CreateSubmissionFromDocxRequestOrder ReadAsPropertyName(
+        public override SubmittersOrder ReadAsPropertyName(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options
@@ -94,12 +89,12 @@ public readonly record struct CreateSubmissionFromDocxRequestOrder : IStringEnum
                 ?? throw new global::System.Exception(
                     "The JSON property name could not be read as a string."
                 );
-            return new CreateSubmissionFromDocxRequestOrder(stringValue);
+            return new SubmittersOrder(stringValue);
         }
 
         public override void WriteAsPropertyName(
             Utf8JsonWriter writer,
-            CreateSubmissionFromDocxRequestOrder value,
+            SubmittersOrder value,
             JsonSerializerOptions options
         )
         {
@@ -113,8 +108,8 @@ public readonly record struct CreateSubmissionFromDocxRequestOrder : IStringEnum
     [Serializable]
     public static class Values
     {
-        public const string Preserved = "preserved";
-
         public const string Random = "random";
+
+        public const string Preserved = "preserved";
     }
 }

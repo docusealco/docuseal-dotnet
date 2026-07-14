@@ -20,9 +20,9 @@ public record Submission : IJsonOnDeserialized
     /// <summary>
     /// Name of the document submission.
     /// </summary>
-    [Optional]
+    [Nullable, Optional]
     [JsonPropertyName("name")]
-    public string? Name { get; set; }
+    public Optional<string?> Name { get; set; }
 
     /// <summary>
     /// Unique slug of the submission.
@@ -40,7 +40,7 @@ public record Submission : IJsonOnDeserialized
     /// The order of submitters.
     /// </summary>
     [JsonPropertyName("submitters_order")]
-    public required SubmissionSubmittersOrder SubmittersOrder { get; set; }
+    public required SubmittersOrder SubmittersOrder { get; set; }
 
     /// <summary>
     /// Audit log file URL.

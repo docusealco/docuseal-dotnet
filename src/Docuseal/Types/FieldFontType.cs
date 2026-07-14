@@ -4,15 +4,17 @@ using global::System.Text.Json.Serialization;
 
 namespace Docuseal;
 
-[JsonConverter(typeof(CreateSubmissionRequestOrder.CreateSubmissionRequestOrderSerializer))]
+[JsonConverter(typeof(FieldFontType.FieldFontTypeSerializer))]
 [Serializable]
-public readonly record struct CreateSubmissionRequestOrder : IStringEnum
+public readonly record struct FieldFontType : IStringEnum
 {
-    public static readonly CreateSubmissionRequestOrder Preserved = new(Values.Preserved);
+    public static readonly FieldFontType Bold = new(Values.Bold);
 
-    public static readonly CreateSubmissionRequestOrder Random = new(Values.Random);
+    public static readonly FieldFontType Italic = new(Values.Italic);
 
-    public CreateSubmissionRequestOrder(string value)
+    public static readonly FieldFontType BoldItalic = new(Values.BoldItalic);
+
+    public FieldFontType(string value)
     {
         Value = value;
     }
@@ -25,9 +27,9 @@ public readonly record struct CreateSubmissionRequestOrder : IStringEnum
     /// <summary>
     /// Create a string enum with the given value.
     /// </summary>
-    public static CreateSubmissionRequestOrder FromCustom(string value)
+    public static FieldFontType FromCustom(string value)
     {
-        return new CreateSubmissionRequestOrder(value);
+        return new FieldFontType(value);
     }
 
     public bool Equals(string? other)
@@ -43,20 +45,19 @@ public readonly record struct CreateSubmissionRequestOrder : IStringEnum
         return Value;
     }
 
-    public static bool operator ==(CreateSubmissionRequestOrder value1, string value2) =>
+    public static bool operator ==(FieldFontType value1, string value2) =>
         value1.Value.Equals(value2);
 
-    public static bool operator !=(CreateSubmissionRequestOrder value1, string value2) =>
+    public static bool operator !=(FieldFontType value1, string value2) =>
         !value1.Value.Equals(value2);
 
-    public static explicit operator string(CreateSubmissionRequestOrder value) => value.Value;
+    public static explicit operator string(FieldFontType value) => value.Value;
 
-    public static explicit operator CreateSubmissionRequestOrder(string value) => new(value);
+    public static explicit operator FieldFontType(string value) => new(value);
 
-    internal class CreateSubmissionRequestOrderSerializer
-        : JsonConverter<CreateSubmissionRequestOrder>
+    internal class FieldFontTypeSerializer : JsonConverter<FieldFontType>
     {
-        public override CreateSubmissionRequestOrder Read(
+        public override FieldFontType Read(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options
@@ -67,19 +68,19 @@ public readonly record struct CreateSubmissionRequestOrder : IStringEnum
                 ?? throw new global::System.Exception(
                     "The JSON value could not be read as a string."
                 );
-            return new CreateSubmissionRequestOrder(stringValue);
+            return new FieldFontType(stringValue);
         }
 
         public override void Write(
             Utf8JsonWriter writer,
-            CreateSubmissionRequestOrder value,
+            FieldFontType value,
             JsonSerializerOptions options
         )
         {
             writer.WriteStringValue(value.Value);
         }
 
-        public override CreateSubmissionRequestOrder ReadAsPropertyName(
+        public override FieldFontType ReadAsPropertyName(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options
@@ -90,12 +91,12 @@ public readonly record struct CreateSubmissionRequestOrder : IStringEnum
                 ?? throw new global::System.Exception(
                     "The JSON property name could not be read as a string."
                 );
-            return new CreateSubmissionRequestOrder(stringValue);
+            return new FieldFontType(stringValue);
         }
 
         public override void WriteAsPropertyName(
             Utf8JsonWriter writer,
-            CreateSubmissionRequestOrder value,
+            FieldFontType value,
             JsonSerializerOptions options
         )
         {
@@ -109,8 +110,10 @@ public readonly record struct CreateSubmissionRequestOrder : IStringEnum
     [Serializable]
     public static class Values
     {
-        public const string Preserved = "preserved";
+        public const string Bold = "bold";
 
-        public const string Random = "random";
+        public const string Italic = "italic";
+
+        public const string BoldItalic = "bold_italic";
     }
 }

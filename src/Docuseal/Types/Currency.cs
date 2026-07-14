@@ -4,21 +4,21 @@ using global::System.Text.Json.Serialization;
 
 namespace Docuseal;
 
-[JsonConverter(typeof(SubmissionListItemSource.SubmissionListItemSourceSerializer))]
+[JsonConverter(typeof(Currency.CurrencySerializer))]
 [Serializable]
-public readonly record struct SubmissionListItemSource : IStringEnum
+public readonly record struct Currency : IStringEnum
 {
-    public static readonly SubmissionListItemSource Invite = new(Values.Invite);
+    public static readonly Currency Usd = new(Values.Usd);
 
-    public static readonly SubmissionListItemSource Bulk = new(Values.Bulk);
+    public static readonly Currency Eur = new(Values.Eur);
 
-    public static readonly SubmissionListItemSource Api = new(Values.Api);
+    public static readonly Currency Gbp = new(Values.Gbp);
 
-    public static readonly SubmissionListItemSource Embed = new(Values.Embed);
+    public static readonly Currency Cad = new(Values.Cad);
 
-    public static readonly SubmissionListItemSource Link = new(Values.Link);
+    public static readonly Currency Aud = new(Values.Aud);
 
-    public SubmissionListItemSource(string value)
+    public Currency(string value)
     {
         Value = value;
     }
@@ -31,9 +31,9 @@ public readonly record struct SubmissionListItemSource : IStringEnum
     /// <summary>
     /// Create a string enum with the given value.
     /// </summary>
-    public static SubmissionListItemSource FromCustom(string value)
+    public static Currency FromCustom(string value)
     {
-        return new SubmissionListItemSource(value);
+        return new Currency(value);
     }
 
     public bool Equals(string? other)
@@ -49,19 +49,17 @@ public readonly record struct SubmissionListItemSource : IStringEnum
         return Value;
     }
 
-    public static bool operator ==(SubmissionListItemSource value1, string value2) =>
-        value1.Value.Equals(value2);
+    public static bool operator ==(Currency value1, string value2) => value1.Value.Equals(value2);
 
-    public static bool operator !=(SubmissionListItemSource value1, string value2) =>
-        !value1.Value.Equals(value2);
+    public static bool operator !=(Currency value1, string value2) => !value1.Value.Equals(value2);
 
-    public static explicit operator string(SubmissionListItemSource value) => value.Value;
+    public static explicit operator string(Currency value) => value.Value;
 
-    public static explicit operator SubmissionListItemSource(string value) => new(value);
+    public static explicit operator Currency(string value) => new(value);
 
-    internal class SubmissionListItemSourceSerializer : JsonConverter<SubmissionListItemSource>
+    internal class CurrencySerializer : JsonConverter<Currency>
     {
-        public override SubmissionListItemSource Read(
+        public override Currency Read(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options
@@ -72,19 +70,19 @@ public readonly record struct SubmissionListItemSource : IStringEnum
                 ?? throw new global::System.Exception(
                     "The JSON value could not be read as a string."
                 );
-            return new SubmissionListItemSource(stringValue);
+            return new Currency(stringValue);
         }
 
         public override void Write(
             Utf8JsonWriter writer,
-            SubmissionListItemSource value,
+            Currency value,
             JsonSerializerOptions options
         )
         {
             writer.WriteStringValue(value.Value);
         }
 
-        public override SubmissionListItemSource ReadAsPropertyName(
+        public override Currency ReadAsPropertyName(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options
@@ -95,12 +93,12 @@ public readonly record struct SubmissionListItemSource : IStringEnum
                 ?? throw new global::System.Exception(
                     "The JSON property name could not be read as a string."
                 );
-            return new SubmissionListItemSource(stringValue);
+            return new Currency(stringValue);
         }
 
         public override void WriteAsPropertyName(
             Utf8JsonWriter writer,
-            SubmissionListItemSource value,
+            Currency value,
             JsonSerializerOptions options
         )
         {
@@ -114,14 +112,14 @@ public readonly record struct SubmissionListItemSource : IStringEnum
     [Serializable]
     public static class Values
     {
-        public const string Invite = "invite";
+        public const string Usd = "USD";
 
-        public const string Bulk = "bulk";
+        public const string Eur = "EUR";
 
-        public const string Api = "api";
+        public const string Gbp = "GBP";
 
-        public const string Embed = "embed";
+        public const string Cad = "CAD";
 
-        public const string Link = "link";
+        public const string Aud = "AUD";
     }
 }

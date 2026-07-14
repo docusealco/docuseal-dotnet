@@ -20,15 +20,15 @@ public record SubmissionListItem : IJsonOnDeserialized
     /// <summary>
     /// Name of the document submission.
     /// </summary>
-    [Optional]
+    [Nullable, Optional]
     [JsonPropertyName("name")]
-    public string? Name { get; set; }
+    public Optional<string?> Name { get; set; }
 
     /// <summary>
     /// The source of the submission.
     /// </summary>
     [JsonPropertyName("source")]
-    public required SubmissionListItemSource Source { get; set; }
+    public required SubmissionSource Source { get; set; }
 
     /// <summary>
     /// Unique slug of the submission.
@@ -40,13 +40,13 @@ public record SubmissionListItem : IJsonOnDeserialized
     /// The status of the submission.
     /// </summary>
     [JsonPropertyName("status")]
-    public required SubmissionListItemStatus Status { get; set; }
+    public required SubmissionStatus Status { get; set; }
 
     /// <summary>
     /// The order of submitters.
     /// </summary>
     [JsonPropertyName("submitters_order")]
-    public required SubmissionListItemSubmittersOrder SubmittersOrder { get; set; }
+    public required SubmittersOrder SubmittersOrder { get; set; }
 
     /// <summary>
     /// Audit log file URL.

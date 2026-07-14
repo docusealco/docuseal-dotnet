@@ -27,42 +27,42 @@ public record CreateSubmissionSubmitterFieldPreferencesParams : IJsonOnDeseriali
     /// </summary>
     [Optional]
     [JsonPropertyName("font_type")]
-    public CreateSubmissionSubmitterFieldPreferencesParamsFontType? FontType { get; set; }
+    public FieldFontType? FontType { get; set; }
 
     /// <summary>
     /// Font family of the field value.
     /// </summary>
     [Optional]
     [JsonPropertyName("font")]
-    public CreateSubmissionSubmitterFieldPreferencesParamsFont? Font { get; set; }
+    public FieldFont? Font { get; set; }
 
     /// <summary>
     /// Font color of the field value.
     /// </summary>
     [Optional]
     [JsonPropertyName("color")]
-    public CreateSubmissionSubmitterFieldPreferencesParamsColor? Color { get; set; }
+    public string? Color { get; set; }
 
     /// <summary>
     /// Field box background color.
     /// </summary>
     [Optional]
     [JsonPropertyName("background")]
-    public CreateSubmissionSubmitterFieldPreferencesParamsBackground? Background { get; set; }
+    public string? Background { get; set; }
 
     /// <summary>
     /// Horizontal alignment of the field text value.
     /// </summary>
     [Optional]
     [JsonPropertyName("align")]
-    public CreateSubmissionSubmitterFieldPreferencesParamsAlign? Align { get; set; }
+    public FieldAlign? Align { get; set; }
 
     /// <summary>
     /// Vertical alignment of the field text value.
     /// </summary>
     [Optional]
     [JsonPropertyName("valign")]
-    public CreateSubmissionSubmitterFieldPreferencesParamsValign? Valign { get; set; }
+    public FieldValign? Valign { get; set; }
 
     /// <summary>
     /// The data format for different field types.<br/>- Date field: accepts formats such as DD/MM/YYYY (default: MM/DD/YYYY).<br/>- Signature field: accepts drawn, typed, drawn_or_typed (default), or upload.<br/>- Number field: accepts currency formats such as usd, eur, gbp.
@@ -83,7 +83,7 @@ public record CreateSubmissionSubmitterFieldPreferencesParams : IJsonOnDeseriali
     /// </summary>
     [Optional]
     [JsonPropertyName("currency")]
-    public CreateSubmissionSubmitterFieldPreferencesParamsCurrency? Currency { get; set; }
+    public Currency? Currency { get; set; }
 
     /// <summary>
     /// Set `true` to make sensitive data masked on the document.

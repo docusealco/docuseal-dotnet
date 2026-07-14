@@ -194,7 +194,7 @@ public partial interface IDocusealClient
     /// <summary>
     /// This API endpoint allows you to create signature requests (submissions) for a document template and send them to the specified submitters (signers).<br/><b>Related Guides</b><br/><see href="https://www.docuseal.com/guides/send-documents-for-signature-via-api">Send documents for signature via API</see><br/><see href="https://www.docuseal.com/guides/pre-fill-pdf-document-form-fields-with-api">Pre-fill PDF document form fields with API</see>
     /// </summary>
-    WithRawResponseTask<CreateSubmissionResult> CreateSubmissionAsync(
+    WithRawResponseTask<SubmissionInitResult> CreateSubmissionAsync(
         CreateSubmissionParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default

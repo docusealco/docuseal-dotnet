@@ -1822,7 +1822,7 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<WithRawResponse<CreateSubmissionResult>> CreateSubmissionAsyncCore(
+    private async Task<WithRawResponse<SubmissionInitResult>> CreateSubmissionAsyncCore(
         CreateSubmissionParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -1859,8 +1859,8 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<CreateSubmissionResult>(responseBody)!;
-                return new WithRawResponse<CreateSubmissionResult>()
+                var responseData = JsonUtils.Deserialize<SubmissionInitResult>(responseBody)!;
+                return new WithRawResponse<SubmissionInitResult>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -2345,13 +2345,13 @@ public partial class DocusealClient : IDocusealClient
     ///     }
     /// );
     /// </code></example>
-    public WithRawResponseTask<CreateSubmissionResult> CreateSubmissionAsync(
+    public WithRawResponseTask<SubmissionInitResult> CreateSubmissionAsync(
         CreateSubmissionParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<CreateSubmissionResult>(
+        return new WithRawResponseTask<SubmissionInitResult>(
             CreateSubmissionAsyncCore(request, options, cancellationToken)
         );
     }

@@ -43,7 +43,7 @@ public record CreateSubmissionFromHtmlDocumentParams : IJsonOnDeserialized
     /// </summary>
     [Optional]
     [JsonPropertyName("size")]
-    public CreateSubmissionFromHtmlDocumentParamsSize? Size { get; set; }
+    public PageSize? Size { get; set; }
 
     /// <summary>
     /// Document position in the submission. If not specified, the document will be added in the order it appears in the documents array.

@@ -4,35 +4,33 @@ using global::System.Text.Json.Serialization;
 
 namespace Docuseal;
 
-[JsonConverter(
-    typeof(CreateTemplateFromHtmlRequestSize.CreateTemplateFromHtmlRequestSizeSerializer)
-)]
+[JsonConverter(typeof(PageSize.PageSizeSerializer))]
 [Serializable]
-public readonly record struct CreateTemplateFromHtmlRequestSize : IStringEnum
+public readonly record struct PageSize : IStringEnum
 {
-    public static readonly CreateTemplateFromHtmlRequestSize Letter = new(Values.Letter);
+    public static readonly PageSize Letter = new(Values.Letter);
 
-    public static readonly CreateTemplateFromHtmlRequestSize Legal = new(Values.Legal);
+    public static readonly PageSize Legal = new(Values.Legal);
 
-    public static readonly CreateTemplateFromHtmlRequestSize Tabloid = new(Values.Tabloid);
+    public static readonly PageSize Tabloid = new(Values.Tabloid);
 
-    public static readonly CreateTemplateFromHtmlRequestSize Ledger = new(Values.Ledger);
+    public static readonly PageSize Ledger = new(Values.Ledger);
 
-    public static readonly CreateTemplateFromHtmlRequestSize A0 = new(Values.A0);
+    public static readonly PageSize A0 = new(Values.A0);
 
-    public static readonly CreateTemplateFromHtmlRequestSize A1 = new(Values.A1);
+    public static readonly PageSize A1 = new(Values.A1);
 
-    public static readonly CreateTemplateFromHtmlRequestSize A2 = new(Values.A2);
+    public static readonly PageSize A2 = new(Values.A2);
 
-    public static readonly CreateTemplateFromHtmlRequestSize A3 = new(Values.A3);
+    public static readonly PageSize A3 = new(Values.A3);
 
-    public static readonly CreateTemplateFromHtmlRequestSize A4 = new(Values.A4);
+    public static readonly PageSize A4 = new(Values.A4);
 
-    public static readonly CreateTemplateFromHtmlRequestSize A5 = new(Values.A5);
+    public static readonly PageSize A5 = new(Values.A5);
 
-    public static readonly CreateTemplateFromHtmlRequestSize A6 = new(Values.A6);
+    public static readonly PageSize A6 = new(Values.A6);
 
-    public CreateTemplateFromHtmlRequestSize(string value)
+    public PageSize(string value)
     {
         Value = value;
     }
@@ -45,9 +43,9 @@ public readonly record struct CreateTemplateFromHtmlRequestSize : IStringEnum
     /// <summary>
     /// Create a string enum with the given value.
     /// </summary>
-    public static CreateTemplateFromHtmlRequestSize FromCustom(string value)
+    public static PageSize FromCustom(string value)
     {
-        return new CreateTemplateFromHtmlRequestSize(value);
+        return new PageSize(value);
     }
 
     public bool Equals(string? other)
@@ -63,20 +61,17 @@ public readonly record struct CreateTemplateFromHtmlRequestSize : IStringEnum
         return Value;
     }
 
-    public static bool operator ==(CreateTemplateFromHtmlRequestSize value1, string value2) =>
-        value1.Value.Equals(value2);
+    public static bool operator ==(PageSize value1, string value2) => value1.Value.Equals(value2);
 
-    public static bool operator !=(CreateTemplateFromHtmlRequestSize value1, string value2) =>
-        !value1.Value.Equals(value2);
+    public static bool operator !=(PageSize value1, string value2) => !value1.Value.Equals(value2);
 
-    public static explicit operator string(CreateTemplateFromHtmlRequestSize value) => value.Value;
+    public static explicit operator string(PageSize value) => value.Value;
 
-    public static explicit operator CreateTemplateFromHtmlRequestSize(string value) => new(value);
+    public static explicit operator PageSize(string value) => new(value);
 
-    internal class CreateTemplateFromHtmlRequestSizeSerializer
-        : JsonConverter<CreateTemplateFromHtmlRequestSize>
+    internal class PageSizeSerializer : JsonConverter<PageSize>
     {
-        public override CreateTemplateFromHtmlRequestSize Read(
+        public override PageSize Read(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options
@@ -87,19 +82,19 @@ public readonly record struct CreateTemplateFromHtmlRequestSize : IStringEnum
                 ?? throw new global::System.Exception(
                     "The JSON value could not be read as a string."
                 );
-            return new CreateTemplateFromHtmlRequestSize(stringValue);
+            return new PageSize(stringValue);
         }
 
         public override void Write(
             Utf8JsonWriter writer,
-            CreateTemplateFromHtmlRequestSize value,
+            PageSize value,
             JsonSerializerOptions options
         )
         {
             writer.WriteStringValue(value.Value);
         }
 
-        public override CreateTemplateFromHtmlRequestSize ReadAsPropertyName(
+        public override PageSize ReadAsPropertyName(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options
@@ -110,12 +105,12 @@ public readonly record struct CreateTemplateFromHtmlRequestSize : IStringEnum
                 ?? throw new global::System.Exception(
                     "The JSON property name could not be read as a string."
                 );
-            return new CreateTemplateFromHtmlRequestSize(stringValue);
+            return new PageSize(stringValue);
         }
 
         public override void WriteAsPropertyName(
             Utf8JsonWriter writer,
-            CreateTemplateFromHtmlRequestSize value,
+            PageSize value,
             JsonSerializerOptions options
         )
         {

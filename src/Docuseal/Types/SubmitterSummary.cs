@@ -107,7 +107,7 @@ public record SubmitterSummary : IJsonOnDeserialized
     /// The status of signing request for the submitter.
     /// </summary>
     [JsonPropertyName("status")]
-    public required SubmitterSummaryStatus Status { get; set; }
+    public required SubmitterStatus Status { get; set; }
 
     /// <summary>
     /// The role of the submitter in the signing process.

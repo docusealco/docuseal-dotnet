@@ -49,6 +49,13 @@ public record Template : IJsonOnDeserialized
     public IEnumerable<Field> Fields { get; set; } = new List<Field>();
 
     /// <summary>
+    /// Schema of the dynamic document content variables used in the template.
+    /// </summary>
+    [JsonPropertyName("variables_schema")]
+    public Dictionary<string, object?> VariablesSchema { get; set; } =
+        new Dictionary<string, object?>();
+
+    /// <summary>
     /// The list of submitters for the template.
     /// </summary>
     [JsonPropertyName("submitters")]

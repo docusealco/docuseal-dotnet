@@ -4,21 +4,17 @@ using global::System.Text.Json.Serialization;
 
 namespace Docuseal;
 
-[JsonConverter(typeof(SubmissionUpdateResultSource.SubmissionUpdateResultSourceSerializer))]
+[JsonConverter(typeof(FieldValign.FieldValignSerializer))]
 [Serializable]
-public readonly record struct SubmissionUpdateResultSource : IStringEnum
+public readonly record struct FieldValign : IStringEnum
 {
-    public static readonly SubmissionUpdateResultSource Invite = new(Values.Invite);
+    public static readonly FieldValign Top = new(Values.Top);
 
-    public static readonly SubmissionUpdateResultSource Bulk = new(Values.Bulk);
+    public static readonly FieldValign Center = new(Values.Center);
 
-    public static readonly SubmissionUpdateResultSource Api = new(Values.Api);
+    public static readonly FieldValign Bottom = new(Values.Bottom);
 
-    public static readonly SubmissionUpdateResultSource Embed = new(Values.Embed);
-
-    public static readonly SubmissionUpdateResultSource Link = new(Values.Link);
-
-    public SubmissionUpdateResultSource(string value)
+    public FieldValign(string value)
     {
         Value = value;
     }
@@ -31,9 +27,9 @@ public readonly record struct SubmissionUpdateResultSource : IStringEnum
     /// <summary>
     /// Create a string enum with the given value.
     /// </summary>
-    public static SubmissionUpdateResultSource FromCustom(string value)
+    public static FieldValign FromCustom(string value)
     {
-        return new SubmissionUpdateResultSource(value);
+        return new FieldValign(value);
     }
 
     public bool Equals(string? other)
@@ -49,20 +45,19 @@ public readonly record struct SubmissionUpdateResultSource : IStringEnum
         return Value;
     }
 
-    public static bool operator ==(SubmissionUpdateResultSource value1, string value2) =>
+    public static bool operator ==(FieldValign value1, string value2) =>
         value1.Value.Equals(value2);
 
-    public static bool operator !=(SubmissionUpdateResultSource value1, string value2) =>
+    public static bool operator !=(FieldValign value1, string value2) =>
         !value1.Value.Equals(value2);
 
-    public static explicit operator string(SubmissionUpdateResultSource value) => value.Value;
+    public static explicit operator string(FieldValign value) => value.Value;
 
-    public static explicit operator SubmissionUpdateResultSource(string value) => new(value);
+    public static explicit operator FieldValign(string value) => new(value);
 
-    internal class SubmissionUpdateResultSourceSerializer
-        : JsonConverter<SubmissionUpdateResultSource>
+    internal class FieldValignSerializer : JsonConverter<FieldValign>
     {
-        public override SubmissionUpdateResultSource Read(
+        public override FieldValign Read(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options
@@ -73,19 +68,19 @@ public readonly record struct SubmissionUpdateResultSource : IStringEnum
                 ?? throw new global::System.Exception(
                     "The JSON value could not be read as a string."
                 );
-            return new SubmissionUpdateResultSource(stringValue);
+            return new FieldValign(stringValue);
         }
 
         public override void Write(
             Utf8JsonWriter writer,
-            SubmissionUpdateResultSource value,
+            FieldValign value,
             JsonSerializerOptions options
         )
         {
             writer.WriteStringValue(value.Value);
         }
 
-        public override SubmissionUpdateResultSource ReadAsPropertyName(
+        public override FieldValign ReadAsPropertyName(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options
@@ -96,12 +91,12 @@ public readonly record struct SubmissionUpdateResultSource : IStringEnum
                 ?? throw new global::System.Exception(
                     "The JSON property name could not be read as a string."
                 );
-            return new SubmissionUpdateResultSource(stringValue);
+            return new FieldValign(stringValue);
         }
 
         public override void WriteAsPropertyName(
             Utf8JsonWriter writer,
-            SubmissionUpdateResultSource value,
+            FieldValign value,
             JsonSerializerOptions options
         )
         {
@@ -115,14 +110,10 @@ public readonly record struct SubmissionUpdateResultSource : IStringEnum
     [Serializable]
     public static class Values
     {
-        public const string Invite = "invite";
+        public const string Top = "top";
 
-        public const string Bulk = "bulk";
+        public const string Center = "center";
 
-        public const string Api = "api";
-
-        public const string Embed = "embed";
-
-        public const string Link = "link";
+        public const string Bottom = "bottom";
     }
 }

@@ -100,7 +100,7 @@ public record SubmitterUpdateResult : IJsonOnDeserialized
     /// The status of signing request for the submitter.
     /// </summary>
     [JsonPropertyName("status")]
-    public required SubmitterUpdateResultStatus Status { get; set; }
+    public required SubmitterStatus Status { get; set; }
 
     /// <summary>
     /// Your application-specific unique string key to identify this submitter within your app.

@@ -32,7 +32,7 @@ public record CreateSubmissionFromPdfParams
     /// </summary>
     [Optional]
     [JsonPropertyName("order")]
-    public CreateSubmissionFromPdfRequestOrder? Order { get; set; }
+    public SubmittersOrder? Order { get; set; }
 
     /// <summary>
     /// Specify URL to redirect to after the submission completion.
