@@ -18,6 +18,10 @@ public readonly record struct Currency : IStringEnum
 
     public static readonly Currency Aud = new(Values.Aud);
 
+    public static readonly Currency Chf = new(Values.Chf);
+
+    public static readonly Currency Sek = new(Values.Sek);
+
     public Currency(string value)
     {
         Value = value;
@@ -121,5 +125,9 @@ public readonly record struct Currency : IStringEnum
         public const string Cad = "CAD";
 
         public const string Aud = "AUD";
+
+        public const string Chf = "CHF";
+
+        public const string Sek = "SEK";
     }
 }

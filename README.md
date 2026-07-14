@@ -452,7 +452,6 @@ var template = await client.MergeTemplateAsync(new MergeTemplateParams
 
 [Documentation](https://www.docuseal.com/docs/api?lang=csharp#update-a-template)
 
-
 Provides the functionality to move a document template to a different folder and update the name of the template.
 
 
@@ -494,6 +493,16 @@ Allows you to archive a document template.
 
 ```csharp
 await client.ArchiveTemplateAsync(new ArchiveTemplateParams { Id = 1000001 });
+```
+
+### Configuring Timeouts
+
+Set timeouts to avoid hanging requests:
+
+```csharp
+var client = new DocusealClient(
+    Environment.GetEnvironmentVariable("DOCUSEAL_API_KEY"),
+    new ClientOptions { Timeout = TimeSpan.FromSeconds(30) });
 ```
 
 ## Support

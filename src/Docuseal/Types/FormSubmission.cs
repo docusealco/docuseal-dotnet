@@ -4,31 +4,48 @@ using global::System.Text.Json.Serialization;
 
 namespace Docuseal;
 
+/// <summary>
+/// Submission details of the form.
+/// </summary>
 [Serializable]
-public record SubmissionCreateResult : IJsonOnDeserialized
+public record FormSubmission : IJsonOnDeserialized
 {
     [JsonExtensionData]
     private readonly IDictionary<string, JsonElement> _extensionData =
         new Dictionary<string, JsonElement>();
 
     /// <summary>
-    /// Submission unique ID number.
+    /// The submission unique identifier.
     /// </summary>
     [JsonPropertyName("id")]
     public required int Id { get; set; }
 
     /// <summary>
-    /// The list of created submitters.
+    /// Audit log file URL.
     /// </summary>
-    [JsonPropertyName("submitters")]
-    public IEnumerable<SubmitterCreateResult> Submitters { get; set; } =
-        new List<SubmitterCreateResult>();
+    [JsonPropertyName("audit_log_url")]
+    public string? AuditLogUrl { get; set; }
 
     /// <summary>
-    /// The date and time when the submission expires.
+    /// Combined PDF file URL with documents and Audit Log.
     /// </summary>
-    [JsonPropertyName("expire_at")]
-    public string? ExpireAt { get; set; }
+    [JsonPropertyName("combined_document_url")]
+    public string? CombinedDocumentUrl { get; set; }
+
+    [JsonPropertyName("status")]
+    public required SubmissionStatus Status { get; set; }
+
+    /// <summary>
+    /// The submission URL.
+    /// </summary>
+    [JsonPropertyName("url")]
+    public required string Url { get; set; }
+
+    /// <summary>
+    /// Dynamic document content variables of the submission.
+    /// </summary>
+    [JsonPropertyName("variables")]
+    public Dictionary<string, object?>? Variables { get; set; }
 
     /// <summary>
     /// The date and time when the submission was created.

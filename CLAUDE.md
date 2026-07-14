@@ -10,18 +10,20 @@ client with a hand partial.
 ## Architecture
 
 - `src/Docuseal/` - generated, never edit by hand. Regenerate with
-  `./generate-types.sh [spec-path-or-url]` (Node.js, Docker and ruby
+  `./generate-types.rb [spec-path-or-url]` (Node.js, Docker and ruby
   required; the Fern generator runs locally in Docker, no account). Building
   all target frameworks needs the .NET 9 SDK.
 - `fern/` - Fern workspace config: generator version pin,
   `namespace: Docuseal`, `client-class-name: DocusealClient`.
 - `Directory.Build.props` - NuGet package metadata (PackageId, Version,
   license); kept outside src/ so regeneration does not touch it.
-- `generate-types.sh` preprocesses the spec with ruby (same transform as
-  docuseal-java): drops webhook schemas, swaps legacy `POST /submissions`
-  for `/submissions/init` (envelope response), strips tags for a flat client
-  surface and injects `x-fern-request-name` so method inputs are named
-  `<OperationId>Params`.
+- `generate-types.rb` fetches the spec in SDK mode (`?sdk=true`; the
+  webhook drop, `/submissions/init` swap, tag strip and
+  `<OperationId>Params` naming happen on the Rails side) and appends
+  `PermanentlyDeleteTemplateAsync`/`PermanentlyDeleteSubmissionAsync` (same
+  DELETE endpoints with `?permanently=true`; not expressible in OpenAPI
+  next to the archive operations) into `DocusealClient.cs`/
+  `IDocusealClient.cs` plus their Params records under `Requests/`.
 
 ## Source of truth
 

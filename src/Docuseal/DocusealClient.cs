@@ -809,7 +809,9 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<WithRawResponse<SubmissionCreateResult>> CreateSubmissionFromPdfAsyncCore(
+    private async Task<
+        WithRawResponse<SubmissionCreateOneoffResult>
+    > CreateSubmissionFromPdfAsyncCore(
         CreateSubmissionFromPdfParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -846,8 +848,10 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<SubmissionCreateResult>(responseBody)!;
-                return new WithRawResponse<SubmissionCreateResult>()
+                var responseData = JsonUtils.Deserialize<SubmissionCreateOneoffResult>(
+                    responseBody
+                )!;
+                return new WithRawResponse<SubmissionCreateOneoffResult>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -892,7 +896,9 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<WithRawResponse<SubmissionCreateResult>> CreateSubmissionFromDocxAsyncCore(
+    private async Task<
+        WithRawResponse<SubmissionCreateOneoffResult>
+    > CreateSubmissionFromDocxAsyncCore(
         CreateSubmissionFromDocxParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -929,8 +935,10 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<SubmissionCreateResult>(responseBody)!;
-                return new WithRawResponse<SubmissionCreateResult>()
+                var responseData = JsonUtils.Deserialize<SubmissionCreateOneoffResult>(
+                    responseBody
+                )!;
+                return new WithRawResponse<SubmissionCreateOneoffResult>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -975,7 +983,9 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<WithRawResponse<SubmissionCreateResult>> CreateSubmissionFromHtmlAsyncCore(
+    private async Task<
+        WithRawResponse<SubmissionCreateOneoffResult>
+    > CreateSubmissionFromHtmlAsyncCore(
         CreateSubmissionFromHtmlParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -1012,8 +1022,10 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<SubmissionCreateResult>(responseBody)!;
-                return new WithRawResponse<SubmissionCreateResult>()
+                var responseData = JsonUtils.Deserialize<SubmissionCreateOneoffResult>(
+                    responseBody
+                )!;
+                return new WithRawResponse<SubmissionCreateOneoffResult>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -1822,7 +1834,7 @@ public partial class DocusealClient : IDocusealClient
         }
     }
 
-    private async Task<WithRawResponse<SubmissionInitResult>> CreateSubmissionAsyncCore(
+    private async Task<WithRawResponse<SubmissionCreateResult>> CreateSubmissionAsyncCore(
         CreateSubmissionParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -1859,8 +1871,8 @@ public partial class DocusealClient : IDocusealClient
                 .ConfigureAwait(false);
             try
             {
-                var responseData = JsonUtils.Deserialize<SubmissionInitResult>(responseBody)!;
-                return new WithRawResponse<SubmissionInitResult>()
+                var responseData = JsonUtils.Deserialize<SubmissionCreateResult>(responseBody)!;
+                return new WithRawResponse<SubmissionCreateResult>()
                 {
                     Data = responseData,
                     RawResponse = new Docuseal.RawResponse()
@@ -2076,13 +2088,13 @@ public partial class DocusealClient : IDocusealClient
     ///     }
     /// );
     /// </code></example>
-    public WithRawResponseTask<SubmissionCreateResult> CreateSubmissionFromPdfAsync(
+    public WithRawResponseTask<SubmissionCreateOneoffResult> CreateSubmissionFromPdfAsync(
         CreateSubmissionFromPdfParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<SubmissionCreateResult>(
+        return new WithRawResponseTask<SubmissionCreateOneoffResult>(
             CreateSubmissionFromPdfAsyncCore(request, options, cancellationToken)
         );
     }
@@ -2105,13 +2117,13 @@ public partial class DocusealClient : IDocusealClient
     ///     }
     /// );
     /// </code></example>
-    public WithRawResponseTask<SubmissionCreateResult> CreateSubmissionFromDocxAsync(
+    public WithRawResponseTask<SubmissionCreateOneoffResult> CreateSubmissionFromDocxAsync(
         CreateSubmissionFromDocxParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<SubmissionCreateResult>(
+        return new WithRawResponseTask<SubmissionCreateOneoffResult>(
             CreateSubmissionFromDocxAsyncCore(request, options, cancellationToken)
         );
     }
@@ -2138,13 +2150,13 @@ public partial class DocusealClient : IDocusealClient
     ///     }
     /// );
     /// </code></example>
-    public WithRawResponseTask<SubmissionCreateResult> CreateSubmissionFromHtmlAsync(
+    public WithRawResponseTask<SubmissionCreateOneoffResult> CreateSubmissionFromHtmlAsync(
         CreateSubmissionFromHtmlParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<SubmissionCreateResult>(
+        return new WithRawResponseTask<SubmissionCreateOneoffResult>(
             CreateSubmissionFromHtmlAsyncCore(request, options, cancellationToken)
         );
     }
@@ -2345,14 +2357,218 @@ public partial class DocusealClient : IDocusealClient
     ///     }
     /// );
     /// </code></example>
-    public WithRawResponseTask<SubmissionInitResult> CreateSubmissionAsync(
+    public WithRawResponseTask<SubmissionCreateResult> CreateSubmissionAsync(
         CreateSubmissionParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
     {
-        return new WithRawResponseTask<SubmissionInitResult>(
+        return new WithRawResponseTask<SubmissionCreateResult>(
             CreateSubmissionAsyncCore(request, options, cancellationToken)
         );
+    }
+
+    /// <summary>
+    /// The API endpoint allows you to permanently delete a document template and all of its submissions.
+    /// </summary>
+    /// <example><code>
+    /// await client.PermanentlyDeleteTemplateAsync(new PermanentlyDeleteTemplateParams { Id = 1 });
+    /// </code></example>
+    public WithRawResponseTask<TemplateArchiveResult> PermanentlyDeleteTemplateAsync(
+        PermanentlyDeleteTemplateParams request,
+        RequestOptions? options = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        return new WithRawResponseTask<TemplateArchiveResult>(
+            PermanentlyDeleteTemplateAsyncCore(request, options, cancellationToken)
+        );
+    }
+
+    private async Task<WithRawResponse<TemplateArchiveResult>> PermanentlyDeleteTemplateAsyncCore(
+        PermanentlyDeleteTemplateParams request,
+        RequestOptions? options = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var _queryString = new Docuseal.Core.QueryStringBuilder.Builder(capacity: 1)
+            .Add("permanently", "true")
+            .MergeAdditional(options?.AdditionalQueryParameters)
+            .Build();
+        var _headers = await new Docuseal.Core.HeadersBuilder.Builder()
+            .Add(_client.Options.Headers)
+            .Add(_client.Options.AdditionalHeaders)
+            .Add(options?.AdditionalHeaders)
+            .BuildAsync()
+            .ConfigureAwait(false);
+        var response = await _client
+            .SendRequestAsync(
+                new JsonRequest
+                {
+                    Method = HttpMethod.Delete,
+                    Path = string.Format(
+                        "templates/{0}",
+                        ValueConvert.ToPathParameterString(request.Id)
+                    ),
+                    QueryString = _queryString,
+                    Headers = _headers,
+                    Options = options,
+                },
+                cancellationToken
+            )
+            .ConfigureAwait(false);
+        if (response.StatusCode is >= 200 and < 400)
+        {
+            var responseBody = await response
+                .Raw.Content.ReadAsStringAsync(cancellationToken)
+                .ConfigureAwait(false);
+            try
+            {
+                var responseData = JsonUtils.Deserialize<TemplateArchiveResult>(responseBody)!;
+                return new WithRawResponse<TemplateArchiveResult>()
+                {
+                    Data = responseData,
+                    RawResponse = new Docuseal.RawResponse()
+                    {
+                        StatusCode = response.Raw.StatusCode,
+                        Url = response.Raw.RequestMessage?.RequestUri ?? new Uri("about:blank"),
+                        Headers = ResponseHeaders.FromHttpResponseMessage(response.Raw),
+                    },
+                };
+            }
+            catch (JsonException e)
+            {
+                throw new DocusealClientApiException(
+                    "Failed to deserialize response",
+                    response.StatusCode,
+                    responseBody,
+                    e,
+                    rawResponse: new Docuseal.RawResponse()
+                    {
+                        StatusCode = response.Raw.StatusCode,
+                        Url = response.Raw.RequestMessage?.RequestUri ?? new Uri("about:blank"),
+                        Headers = ResponseHeaders.FromHttpResponseMessage(response.Raw),
+                    }
+                );
+            }
+        }
+        {
+            var responseBody = await response
+                .Raw.Content.ReadAsStringAsync(cancellationToken)
+                .ConfigureAwait(false);
+            throw new DocusealClientApiException(
+                $"Error with status code {response.StatusCode}",
+                response.StatusCode,
+                responseBody,
+                rawResponse: new Docuseal.RawResponse()
+                {
+                    StatusCode = response.Raw.StatusCode,
+                    Url = response.Raw.RequestMessage?.RequestUri ?? new Uri("about:blank"),
+                    Headers = ResponseHeaders.FromHttpResponseMessage(response.Raw),
+                }
+            );
+        }
+    }
+
+    /// <summary>
+    /// The API endpoint allows you to permanently delete a submission and all of its submitters and documents.
+    /// </summary>
+    /// <example><code>
+    /// await client.PermanentlyDeleteSubmissionAsync(new PermanentlyDeleteSubmissionParams { Id = 1 });
+    /// </code></example>
+    public WithRawResponseTask<SubmissionArchiveResult> PermanentlyDeleteSubmissionAsync(
+        PermanentlyDeleteSubmissionParams request,
+        RequestOptions? options = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        return new WithRawResponseTask<SubmissionArchiveResult>(
+            PermanentlyDeleteSubmissionAsyncCore(request, options, cancellationToken)
+        );
+    }
+
+    private async Task<WithRawResponse<SubmissionArchiveResult>> PermanentlyDeleteSubmissionAsyncCore(
+        PermanentlyDeleteSubmissionParams request,
+        RequestOptions? options = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var _queryString = new Docuseal.Core.QueryStringBuilder.Builder(capacity: 1)
+            .Add("permanently", "true")
+            .MergeAdditional(options?.AdditionalQueryParameters)
+            .Build();
+        var _headers = await new Docuseal.Core.HeadersBuilder.Builder()
+            .Add(_client.Options.Headers)
+            .Add(_client.Options.AdditionalHeaders)
+            .Add(options?.AdditionalHeaders)
+            .BuildAsync()
+            .ConfigureAwait(false);
+        var response = await _client
+            .SendRequestAsync(
+                new JsonRequest
+                {
+                    Method = HttpMethod.Delete,
+                    Path = string.Format(
+                        "submissions/{0}",
+                        ValueConvert.ToPathParameterString(request.Id)
+                    ),
+                    QueryString = _queryString,
+                    Headers = _headers,
+                    Options = options,
+                },
+                cancellationToken
+            )
+            .ConfigureAwait(false);
+        if (response.StatusCode is >= 200 and < 400)
+        {
+            var responseBody = await response
+                .Raw.Content.ReadAsStringAsync(cancellationToken)
+                .ConfigureAwait(false);
+            try
+            {
+                var responseData = JsonUtils.Deserialize<SubmissionArchiveResult>(responseBody)!;
+                return new WithRawResponse<SubmissionArchiveResult>()
+                {
+                    Data = responseData,
+                    RawResponse = new Docuseal.RawResponse()
+                    {
+                        StatusCode = response.Raw.StatusCode,
+                        Url = response.Raw.RequestMessage?.RequestUri ?? new Uri("about:blank"),
+                        Headers = ResponseHeaders.FromHttpResponseMessage(response.Raw),
+                    },
+                };
+            }
+            catch (JsonException e)
+            {
+                throw new DocusealClientApiException(
+                    "Failed to deserialize response",
+                    response.StatusCode,
+                    responseBody,
+                    e,
+                    rawResponse: new Docuseal.RawResponse()
+                    {
+                        StatusCode = response.Raw.StatusCode,
+                        Url = response.Raw.RequestMessage?.RequestUri ?? new Uri("about:blank"),
+                        Headers = ResponseHeaders.FromHttpResponseMessage(response.Raw),
+                    }
+                );
+            }
+        }
+        {
+            var responseBody = await response
+                .Raw.Content.ReadAsStringAsync(cancellationToken)
+                .ConfigureAwait(false);
+            throw new DocusealClientApiException(
+                $"Error with status code {response.StatusCode}",
+                response.StatusCode,
+                responseBody,
+                rawResponse: new Docuseal.RawResponse()
+                {
+                    StatusCode = response.Raw.StatusCode,
+                    Url = response.Raw.RequestMessage?.RequestUri ?? new Uri("about:blank"),
+                    Headers = ResponseHeaders.FromHttpResponseMessage(response.Raw),
+                }
+            );
+        }
     }
 }
