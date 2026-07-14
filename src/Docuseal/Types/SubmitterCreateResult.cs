@@ -32,7 +32,6 @@ public record SubmitterCreateResult : IJsonOnDeserialized
     /// <summary>
     /// The email address of the submitter.
     /// </summary>
-    [Nullable]
     [JsonPropertyName("email")]
     public string? Email { get; set; }
 
@@ -63,28 +62,24 @@ public record SubmitterCreateResult : IJsonOnDeserialized
     /// <summary>
     /// The date and time when the signing request was sent to the submitter.
     /// </summary>
-    [Nullable]
     [JsonPropertyName("sent_at")]
     public string? SentAt { get; set; }
 
     /// <summary>
     /// The date and time when the submitter opened the signing form.
     /// </summary>
-    [Nullable]
     [JsonPropertyName("opened_at")]
     public string? OpenedAt { get; set; }
 
     /// <summary>
     /// The date and time when the submitter completed the signing form.
     /// </summary>
-    [Nullable]
     [JsonPropertyName("completed_at")]
     public string? CompletedAt { get; set; }
 
     /// <summary>
     /// The date and time when the submitter declined the signing form.
     /// </summary>
-    [Nullable]
     [JsonPropertyName("declined_at")]
     public string? DeclinedAt { get; set; }
 
@@ -103,21 +98,18 @@ public record SubmitterCreateResult : IJsonOnDeserialized
     /// <summary>
     /// The name of the submitter.
     /// </summary>
-    [Nullable]
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
     /// The phone number of the submitter.
     /// </summary>
-    [Nullable]
     [JsonPropertyName("phone")]
     public string? Phone { get; set; }
 
     /// <summary>
     /// Your application-specific unique string key to identify this submitter within your app.
     /// </summary>
-    [Nullable]
     [JsonPropertyName("external_id")]
     public string? ExternalId { get; set; }
 

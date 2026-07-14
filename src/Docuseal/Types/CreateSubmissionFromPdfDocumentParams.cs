@@ -26,14 +26,12 @@ public record CreateSubmissionFromPdfDocumentParams : IJsonOnDeserialized
     /// <summary>
     /// Fields are optional if you use {{...}} text tags to define fields in the document.
     /// </summary>
-    [Optional]
     [JsonPropertyName("fields")]
     public IEnumerable<CreateSubmissionDocumentFieldParams>? Fields { get; set; }
 
     /// <summary>
     /// Document position in the submission. If not specified, the document will be added in the order it appears in the documents array.
     /// </summary>
-    [Optional]
     [JsonPropertyName("position")]
     public int? Position { get; set; }
 

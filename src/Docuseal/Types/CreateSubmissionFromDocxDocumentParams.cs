@@ -26,7 +26,6 @@ public record CreateSubmissionFromDocxDocumentParams : IJsonOnDeserialized
     /// <summary>
     /// Document position in the submission. If not specified, the document will be added in the order it appears in the documents array.
     /// </summary>
-    [Optional]
     [JsonPropertyName("position")]
     public int? Position { get; set; }
 

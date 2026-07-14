@@ -15,21 +15,18 @@ public record UpdateSubmissionParams
     /// <summary>
     /// The name of the submission.
     /// </summary>
-    [Optional]
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
     /// The date and time when the submission will expire and no longer be available. Pass `null` to remove the expiration.
     /// </summary>
-    [Optional]
     [JsonPropertyName("expire_at")]
     public string? ExpireAt { get; set; }
 
     /// <summary>
     /// Set `true` to archive the submission or `false` to unarchive it.
     /// </summary>
-    [Optional]
     [JsonPropertyName("archived")]
     public bool? Archived { get; set; }
 

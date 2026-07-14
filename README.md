@@ -102,7 +102,7 @@ var submission = await client.CreateSubmissionAsync(new CreateSubmissionParams
     TemplateId = 1000001,
     SendEmail = true,
     Submitters = [
-        new CreateSubmissionRequestSubmitter
+        new CreateSubmissionSubmitterParams
         {
             Role = "First Party",
             Email = "john.doe@example.com"
@@ -126,17 +126,16 @@ var submission = await client.CreateSubmissionFromPdfAsync(new CreateSubmissionF
 {
     Name = "Test Submission Document",
     Documents = [
-        new CreateSubmissionFromPdfRequestDocument
+        new CreateSubmissionFromPdfDocumentParams
         {
             Name = "string",
             File = "base64",
             Fields = [
-                new CreateSubmissionFromPdfRequestDocumentField
+                new CreateSubmissionDocumentFieldParams
                 {
                     Name = "string",
                     Areas = [
-
-                        new CreateSubmissionFromPdfRequestDocumentFieldArea
+                        new CreateSubmissionDocumentFieldAreaParams
                         {
                             X = 0,
                             Y = 0,
@@ -150,7 +149,7 @@ var submission = await client.CreateSubmissionFromPdfAsync(new CreateSubmissionF
         },
     ],
     Submitters = [
-        new CreateSubmissionFromPdfRequestSubmitter
+        new CreateSubmissionSubmitterParams
         {
             Role = "First Party",
             Email = "john.doe@example.com"
@@ -175,14 +174,14 @@ var submission = await client.CreateSubmissionFromDocxAsync(new CreateSubmission
     Name = "Test Submission Document",
     Variables = new Dictionary<string, object?> { ["variable_name"] = "value" },
     Documents = [
-        new CreateSubmissionFromDocxRequestDocument
+        new CreateSubmissionFromDocxDocumentParams
         {
             Name = "string",
             File = "base64"
         },
     ],
     Submitters = [
-        new CreateSubmissionFromPdfRequestSubmitter
+        new CreateSubmissionSubmitterParams
         {
             Role = "First Party",
             Email = "john.doe@example.com"
@@ -206,7 +205,7 @@ var submission = await client.CreateSubmissionFromHtmlAsync(new CreateSubmission
 {
     Name = "Test Submission Document",
     Documents = [
-        new CreateSubmissionFromHtmlRequestDocument
+        new CreateSubmissionFromHtmlDocumentParams
         {
             Name = "Test Document",
             Html = """
@@ -222,7 +221,7 @@ and typesetting industry</p>
         },
     ],
     Submitters = [
-        new CreateSubmissionFromPdfRequestSubmitter
+        new CreateSubmissionSubmitterParams
         {
             Role = "First Party",
             Email = "john.doe@example.com"
@@ -297,7 +296,7 @@ var submitter = await client.UpdateSubmitterAsync(new UpdateSubmitterParams
     Id = 500001,
     Email = "john.doe@example.com",
     Fields = [
-        new UpdateSubmitterRequestField
+        new UpdateSubmitterFieldParams
         {
             Name = "First Name",
             DefaultValue = "Acme"
@@ -311,7 +310,6 @@ var submitter = await client.UpdateSubmitterAsync(new UpdateSubmitterParams
 [Documentation](https://www.docuseal.com/docs/api?lang=csharp#list-all-templates)
 
 Provides the ability to retrieve a list of available document templates.
-
 
 
 ```csharp
@@ -344,16 +342,16 @@ var template = await client.CreateTemplateFromPdfAsync(new CreateTemplateFromPdf
 {
     Name = "Test PDF",
     Documents = [
-        new CreateTemplateFromPdfRequestDocument
+        new CreateTemplateFromPdfDocumentParams
         {
             Name = "string",
             File = "base64",
             Fields = [
-                new CreateTemplateFromPdfRequestDocumentField
+                new CreateTemplateDocumentFieldParams
                 {
                     Name = "string",
                     Areas = [
-                        new CreateSubmissionFromPdfRequestDocumentFieldArea
+                        new CreateTemplateDocumentFieldAreaParams
                         {
                             X = 0,
                             Y = 0,
@@ -384,7 +382,7 @@ var template = await client.CreateTemplateFromDocxAsync(new CreateTemplateFromDo
 {
     Name = "Test DOCX",
     Documents = [
-        new CreateTemplateFromDocxRequestDocument
+        new CreateTemplateFromDocxDocumentParams
         {
             Name = "string",
             File = "base64"
@@ -454,6 +452,7 @@ var template = await client.MergeTemplateAsync(new MergeTemplateParams
 
 [Documentation](https://www.docuseal.com/docs/api?lang=csharp#update-a-template)
 
+
 Provides the functionality to move a document template to a different folder and update the name of the template.
 
 
@@ -466,7 +465,7 @@ var template = await client.UpdateTemplateAsync(new UpdateTemplateParams
 });
 ```
 
-### AddDocumentToTemplateAsync(id, data)
+### UpdateTemplateDocumentsAsync(id, data)
 
 [Documentation](https://www.docuseal.com/docs/api?lang=csharp#update-template-documents)
 
@@ -474,11 +473,11 @@ Allows you to add, remove or replace documents in the template with provided PDF
 
 
 ```csharp
-var template = await client.AddDocumentToTemplateAsync(new AddDocumentToTemplateParams
+var template = await client.UpdateTemplateDocumentsAsync(new UpdateTemplateDocumentsParams
 {
     Id = 1000001,
     Documents = [
-        new AddDocumentToTemplateRequestDocument
+        new UpdateTemplateDocumentsDocumentParams
         {
             File = "string"
         },

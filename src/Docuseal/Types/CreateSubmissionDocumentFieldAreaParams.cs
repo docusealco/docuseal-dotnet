@@ -44,7 +44,6 @@ public record CreateSubmissionDocumentFieldAreaParams : IJsonOnDeserialized
     /// <summary>
     /// Option string value for 'radio' and 'multiple' select field types.
     /// </summary>
-    [Optional]
     [JsonPropertyName("option")]
     public string? Option { get; set; }
 

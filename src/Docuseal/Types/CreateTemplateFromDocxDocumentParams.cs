@@ -26,14 +26,12 @@ public record CreateTemplateFromDocxDocumentParams : IJsonOnDeserialized
     /// <summary>
     /// Set to `true` to make the document dynamic. When enabled, the DOCX document content can be edited or use [[variables]] in the template editor.
     /// </summary>
-    [Optional]
     [JsonPropertyName("dynamic")]
     public bool? Dynamic { get; set; }
 
     /// <summary>
     /// Fields are optional if you use {{...}} text tags to define fields in the document.
     /// </summary>
-    [Optional]
     [JsonPropertyName("fields")]
     public IEnumerable<CreateTemplateDocumentFieldParams>? Fields { get; set; }
 

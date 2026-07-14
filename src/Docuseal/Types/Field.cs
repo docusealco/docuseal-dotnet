@@ -41,7 +41,6 @@ public record Field : IJsonOnDeserialized
     [JsonPropertyName("required")]
     public required bool Required { get; set; }
 
-    [Optional]
     [JsonPropertyName("preferences")]
     public FieldPreferences? Preferences { get; set; }
 

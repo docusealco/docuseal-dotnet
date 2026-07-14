@@ -51,21 +51,18 @@ public record SubmissionCreateResult : IJsonOnDeserialized
     /// <summary>
     /// The one-off submission document files.
     /// </summary>
-    [Optional]
     [JsonPropertyName("schema")]
     public IEnumerable<SchemaDocument>? Schema { get; set; }
 
     /// <summary>
     /// List of fields to be filled in the one-off submission.
     /// </summary>
-    [Optional]
     [JsonPropertyName("fields")]
     public IEnumerable<Field>? Fields { get; set; }
 
     /// <summary>
     /// The date and time when the submission will expire and no longer be available for signing.
     /// </summary>
-    [Nullable]
     [JsonPropertyName("expire_at")]
     public string? ExpireAt { get; set; }
 

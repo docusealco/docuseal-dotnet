@@ -21,7 +21,6 @@ public record UpdateSubmitterFieldParams : IJsonOnDeserialized
     /// <summary>
     /// Default value of the field. Use base64 encoded file or a public URL to the image file to set default signature or image fields.
     /// </summary>
-    [Optional]
     [JsonPropertyName("default_value")]
     public OneOf<
         string,
@@ -33,22 +32,18 @@ public record UpdateSubmitterFieldParams : IJsonOnDeserialized
     /// <summary>
     /// Set `true` to make it impossible for the submitter to edit predefined field value.
     /// </summary>
-    [Optional]
     [JsonPropertyName("readonly")]
     public bool? Readonly { get; set; }
 
     /// <summary>
     /// Set `true` to make the field required.
     /// </summary>
-    [Optional]
     [JsonPropertyName("required")]
     public bool? Required { get; set; }
 
-    [Optional]
     [JsonPropertyName("validation")]
     public UpdateSubmitterFieldValidationParams? Validation { get; set; }
 
-    [Optional]
     [JsonPropertyName("preferences")]
     public UpdateSubmitterFieldPreferencesParams? Preferences { get; set; }
 

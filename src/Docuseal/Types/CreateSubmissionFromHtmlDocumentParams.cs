@@ -14,7 +14,6 @@ public record CreateSubmissionFromHtmlDocumentParams : IJsonOnDeserialized
     /// <summary>
     /// Document name. Random uuid will be assigned when not specified.
     /// </summary>
-    [Optional]
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
@@ -27,28 +26,24 @@ public record CreateSubmissionFromHtmlDocumentParams : IJsonOnDeserialized
     /// <summary>
     /// HTML document content of the header to be displayed on every page.
     /// </summary>
-    [Optional]
     [JsonPropertyName("html_header")]
     public string? HtmlHeader { get; set; }
 
     /// <summary>
     /// HTML document content of the footer to be displayed on every page.
     /// </summary>
-    [Optional]
     [JsonPropertyName("html_footer")]
     public string? HtmlFooter { get; set; }
 
     /// <summary>
     /// Page size. Letter 8.5 x 11 will be assigned when not specified.
     /// </summary>
-    [Optional]
     [JsonPropertyName("size")]
     public PageSize? Size { get; set; }
 
     /// <summary>
     /// Document position in the submission. If not specified, the document will be added in the order it appears in the documents array.
     /// </summary>
-    [Optional]
     [JsonPropertyName("position")]
     public int? Position { get; set; }
 

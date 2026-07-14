@@ -17,86 +17,74 @@ public record FieldPreferences : IJsonOnDeserialized
     /// <summary>
     /// Font size of the field value in pixels.
     /// </summary>
-    [Nullable, Optional]
     [JsonPropertyName("font_size")]
-    public Optional<int?> FontSize { get; set; }
+    public int? FontSize { get; set; }
 
     /// <summary>
     /// Font type of the field value.
     /// </summary>
-    [Nullable, Optional]
     [JsonPropertyName("font_type")]
-    public Optional<string?> FontType { get; set; }
+    public string? FontType { get; set; }
 
     /// <summary>
     /// Font family of the field value.
     /// </summary>
-    [Nullable, Optional]
     [JsonPropertyName("font")]
-    public Optional<string?> Font { get; set; }
+    public string? Font { get; set; }
 
     /// <summary>
     /// Font color of the field value.
     /// </summary>
-    [Nullable, Optional]
     [JsonPropertyName("color")]
-    public Optional<string?> Color { get; set; }
+    public string? Color { get; set; }
 
     /// <summary>
     /// Field box background color.
     /// </summary>
-    [Nullable, Optional]
     [JsonPropertyName("background")]
-    public Optional<string?> Background { get; set; }
+    public string? Background { get; set; }
 
     /// <summary>
     /// Horizontal alignment of the field text value.
     /// </summary>
-    [Nullable, Optional]
     [JsonPropertyName("align")]
-    public Optional<string?> Align { get; set; }
+    public string? Align { get; set; }
 
     /// <summary>
     /// Vertical alignment of the field text value.
     /// </summary>
-    [Nullable, Optional]
     [JsonPropertyName("valign")]
-    public Optional<string?> Valign { get; set; }
+    public string? Valign { get; set; }
 
     /// <summary>
     /// The data format for different field types.
     /// </summary>
-    [Nullable, Optional]
     [JsonPropertyName("format")]
-    public Optional<string?> Format { get; set; }
+    public string? Format { get; set; }
 
     /// <summary>
     /// Price value of the payment field. Only for payment fields.
     /// </summary>
-    [Nullable, Optional]
     [JsonPropertyName("price")]
-    public Optional<double?> Price { get; set; }
+    public double? Price { get; set; }
 
     /// <summary>
     /// Currency value of the payment field. Only for payment fields.
     /// </summary>
-    [Nullable, Optional]
     [JsonPropertyName("currency")]
-    public Optional<string?> Currency { get; set; }
+    public string? Currency { get; set; }
 
     /// <summary>
     /// Indicates if the field is masked on the document.
     /// </summary>
-    [Nullable, Optional]
     [JsonPropertyName("mask")]
-    public Optional<bool?> Mask { get; set; }
+    public bool? Mask { get; set; }
 
     /// <summary>
     /// An array of signature reasons to choose from.
     /// </summary>
-    [Nullable, Optional]
     [JsonPropertyName("reasons")]
-    public Optional<IEnumerable<string>?> Reasons { get; set; }
+    public IEnumerable<string>? Reasons { get; set; }
 
     [JsonIgnore]
     public ReadOnlyAdditionalProperties AdditionalProperties { get; private set; } = new();

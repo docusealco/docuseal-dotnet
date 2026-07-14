@@ -20,7 +20,6 @@ public record SubmissionArchiveResult : IJsonOnDeserialized
     /// <summary>
     /// Date and time when the submission was archived.
     /// </summary>
-    [Nullable]
     [JsonPropertyName("archived_at")]
     public string? ArchivedAt { get; set; }
 
