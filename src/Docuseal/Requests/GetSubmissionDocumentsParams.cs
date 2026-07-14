@@ -7,12 +7,6 @@ namespace Docuseal;
 public record GetSubmissionDocumentsParams
 {
     /// <summary>
-    /// The unique identifier of the submission.
-    /// </summary>
-    [JsonIgnore]
-    public required int Id { get; set; }
-
-    /// <summary>
     /// When `true`, merges all documents into a single PDF.
     /// </summary>
     [JsonIgnore]

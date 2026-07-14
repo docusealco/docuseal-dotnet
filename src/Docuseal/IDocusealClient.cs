@@ -15,7 +15,7 @@ public partial interface IDocusealClient
     /// The API endpoint provides the functionality to retrieve information about a document template.
     /// </summary>
     WithRawResponseTask<Template> GetTemplateAsync(
-        GetTemplateParams request,
+        int id,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     );
@@ -24,6 +24,7 @@ public partial interface IDocusealClient
     /// The API endpoint provides the functionality to move a document template to a different folder and update the name of the template.
     /// </summary>
     WithRawResponseTask<TemplateUpdateResult> UpdateTemplateAsync(
+        int id,
         UpdateTemplateParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -33,7 +34,7 @@ public partial interface IDocusealClient
     /// The API endpoint allows you to archive a document template.
     /// </summary>
     WithRawResponseTask<TemplateArchiveResult> ArchiveTemplateAsync(
-        ArchiveTemplateParams request,
+        int id,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     );
@@ -51,7 +52,7 @@ public partial interface IDocusealClient
     /// The API endpoint provides the functionality to retrieve information about a submission.
     /// </summary>
     WithRawResponseTask<Submission> GetSubmissionAsync(
-        GetSubmissionParams request,
+        int id,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     );
@@ -60,6 +61,7 @@ public partial interface IDocusealClient
     /// The API endpoint allows you to update a submission: change its name, expiration date, and archive or unarchive it.
     /// </summary>
     WithRawResponseTask<SubmissionUpdateResult> UpdateSubmissionAsync(
+        int id,
         UpdateSubmissionParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -69,7 +71,7 @@ public partial interface IDocusealClient
     /// The API endpoint allows you to archive a submission.
     /// </summary>
     WithRawResponseTask<SubmissionArchiveResult> ArchiveSubmissionAsync(
-        ArchiveSubmissionParams request,
+        int id,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     );
@@ -78,6 +80,7 @@ public partial interface IDocusealClient
     /// This endpoint returns a list of partially filled documents for a submission. If the submission has been completed, the final signed documents are returned.
     /// </summary>
     WithRawResponseTask<SubmissionDocuments> GetSubmissionDocumentsAsync(
+        int id,
         GetSubmissionDocumentsParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -114,7 +117,7 @@ public partial interface IDocusealClient
     /// The API endpoint provides functionality to retrieve information about a submitter, along with the submitter documents and field values.
     /// </summary>
     WithRawResponseTask<Submitter> GetSubmitterAsync(
-        GetSubmitterParams request,
+        int id,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     );
@@ -123,6 +126,7 @@ public partial interface IDocusealClient
     /// The API endpoint allows you to update submitter details, pre-fill or update field values and re-send emails.<br/><b>Related Guides</b><br/><see href="https://www.docuseal.com/guides/pre-fill-pdf-document-form-fields-with-api#automatically_sign_documents_via_api">Automatically sign documents via API</see>
     /// </summary>
     WithRawResponseTask<SubmitterUpdateResult> UpdateSubmitterAsync(
+        int id,
         UpdateSubmitterParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -141,6 +145,7 @@ public partial interface IDocusealClient
     /// The API endpoint allows you to add, remove or replace documents in the template with provided PDF/DOCX file or HTML content.
     /// </summary>
     WithRawResponseTask<Template> UpdateTemplateDocumentsAsync(
+        int id,
         UpdateTemplateDocumentsParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -150,6 +155,7 @@ public partial interface IDocusealClient
     /// The API endpoint allows you to clone an existing template into a new template.
     /// </summary>
     WithRawResponseTask<Template> CloneTemplateAsync(
+        int id,
         CloneTemplateParams request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -203,8 +209,8 @@ public partial interface IDocusealClient
     /// <summary>
     /// The API endpoint allows you to permanently delete a document template and all of its submissions.
     /// </summary>
-    WithRawResponseTask<TemplateArchiveResult> PermanentlyDeleteTemplateAsync(
-        PermanentlyDeleteTemplateParams request,
+    WithRawResponseTask<TemplatePermanentlyDeleteResult> PermanentlyDeleteTemplateAsync(
+        int id,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     );
@@ -212,8 +218,8 @@ public partial interface IDocusealClient
     /// <summary>
     /// The API endpoint allows you to permanently delete a submission and all of its submitters and documents.
     /// </summary>
-    WithRawResponseTask<SubmissionArchiveResult> PermanentlyDeleteSubmissionAsync(
-        PermanentlyDeleteSubmissionParams request,
+    WithRawResponseTask<SubmissionPermanentlyDeleteResult> PermanentlyDeleteSubmissionAsync(
+        int id,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     );

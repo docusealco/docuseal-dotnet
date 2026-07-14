@@ -1,0 +1,10 @@
+--- a/src/Docuseal/DocusealClient.cs
++++ b/src/Docuseal/DocusealClient.cs
+@@ -16,6 +16,7 @@ public partial class DocusealClient : IDocusealClient
+                 { "X-Fern-Language", "C#" },
+                 { "X-Fern-SDK-Name", "Docuseal" },
+                 { "X-Fern-SDK-Version", Version.Current },
++                { "User-Agent", "DocuSeal C# v1.0.0" },
+             }
+         );
+         foreach (var header in platformHeaders)

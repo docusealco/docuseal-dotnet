@@ -1,0 +1,9 @@
+--- a/src/Docuseal/Core/Public/DocusealClientEnvironment.cs
++++ b/src/Docuseal/Core/Public/DocusealClientEnvironment.cs
+@@ -4,4 +4,6 @@ namespace Docuseal;
+ public class DocusealClientEnvironment
+ {
+     public const string Default = "https://api.docuseal.com";
++
++    public const string EU = "https://api.docuseal.eu";
+ }

@@ -7,12 +7,6 @@ namespace Docuseal;
 public record UpdateSubmitterParams
 {
     /// <summary>
-    /// The unique identifier of the submitter.
-    /// </summary>
-    [JsonIgnore]
-    public required int Id { get; set; }
-
-    /// <summary>
     /// The name of the submitter.
     /// </summary>
     [JsonPropertyName("name")]

@@ -7,12 +7,6 @@ namespace Docuseal;
 public record UpdateTemplateParams
 {
     /// <summary>
-    /// The unique identifier of the document template.
-    /// </summary>
-    [JsonIgnore]
-    public required int Id { get; set; }
-
-    /// <summary>
     /// The name of the template.
     /// </summary>
     [JsonPropertyName("name")]

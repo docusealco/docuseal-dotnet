@@ -18,16 +18,20 @@ public record UpdateSubmitterFieldParams : IJsonOnDeserialized
     [JsonPropertyName("name")]
     public required string Name { get; set; }
 
-    /// <summary>
-    /// Default value of the field. Use base64 encoded file or a public URL to the image file to set default signature or image fields.
-    /// </summary>
     [JsonPropertyName("default_value")]
     public OneOf<
         string,
+        int,
         double,
         bool,
-        IEnumerable<OneOf<string, double, bool>>
+        IEnumerable<OneOf<string, int, double, bool>>
     >? DefaultValue { get; set; }
+
+    /// <summary>
+    /// Default value of the field as a plain string. Alias of `default_value` that takes precedence when both are provided.
+    /// </summary>
+    [JsonPropertyName("value")]
+    public string? Value { get; set; }
 
     /// <summary>
     /// Set `true` to make it impossible for the submitter to edit predefined field value.

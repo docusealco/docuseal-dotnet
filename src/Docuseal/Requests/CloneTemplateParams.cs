@@ -7,12 +7,6 @@ namespace Docuseal;
 public record CloneTemplateParams
 {
     /// <summary>
-    /// The unique identifier of the document template.
-    /// </summary>
-    [JsonIgnore]
-    public required int Id { get; set; }
-
-    /// <summary>
     /// Template name. Existing name with (Clone) suffix will be used if not specified.
     /// </summary>
     [JsonPropertyName("name")]

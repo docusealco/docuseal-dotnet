@@ -37,7 +37,7 @@ API keys for the EU cloud can be obtained from your [EU DocuSeal Console](https:
 ```csharp
 var client = new DocusealClient(
     Environment.GetEnvironmentVariable("DOCUSEAL_API_KEY"),
-    new ClientOptions { BaseUrl = "https://api.docuseal.eu" });
+    new ClientOptions { BaseUrl = DocusealClientEnvironment.EU });
 ```
 
 #### On-Premises
@@ -47,7 +47,7 @@ For on-premises installations, API keys can be retrieved from the API settings p
 ```csharp
 var client = new DocusealClient(
     Environment.GetEnvironmentVariable("DOCUSEAL_API_KEY"),
-    new ClientOptions { BaseUrl = "https://yourdocuseal.com/api" });
+    new ClientOptions { BaseUrl = "https://yourdocusealapp.com/api" });
 ```
 
 ## API Methods
@@ -71,7 +71,7 @@ Provides the functionality to retrieve information about a submission.
 
 
 ```csharp
-var submission = await client.GetSubmissionAsync(new GetSubmissionParams { Id = 1001 });
+var submission = await client.GetSubmissionAsync(1001);
 ```
 
 ### GetSubmissionDocumentsAsync(id)
@@ -82,7 +82,7 @@ This endpoint returns a list of partially filled documents for a submission. If 
 
 
 ```csharp
-var submission = await client.GetSubmissionDocumentsAsync(new GetSubmissionDocumentsParams { Id = 1001 });
+var submission = await client.GetSubmissionDocumentsAsync(1001, new GetSubmissionDocumentsParams());
 ```
 
 ### CreateSubmissionAsync(data)
@@ -238,9 +238,8 @@ Allows you to update a submission: change its name, expiration date, and archive
 
 
 ```csharp
-var submission = await client.UpdateSubmissionAsync(new UpdateSubmissionParams
+var submission = await client.UpdateSubmissionAsync(1001, new UpdateSubmissionParams
 {
-    Id = 1001,
     Name = "New Submission Name",
     ExpireAt = "2024-09-01 12:00:00 UTC",
     Archived = true
@@ -255,7 +254,7 @@ Allows you to archive a submission.
 
 
 ```csharp
-await client.ArchiveSubmissionAsync(new ArchiveSubmissionParams { Id = 1001 });
+await client.ArchiveSubmissionAsync(1001);
 ```
 
 ### GetSubmittersAsync(params)
@@ -277,7 +276,7 @@ Provides functionality to retrieve information about a submitter, along with the
 
 
 ```csharp
-var submitter = await client.GetSubmitterAsync(new GetSubmitterParams { Id = 500001 });
+var submitter = await client.GetSubmitterAsync(500001);
 ```
 
 ### UpdateSubmitterAsync(id, data)
@@ -291,15 +290,14 @@ Allows you to update submitter details, pre-fill or update field values and re-s
 
 
 ```csharp
-var submitter = await client.UpdateSubmitterAsync(new UpdateSubmitterParams
+var submitter = await client.UpdateSubmitterAsync(500001, new UpdateSubmitterParams
 {
-    Id = 500001,
     Email = "john.doe@example.com",
     Fields = [
         new UpdateSubmitterFieldParams
         {
             Name = "First Name",
-            DefaultValue = "Acme"
+            Value = "Acme"
         },
     ]
 });
@@ -324,7 +322,7 @@ Provides the functionality to retrieve information about a document template.
 
 
 ```csharp
-var template = await client.GetTemplateAsync(new GetTemplateParams { Id = 1000001 });
+var template = await client.GetTemplateAsync(1000001);
 ```
 
 ### CreateTemplateFromPdfAsync(data)
@@ -426,9 +424,8 @@ Allows you to clone an existing template into a new template.
 
 
 ```csharp
-var template = await client.CloneTemplateAsync(new CloneTemplateParams
+var template = await client.CloneTemplateAsync(1000001, new CloneTemplateParams
 {
-    Id = 1000001,
     Name = "Cloned Template"
 });
 ```
@@ -456,9 +453,8 @@ Provides the functionality to move a document template to a different folder and
 
 
 ```csharp
-var template = await client.UpdateTemplateAsync(new UpdateTemplateParams
+var template = await client.UpdateTemplateAsync(1000001, new UpdateTemplateParams
 {
-    Id = 1000001,
     Name = "New Document Name",
     FolderName = "New Folder"
 });
@@ -471,10 +467,10 @@ var template = await client.UpdateTemplateAsync(new UpdateTemplateParams
 Allows you to add, remove or replace documents in the template with provided PDF/DOCX file or HTML content.
 
 
+
 ```csharp
-var template = await client.UpdateTemplateDocumentsAsync(new UpdateTemplateDocumentsParams
+var template = await client.UpdateTemplateDocumentsAsync(1000001, new UpdateTemplateDocumentsParams
 {
-    Id = 1000001,
     Documents = [
         new UpdateTemplateDocumentsDocumentParams
         {
@@ -492,7 +488,7 @@ Allows you to archive a document template.
 
 
 ```csharp
-await client.ArchiveTemplateAsync(new ArchiveTemplateParams { Id = 1000001 });
+await client.ArchiveTemplateAsync(1000001);
 ```
 
 ### Configuring Timeouts
@@ -512,4 +508,4 @@ For feature requests or bug reports, visit our [GitHub Issues page](https://gith
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The library is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

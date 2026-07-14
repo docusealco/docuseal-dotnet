@@ -1,34 +1,27 @@
 using Docuseal.Core;
 using global::System.Text.Json;
 using global::System.Text.Json.Serialization;
-using OneOf;
 
 namespace Docuseal;
 
 [Serializable]
-public record FieldValue : IJsonOnDeserialized
+public record SubmissionPermanentlyDeleteResult : IJsonOnDeserialized
 {
     [JsonExtensionData]
     private readonly IDictionary<string, JsonElement> _extensionData =
         new Dictionary<string, JsonElement>();
 
     /// <summary>
-    /// Document template field name.
+    /// Submission unique ID number.
     /// </summary>
-    [JsonPropertyName("field")]
-    public required string Field { get; set; }
+    [JsonPropertyName("id")]
+    public required int Id { get; set; }
 
     /// <summary>
-    /// Pre-filled value of the field.
+    /// Date and time when the submission was archived.
     /// </summary>
-    [JsonPropertyName("value")]
-    public required OneOf<
-        string,
-        int,
-        double,
-        bool,
-        IEnumerable<OneOf<string, int, double, bool>>
-    > Value { get; set; }
+    [JsonPropertyName("archived_at")]
+    public string? ArchivedAt { get; set; }
 
     [JsonIgnore]
     public ReadOnlyAdditionalProperties AdditionalProperties { get; private set; } = new();
