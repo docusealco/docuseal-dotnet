@@ -10,15 +10,7 @@ public partial class DocusealClient : IDocusealClient
     public DocusealClient(string? apiKey = null, ClientOptions? clientOptions = null)
     {
         clientOptions ??= new ClientOptions();
-        var platformHeaders = new Headers(
-            new Dictionary<string, string>()
-            {
-                { "X-Fern-Language", "C#" },
-                { "X-Fern-SDK-Name", "Docuseal" },
-                { "X-Fern-SDK-Version", Version.Current },
-                { "User-Agent", "DocuSeal C# v1.0.0" },
-            }
-        );
+        var platformHeaders = new Headers(new Dictionary<string, string>() { { "User-Agent", "DocuSeal C# v1.0.0" } });
         foreach (var header in platformHeaders)
         {
             if (!clientOptions.Headers.ContainsKey(header.Key))

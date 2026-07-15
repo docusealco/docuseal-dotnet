@@ -16,3 +16,4 @@ groups:
         config:
           client-class-name: DocusealClient
           namespace: Docuseal
+          omit-fern-headers: true
