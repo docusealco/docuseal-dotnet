@@ -19,7 +19,7 @@ else
 end
 
 FileUtils.rm_rf('.fern-out')
-system({ 'CI' => 'true' }, 'npx', '-y', 'fern-api@5.67.1', 'generate', '--local', exception: true)
+system({ 'CI' => 'true' }, 'npx', '-y', 'fern-api@5.74.2', 'generate', '--local', exception: true)
 
 FileUtils.rm_rf('src')
 FileUtils.mkdir_p('src')

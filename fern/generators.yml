@@ -9,7 +9,7 @@ groups:
   local:
     generators:
       - name: fernapi/fern-csharp-sdk
-        version: 2.72.2
+        version: 2.76.0
         output:
           location: local-file-system
           path: ../.fern-out
