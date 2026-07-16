@@ -21,13 +21,13 @@ public record User : IJsonOnDeserialized
     /// The first name of the user.
     /// </summary>
     [JsonPropertyName("first_name")]
-    public required string FirstName { get; set; }
+    public string? FirstName { get; set; }
 
     /// <summary>
     /// The last name of the user.
     /// </summary>
     [JsonPropertyName("last_name")]
-    public required string LastName { get; set; }
+    public string? LastName { get; set; }
 
     /// <summary>
     /// The email address of the user.

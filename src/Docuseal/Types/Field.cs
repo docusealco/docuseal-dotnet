@@ -27,7 +27,7 @@ public record Field : IJsonOnDeserialized
     /// Field name.
     /// </summary>
     [JsonPropertyName("name")]
-    public required string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Type of the field (e.g., text, signature, date, initials).
@@ -39,7 +39,7 @@ public record Field : IJsonOnDeserialized
     /// Indicates if the field is required.
     /// </summary>
     [JsonPropertyName("required")]
-    public required bool Required { get; set; }
+    public bool? Required { get; set; }
 
     [JsonPropertyName("preferences")]
     public FieldPreferences? Preferences { get; set; }
@@ -48,7 +48,7 @@ public record Field : IJsonOnDeserialized
     /// List of areas where the field is located in the document.
     /// </summary>
     [JsonPropertyName("areas")]
-    public IEnumerable<FieldArea> Areas { get; set; } = new List<FieldArea>();
+    public IEnumerable<FieldArea>? Areas { get; set; }
 
     [JsonIgnore]
     public ReadOnlyAdditionalProperties AdditionalProperties { get; private set; } = new();

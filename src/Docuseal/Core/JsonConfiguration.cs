@@ -33,6 +33,7 @@ internal static partial class JsonOptions
             {
                 Modifiers =
                 {
+                    DisableRequiredPropertiesModifier,
                     NullableOptionalModifier,
                     JsonAccessAndIgnoreModifier,
                     HandleExtensionDataFields,
@@ -47,6 +48,36 @@ internal static partial class JsonOptions
             Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
         };
         JsonSerializerOptionsRelaxedEscaping = relaxedOptions;
+    }
+
+    /// <summary>
+    /// Never fail deserialization just because the API omitted a property.
+    /// <para>
+    /// A response is the server's to shape, and a caller cannot fix the server, so throwing
+    /// on an unexpected omission turns a benign API change into a hard crash. Absent keys
+    /// therefore deserialize to null/default instead, matching the DocuSeal Java (Jackson)
+    /// and Go (encoding/json) SDKs, which ignore required-ness by design.
+    /// </para>
+    /// <para>
+    /// Registered first in the <c>Modifiers</c> pipeline so it acts as the baseline; the
+    /// generated modifiers that follow refine serialization behaviour on top of it.
+    /// </para>
+    /// <para>
+    /// The C# <c>required</c> modifier still applies at compile time, so object initializers
+    /// must still set these properties when constructing requests.
+    /// </para>
+    /// </summary>
+    private static void DisableRequiredPropertiesModifier(JsonTypeInfo typeInfo)
+    {
+        if (typeInfo.Kind != JsonTypeInfoKind.Object)
+        {
+            return;
+        }
+
+        foreach (var property in typeInfo.Properties)
+        {
+            property.IsRequired = false;
+        }
     }
 
     private static void NullableOptionalModifier(JsonTypeInfo typeInfo)

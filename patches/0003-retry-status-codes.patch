@@ -1,0 +1,11 @@
+--- a/src/Docuseal/Core/RawClient.cs
++++ b/src/Docuseal/Core/RawClient.cs
+@@ -194,7 +194,7 @@ internal partial class RawClient(ClientOptions clientOptions)
+     {
+         var statusCode = (int)response.StatusCode;
+ 
+-        return statusCode is 408 or 429 or (>= 500);
++        return statusCode is 408 or 429 or (> 500);
+     }
+ 
+     private static int AddPositiveJitter(int delayMs)

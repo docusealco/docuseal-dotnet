@@ -115,7 +115,7 @@ public record Submitter : IJsonOnDeserialized
         new Dictionary<string, object?>();
 
     [JsonPropertyName("template")]
-    public required SubmitterTemplate Template { get; set; }
+    public SubmitterTemplate? Template { get; set; }
 
     /// <summary>
     /// An array of events related to the submission.

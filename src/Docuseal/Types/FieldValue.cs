@@ -22,13 +22,13 @@ public record FieldValue : IJsonOnDeserialized
     /// Pre-filled value of the field.
     /// </summary>
     [JsonPropertyName("value")]
-    public required OneOf<
+    public OneOf<
         string,
         int,
         double,
         bool,
         IEnumerable<OneOf<string, int, double, bool>>
-    > Value { get; set; }
+    >? Value { get; set; }
 
     [JsonIgnore]
     public ReadOnlyAdditionalProperties AdditionalProperties { get; private set; } = new();
