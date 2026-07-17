@@ -15,7 +15,7 @@ public record TemplateCreatedEvent : IJsonOnDeserialized
     /// The event type.
     /// </summary>
     [JsonPropertyName("event_type")]
-    public required string EventType { get; set; }
+    public required EventType EventType { get; set; }
 
     /// <summary>
     /// The event timestamp.
