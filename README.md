@@ -82,7 +82,7 @@ This endpoint returns a list of partially filled documents for a submission. If 
 
 
 ```csharp
-var submission = await client.GetSubmissionDocumentsAsync(1001, new GetSubmissionDocumentsParams());
+var submission = await client.GetSubmissionDocumentsAsync(1001);
 ```
 
 ### CreateSubmissionAsync(data)
