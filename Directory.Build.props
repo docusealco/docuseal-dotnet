@@ -3,6 +3,7 @@
     <PackageId>Docuseal</PackageId>
     <Version>1.0.1</Version>
     <Description>.NET client for the DocuSeal API</Description>
+    <PackageTags>esignature;e-signature;electronic-signature;digital-signature;signature;pdf;documents;document-signing;signing;api;sdk</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://www.docuseal.com</PackageProjectUrl>
     <RepositoryUrl>https://github.com/docusealco/docuseal-dotnet</RepositoryUrl>
