@@ -10,7 +10,7 @@ public partial class DocusealClient : IDocusealClient
     public DocusealClient(string? apiKey = null, ClientOptions? clientOptions = null)
     {
         clientOptions ??= new ClientOptions();
-        var platformHeaders = new Headers(new Dictionary<string, string>() { { "User-Agent", "DocuSeal C# v1.0.0" } });
+        var platformHeaders = new Headers(new Dictionary<string, string>() { { "User-Agent", "DocuSeal C# v1.0.1" } });
         foreach (var header in platformHeaders)
         {
             if (!clientOptions.Headers.ContainsKey(header.Key))
