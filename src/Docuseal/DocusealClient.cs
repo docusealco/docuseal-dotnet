@@ -7,10 +7,40 @@ public partial class DocusealClient : IDocusealClient
 {
     private readonly RawClient _client;
 
+    /// <summary>
+    /// Initializes a new client using the given base URL (e.g. <see cref="DocusealClientEnvironment.EU"/>).
+    /// </summary>
+    /// <example><code>
+    /// var client = new DocusealClient(apiKey, DocusealClientEnvironment.EU);
+    /// </code></example>
+    public DocusealClient(string? apiKey, string baseUrl)
+        : this(apiKey, new ClientOptions { BaseUrl = baseUrl }) { }
+
+    /// <summary>
+    /// Initializes a new client using the given base URL together with additional client options.
+    /// The explicit <paramref name="baseUrl"/> takes precedence over <see cref="ClientOptions.BaseUrl"/>.
+    /// </summary>
+    /// <example><code>
+    /// var client = new DocusealClient(apiKey, DocusealClientEnvironment.EU, new ClientOptions { Timeout = TimeSpan.FromSeconds(30) });
+    /// </code></example>
+    public DocusealClient(string? apiKey, string baseUrl, ClientOptions clientOptions)
+        : this(
+            apiKey,
+            new ClientOptions
+            {
+                BaseUrl = baseUrl,
+                HttpClient = clientOptions.HttpClient,
+                MaxRetries = clientOptions.MaxRetries,
+                Timeout = clientOptions.Timeout,
+                Headers = new Headers(new Dictionary<string, HeaderValue>(clientOptions.Headers)),
+                AdditionalHeaders = clientOptions.AdditionalHeaders,
+            }
+        ) { }
+
     public DocusealClient(string? apiKey = null, ClientOptions? clientOptions = null)
     {
         clientOptions ??= new ClientOptions();
-        var platformHeaders = new Headers(new Dictionary<string, string>() { { "User-Agent", "DocuSeal C# v1.0.1" } });
+        var platformHeaders = new Headers(new Dictionary<string, string>() { { "User-Agent", "DocuSeal C# v1.0.2" } });
         foreach (var header in platformHeaders)
         {
             if (!clientOptions.Headers.ContainsKey(header.Key))

@@ -5,7 +5,7 @@
      {
          clientOptions ??= new ClientOptions();
 -        var platformHeaders = new Headers(new Dictionary<string, string>() { });
-+        var platformHeaders = new Headers(new Dictionary<string, string>() { { "User-Agent", "DocuSeal C# v1.0.1" } });
++        var platformHeaders = new Headers(new Dictionary<string, string>() { { "User-Agent", "DocuSeal C# v1.0.2" } });
          foreach (var header in platformHeaders)
          {
              if (!clientOptions.Headers.ContainsKey(header.Key))

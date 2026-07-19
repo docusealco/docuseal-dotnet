@@ -37,7 +37,7 @@ API keys for the EU cloud can be obtained from your [EU DocuSeal Console](https:
 ```csharp
 var client = new DocusealClient(
     Environment.GetEnvironmentVariable("DOCUSEAL_API_KEY"),
-    new ClientOptions { BaseUrl = DocusealClientEnvironment.EU });
+    DocusealClientEnvironment.EU);
 ```
 
 #### On-Premises
@@ -47,7 +47,7 @@ For on-premises installations, API keys can be retrieved from the API settings p
 ```csharp
 var client = new DocusealClient(
     Environment.GetEnvironmentVariable("DOCUSEAL_API_KEY"),
-    new ClientOptions { BaseUrl = "https://yourdocusealapp.com/api" });
+    "https://yourdocusealapp.com/api");
 ```
 
 ## API Methods
